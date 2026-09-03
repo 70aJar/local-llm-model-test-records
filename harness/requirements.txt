@@ -1,0 +1,2 @@
+# Standard-library only — the harnesses run with zero third-party deps.
+# Optional: gzip ships with Python.

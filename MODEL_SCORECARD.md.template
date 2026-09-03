@@ -1,0 +1,45 @@
+# Model Scorecard — <MODEL NAME>
+
+| Field | Value |
+|---|---|
+| **Date tested** | YYYY-MM-DD |
+| **Model** | `<name>` |
+| **Source** | [Hugging Face](<url>) / Ollama |
+| **Quantization** | e.g. IQ3_S (3.50 bpw), Q8_0, bf16, 4-bit MLX |
+| **Size on disk** | N GB |
+| **Engine** | LM Studio / oMLX / Ollama |
+| **Host** | Apple Silicon M5 Max / 128 GB (compute only) |
+| **Context loaded** | 32K (`-c 32768`) |
+
+## Results
+
+| Section | Score | Details |
+|---|---|---|
+| HumanEval (HE20) | N/20 | _per-problem table optional below_ |
+| Tasks (5) | N/5 | adherence ✓/✗ · expense-tracker ✓/✗ · fake-desktop ✓/✗ · kanban ✓/✗ · reasoning ✓/✗ |
+| Agency (15) | N/15 | _scenario breakdown_ |
+| Throughput | N tok/s | standalone |
+| Tool-call | pass/fail | _notes_ |
+
+## Real-work tasks (4-task suite, optional but recommended)
+
+| Task | Result | Notes |
+|---|---|---|
+| Grounded Q&A | ✅/❌ | — |
+| Invoice (math+format) | ✅/❌ | 189,000 → 170,100 → **192,213** + "Bank Deposit" |
+| Technical summary | ✅/❌ | facts survived compression |
+| Client email | ✅/❌ | both issues, courier proof, photo, 5-day replacement |
+
+## Notes & quirks
+
+- _e.g. thinking-on behavior, reasoning-off knob honored?, token-budget behavior,
+  vision, MTP/spec-decode, anything unusual._
+
+## Verdict
+
+> One-paragraph honest take: worth using for X daily work, or not; what it
+> replaces; what surprised you about the quantization.
+
+---
+Harness: `harness/full_test_model.py` (HE20+Tasks5+Agency15+throughput+toolcall)
+and `harness/real_task_harness.py` (4 real-work tasks).
