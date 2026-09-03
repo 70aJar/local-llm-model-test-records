@@ -62,6 +62,10 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 | Date | Model | Engine | HE | Tasks | Agency | tok/s | Tool-call | Record |
 |---|---|---|---|---|---|---|---|---|
 | 2026-09-03 | Qwen3.8-27B GSQ-RCO IQ3_S-mtp (3.50 bpw) | LM Studio | 20/20 | 5/5 | 13/15 | 19.4 | ✅ | [records/Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp.md](records/Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp.md) |
+| 2026-09-03 | MiniCPM-o-4.5 (MLX 4-bit) | oMLX | 15/20 | 5/5 | 6/15¹ | 95.4 | ✅ | [records/MiniCPM-o-4_5-MLX-4bit.md](records/MiniCPM-o-4_5-MLX-4bit.md) |
+
+¹ Agency = 6/15 on strict name matching; intent was correct on 9 of the misses
+(`employee_lookup`, `book_meeting_room`, `currency_conversion` etc.) — see scorecard.
 
 ---
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,
