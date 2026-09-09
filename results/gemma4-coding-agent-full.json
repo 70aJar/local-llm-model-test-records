@@ -1,0 +1,253 @@
+{
+  "label": "gemma4-coding-agent-full",
+  "model": "gemma4-coding-agent",
+  "humaneval": 19,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "secs": 3.5
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": true,
+      "secs": 4.2
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": true,
+      "secs": 2.1
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "secs": 2.8
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "secs": 3.0
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "secs": 3.1
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": true,
+      "secs": 5.4
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "secs": 2.7
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": false,
+      "secs": 2.9
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "secs": 3.3
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": true,
+      "secs": 4.4
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "secs": 3.2
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "secs": 3.4
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "secs": 2.0
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": true,
+      "secs": 2.0
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": true,
+      "secs": 2.0
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "secs": 2.0
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": true,
+      "secs": 4.3
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "secs": 3.0
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "secs": 5.1
+    }
+  ],
+  "tasks": {
+    "adherence": {
+      "chars": 403,
+      "secs": 2.0,
+      "code": "N"
+    },
+    "expense-tracker": {
+      "chars": 14219,
+      "secs": 49.1,
+      "code": "Y"
+    },
+    "fake-desktop": {
+      "chars": 41211,
+      "secs": 113.7,
+      "code": "Y"
+    },
+    "kanban": {
+      "chars": 44182,
+      "secs": 150.0,
+      "code": "Y"
+    },
+    "reasoning": {
+      "chars": 5631,
+      "secs": 19.6,
+      "code": "Y"
+    }
+  },
+  "agency": 15,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ]
+    },
+    {
+      "name": "list_active_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "book_room_b",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ]
+    },
+    {
+      "name": "book_room_a",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ]
+    },
+    {
+      "name": "check_room_b",
+      "pass": true,
+      "calls": [
+        "check_availability"
+      ]
+    },
+    {
+      "name": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ]
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": true,
+      "calls": [
+        "create_ticket"
+      ]
+    },
+    {
+      "name": "ticket_platform",
+      "pass": true,
+      "calls": [
+        "create_ticket"
+      ]
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ]
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ]
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "focus_team",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ]
+    }
+  ],
+  "throughput": {
+    "completion_tokens": 608,
+    "prompt_tokens": 49,
+    "secs": 7.8,
+    "tok_per_sec": 77.8
+  },
+  "toolcall": {
+    "emitted": true,
+    "args": {
+      "a": 37,
+      "b": 15
+    },
+    "secs": 1.5
+  },
+  "timestamp": "2026-09-08 21:55:06"
+}
