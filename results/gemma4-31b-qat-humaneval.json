@@ -1,0 +1,9 @@
+{
+  "label": "gemma4-31b-qat",
+  "model": "google/gemma-4-31b-qat",
+  "thinking": "ON (baked, LM Studio)",
+  "humaneval": "20/20",
+  "agency": "15/15 (gemma4-31b-qat-agency.json)",
+  "toolcall": "OK (7.3s, 37+15)",
+  "timestamp": "2026-09-07 10:40"
+}

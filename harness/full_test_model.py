@@ -6,15 +6,15 @@ Saves complete scorecard to /tmp/qwen38_full_results/<label>.json
 """
 import json, gzip, time, urllib.request, urllib.error, subprocess, tempfile, os, re, sys
 
-MODEL = sys.argv[1] if len(sys.argv) > 1 else "qwen/qwen3.8-27b"
+MODEL = sys.argv[1] if len(sys.argv) > 1 else os.environ.get("MODEL", "qwen/qwen3.8-27b")
 LABEL = sys.argv[2] if len(sys.argv) > 2 else MODEL
 API = os.environ.get("LM_API", "http://127.0.0.1:1234/v1/chat/completions")
 API_KEY = os.environ.get("LM_API_KEY", "")
-LMS_BIN = os.environ.get("LMS_BIN", "lms")
+LMS_BIN = os.environ.get("LMS_BIN", "/Users/pasc/.lmstudio/bin/lms")
 LOAD_KEY = os.environ.get("LOAD_KEY", "qwen3.8-27b-ud")
-HE_PATH = os.environ.get("HE_PATH", "human-eval/data/HumanEval.jsonl.gz")
-TASK_DIR = os.environ.get("TASK_DIR", "tasks/")
-OUT_DIR = os.environ.get("OUT_DIR", "./results")
+HE_PATH = "/Volumes/AIPortable/AIProjects/GIT Library/human-eval/data/HumanEval.jsonl.gz"
+TASK_DIR = "/Volumes/AIPortable/AIProjects/GIT Library/youtube-main/prompts/"
+OUT_DIR = "/Users/pasc/Projects/AlitaAICore/benchmarks/results"
 
 def chat(messages, max_tokens=4000, temp=0.2, tools=None):
     payload = {"model": MODEL, "messages": messages, "max_tokens": max_tokens, "temperature": temp}
@@ -23,6 +23,13 @@ def chat(messages, max_tokens=4000, temp=0.2, tools=None):
     effort = os.environ.get("REASONING_EFFORT", "")
     if effort:
         payload["chat_template_kwargs"] = {"reasoning_effort": effort}
+    # Thinking toggle for llama.cpp/Unsloth-style servers (enable_thinking:false).
+    # Env: THINKING_ENABLED=0|false → explicit enable_thinking:false.
+    te = os.environ.get("THINKING_ENABLED", "")
+    if te in ("0", "false", "False"):
+        payload.setdefault("chat_template_kwargs", {})["enable_thinking"] = False
+    elif te in ("1", "true", "True"):
+        payload.setdefault("chat_template_kwargs", {})["enable_thinking"] = True
     if tools:
         payload["tools"] = tools
         payload["tool_choice"] = "auto"
@@ -224,8 +231,9 @@ def run_agency():
     detail = []
     for name, prompt, expected, must_empty in AGENCY_SCENARIOS:
         try:
+            _temp = float(os.environ.get("AGENCY_TEMP", "0.0"))
             msg, dt, _ = chat([{"role":"system","content":AGENCY_SYSTEM},{"role":"user","content":prompt}],
-                              max_tokens=8000, temp=0.0, tools=AGENCY_TOOLS)
+                              max_tokens=8000, temp=_temp, tools=AGENCY_TOOLS)
             names = [tc["function"]["name"] for tc in (msg.get("tool_calls") or [])]
         except Exception as e:
             names, dt = [], 0

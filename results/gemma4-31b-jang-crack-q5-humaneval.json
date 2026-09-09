@@ -1,0 +1,11 @@
+{
+  "label": "gemma4-31b-jang-crack-q5",
+  "model": "gemma-4-31b-jang_4m-crack@q5_k_m",
+  "thinking": "ON",
+  "humaneval": "20/20",
+  "agency": "15/15",
+  "toolcall": "OK (10.4s)",
+  "size_gb": 20.4,
+  "source": "in-house quant from Q8",
+  "timestamp": "2026-09-07"
+}

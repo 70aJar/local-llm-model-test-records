@@ -1,0 +1,108 @@
+{
+  "label": "ornith-1.5-mlx-fp16-he",
+  "model": "Ornith-1.5-35B-A3B-MLX",
+  "humaneval": 20,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "secs": 4.4
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": true,
+      "secs": 9.9
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": true,
+      "secs": 2.9
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "secs": 1.5
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "secs": 4.7
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "secs": 3.6
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": true,
+      "secs": 11.2
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "secs": 2.7
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": true,
+      "secs": 3.5
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "secs": 3.2
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": true,
+      "secs": 16.5
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "secs": 2.0
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "secs": 4.2
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "secs": 3.5
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": true,
+      "secs": 2.0
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": true,
+      "secs": 3.1
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "secs": 3.4
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": true,
+      "secs": 15.2
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "secs": 4.9
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "secs": 5.3
+    }
+  ],
+  "timestamp": "2026-09-08 20:08:57"
+}

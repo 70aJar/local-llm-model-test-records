@@ -1,0 +1,110 @@
+{
+  "label": "ornith-1.5-mlx-fp16",
+  "model": "Ornith-1.5-35B-A3B-MLX",
+  "agency": 13,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ]
+    },
+    {
+      "name": "list_active_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory",
+        "search_directory"
+      ]
+    },
+    {
+      "name": "book_room_b",
+      "pass": [],
+      "calls": [
+        "check_availability"
+      ]
+    },
+    {
+      "name": "book_room_a",
+      "pass": [],
+      "calls": [
+        "check_availability"
+      ]
+    },
+    {
+      "name": "check_room_b",
+      "pass": true,
+      "calls": [
+        "check_availability"
+      ]
+    },
+    {
+      "name": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ]
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "ticket_platform",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ]
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ]
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ]
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "focus_team",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ]
+    }
+  ],
+  "timestamp": "2026-09-08 19:25:03"
+}

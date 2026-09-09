@@ -1,0 +1,10 @@
+{
+  "label": "gemma4-31b-jang-crack-q4",
+  "model": "gemma-4-31b-jang_4m-crack@q4_k_m",
+  "thinking": "ON (baked, LM Studio)",
+  "humaneval": "20/20",
+  "agency": "15/15",
+  "toolcall": "OK (3.3s, 37+15)",
+  "size_gb": 17.4,
+  "timestamp": "2026-09-07"
+}
