@@ -183,7 +183,17 @@ def run_tasks():
                     tf.write(content)
             except Exception:
                 pass
-            code = "Y" if ("```" in content or "def " in content or "class " in content or "{" in content) else "N"
+            code = "Y"
+            if t == "adherence":
+                # Adherence task wants EXACTLY 3 bold-label markdown bullets, no code.
+                # Grade on structure compliance, NOT the code heuristic (which inverts it).
+                bullets = re.findall(r"\*\*[^*]+\*\*", content)
+                if len(bullets) >= 3 and not any(m in content for m in ("```", "def ", "class ")):
+                    code = "Y"
+                else:
+                    code = "N"
+            else:
+                code = "Y" if ("```" in content or "def " in content or "class " in content or "{" in content) else "N"
             results[t] = {"chars": len(content), "secs": round(elapsed, 1), "code": code}
             print(f"  {t:20s} {len(content):6d} chars, {elapsed:5.0f}s, code={code}", flush=True)
         except Exception as e:

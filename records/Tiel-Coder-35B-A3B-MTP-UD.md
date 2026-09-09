@@ -15,7 +15,7 @@
 | Section | Score | Details |
 |---|---|---|
 | HumanEval (HE20) | **19/20** | one problem failed |
-| Tasks (5) | **3/5** | expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · adherence ✗ · reasoning ✗ |
+| Tasks (5) | **4/5** | expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · adherence ✓ (grader fix) · reasoning ✗ |
 | Agency (15) | **13/15** | `book_room_a`/`book_room_b` (availability check, no booking call) |
 | Throughput | **57.4 tok/s** | 1,293 tok in 22.5s |
 | Tool-call | **OK** | schema-compliant {'a': 37, 'b': 15} |

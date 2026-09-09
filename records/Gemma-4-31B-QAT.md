@@ -15,7 +15,7 @@
 | Section | Score | Details |
 |---|---|---|
 | HumanEval (HE20) | **20/20** | perfect |
-| Tasks (5) | **3/5** | expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · adherence ✗ · reasoning ✗ (verbose: kanban 33K chars) |
+| Tasks (5) | **4/5** | expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · adherence ✓ (grader fix) · reasoning ✗ (verbose: kanban 33K chars) |
 | Agency (15) | **15/15** | perfect — no tool-loop drops |
 | Throughput | **18.8 tok/s** | standalone |
 | Tool-call | **OK** (7.3s) | schema-compliant |

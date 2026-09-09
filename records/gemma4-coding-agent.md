@@ -15,7 +15,7 @@
 | Section | Score | Details |
 |---|---|---|
 | HumanEval (HE20) | **19/20** | one problem failed |
-| Tasks (5) | **4/5** | expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · reasoning ✓ · adherence ✗ |
+| Tasks (5) | **5/5** | all build tasks pass — adherence was a grader bug, fixed |
 | Agency (15) | **15/15 PERFECT** | no tool-loop drops — best small-model agency score on the roster |
 | Throughput | **77.8 tok/s** | on RTX 5060 GPU |
 | Tool-call | **OK** | schema-compliant {'a': 37, 'b': 15} |

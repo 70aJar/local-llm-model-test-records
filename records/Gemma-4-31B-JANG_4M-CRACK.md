@@ -15,7 +15,7 @@
 | Section | Q8_0 | Q5_K_M | Q4_K_M |
 |---|---|---|---|
 | HumanEval (HE20) | **20/20** | **20/20** | **20/20** |
-| Tasks (5) | — | — | **4/5** (expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · reasoning ✓ · adherence ✗) |
+| Tasks (5) | — | — | **5/5** (all build tasks pass — adherence was a grader bug, fixed) |
 | Agency (15) | **15/15** | **15/15** | **15/15** |
 | Throughput | — | — | **13.2 tok/s** (Q4, standalone) |
 | Tool-call | **OK** (8.8s) | **OK** (10.4s) | **OK** (3.3s) |
