@@ -61,6 +61,7 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 
 | Date | Model | Engine | HE | Tasks | Agency | tok/s | Tool-call | Record |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-08 | Tiel-Coder-35B-A3B-MTP-UD (Q4_K_XL, MTP) | LM Studio | 19/20 | 3/5 | 13/15 | 57.4 | ✅ | [records/Tiel-Coder-35B-A3B-MTP-UD.md](records/Tiel-Coder-35B-A3B-MTP-UD.md) |
 | 2026-09-08 | Ornith-1.5-35B-A3B-MLX (bf16) | oMLX | 20/20 | — | 13/15 | 56-59 | ✅ | [records/Ornith-1.5-35B-A3B-MLX.md](records/Ornith-1.5-35B-A3B-MLX.md) |
 | 2026-09-07 | Gemma-4-31B JANG_4M-CRACK (GGUF Q4/Q5/Q8) | LM Studio | 20/20 | — | 15/15 | — | ✅ | [records/Gemma-4-31B-JANG_4M-CRACK.md](records/Gemma-4-31B-JANG_4M-CRACK.md) |
 | 2026-09-07 | google/gemma-4-31b-qat (Q4_0, vision) | LM Studio | 20/20 | — | 15/15 | — | ✅ | [records/Gemma-4-31B-QAT.md](records/Gemma-4-31B-QAT.md) |
