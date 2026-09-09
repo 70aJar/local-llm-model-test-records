@@ -15,8 +15,9 @@
 | Section | Score | Details |
 |---|---|---|
 | HumanEval (HE20) | **20/20** | perfect — real run, wire-confirmed model |
+| Tasks (5) | **3/5** | expense-tracker ✓ · fake-desktop ✓ · kanban ✓ · adherence ✗ · reasoning ✗ (verbose: fake-desktop/kanban ~110K chars each) |
 | Agency (15) | **13/15** | `book_room_a`/`book_room_b` only (availability check, no booking call) |
-| Throughput | **56-59 tg tok/s** | ~2,300-2,800 pp tok/s (oMLX single-request bench) |
+| Throughput | **48.1 tok/s** | standalone (oMLX single-request) |
 | Tool-call | **OK** | tool loops emitted (Agency scenarios) |
 
 ## Agency failures — what actually happened
