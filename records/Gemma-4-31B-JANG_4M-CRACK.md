@@ -15,9 +15,9 @@
 | Section | Q8_0 | Q5_K_M | Q4_K_M |
 |---|---|---|---|
 | HumanEval (HE20) | **20/20** | **20/20** | **20/20** |
-| Tasks (5) | — | — | **5/5** (all build tasks pass — adherence was a grader bug, fixed) |
+| Tasks (5) | **5/5** | **5/5** | **5/5** | all quants pass all 5 build tasks (adherence grader fixed) |
 | Agency (15) | **15/15** | **15/15** | **15/15** |
-| Throughput | — | — | **13.2 tok/s** (Q4, standalone) |
+| Throughput | 9.9 | 8.8 | **13.2 tok/s** (Q4 fastest) |
 | Tool-call | **OK** (8.8s) | **OK** (10.4s) | **OK** (3.3s) |
 
 ## Notes & quirks

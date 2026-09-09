@@ -1,0 +1,38 @@
+{
+  "label": "gemma4-31b-jang-crack-q8-tasks-tp",
+  "model": "gemma-4-31b-jang_4m-crack@q8_0",
+  "tasks": {
+    "adherence": {
+      "chars": 367,
+      "secs": 187.5,
+      "code": "Y"
+    },
+    "expense-tracker": {
+      "chars": 20809,
+      "secs": 633.9,
+      "code": "Y"
+    },
+    "fake-desktop": {
+      "chars": 18776,
+      "secs": 774.5,
+      "code": "Y"
+    },
+    "kanban": {
+      "chars": 27514,
+      "secs": 911.0,
+      "code": "Y"
+    },
+    "reasoning": {
+      "chars": 1967,
+      "secs": 136.5,
+      "code": "Y"
+    }
+  },
+  "throughput": {
+    "completion_tokens": 1302,
+    "prompt_tokens": 55,
+    "secs": 132.0,
+    "tok_per_sec": 9.9
+  },
+  "timestamp": "2026-09-09 16:58:57"
+}

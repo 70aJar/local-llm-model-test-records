@@ -185,10 +185,12 @@ def run_tasks():
                 pass
             code = "Y"
             if t == "adherence":
-                # Adherence task wants EXACTLY 3 bold-label markdown bullets, no code.
-                # Grade on structure compliance, NOT the code heuristic (which inverts it).
+                # Adherence task wants EXACTLY 3 bold-label markdown bullets, no code,
+                # no prompt echo. Grade on structure compliance, NOT the code heuristic.
                 bullets = re.findall(r"\*\*[^*]+\*\*", content)
-                if len(bullets) >= 3 and not any(m in content for m in ("```", "def ", "class ")):
+                # 3 expected; tolerate 3-5. >5 (e.g. prompt echo) = FAIL.
+                too_long = len(content) > 20000  # prompt echo / runaway verbosity
+                if 3 <= len(bullets) <= 5 and not too_long and not any(m in content for m in ("```", "def ", "class ")):
                     code = "Y"
                 else:
                     code = "N"
