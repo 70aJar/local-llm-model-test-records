@@ -1,0 +1,224 @@
+{
+  "label": "minicpm5-2b-mlx-full",
+  "model": "minicpm5-2b-mlx",
+  "humaneval": 15,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "secs": 37.5
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": false,
+      "secs": 91.6
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": false,
+      "err": "HTTP Error 400: Bad Request"
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "secs": 13.0
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "secs": 14.9
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "secs": 6.2
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": false,
+      "secs": 116.9
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "secs": 4.5
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": true,
+      "secs": 3.9
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "secs": 7.4
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": true,
+      "secs": 11.0
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "secs": 7.0
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "secs": 5.3
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "secs": 6.0
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": true,
+      "secs": 4.9
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": false,
+      "secs": 89.5
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "secs": 2.9
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": false,
+      "secs": 87.5
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "secs": 6.1
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "secs": 7.3
+    }
+  ],
+  "tasks": {
+    "adherence": {
+      "chars": 238,
+      "secs": 0.8,
+      "code": "Y"
+    },
+    "expense-tracker": {
+      "chars": 23868,
+      "secs": 30.0,
+      "code": "Y"
+    },
+    "fake-desktop": {
+      "chars": 156504,
+      "secs": 231.3,
+      "code": "Y"
+    },
+    "kanban": {
+      "chars": 139504,
+      "secs": 231.5,
+      "code": "Y"
+    },
+    "reasoning": {
+      "chars": 129164,
+      "secs": 236.0,
+      "code": "N"
+    }
+  },
+  "agency": 2,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "list_active_eng",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "count_eng",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "list_support_platform",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "book_room_b",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "book_room_a",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "check_room_b",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "ticket_manager",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "ticket_platform",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "focus_team",
+      "pass": [],
+      "calls": []
+    }
+  ],
+  "throughput": {
+    "completion_tokens": 726,
+    "prompt_tokens": 47,
+    "secs": 3.0,
+    "tok_per_sec": 243.6
+  },
+  "toolcall": {
+    "emitted": false,
+    "args": null,
+    "secs": 0.4
+  },
+  "timestamp": "2026-09-10 15:56:02"
+}

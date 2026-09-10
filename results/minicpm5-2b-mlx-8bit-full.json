@@ -1,0 +1,224 @@
+{
+  "label": "minicpm5-2b-mlx-8bit-full",
+  "model": "MiniCPM5-2B-MLX-8bit",
+  "humaneval": 18,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "secs": 10.4
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": false,
+      "secs": 132.1
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": true,
+      "secs": 9.5
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "secs": 5.0
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "secs": 7.0
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "secs": 8.1
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": true,
+      "secs": 8.3
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "secs": 3.3
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": true,
+      "secs": 4.4
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "secs": 6.9
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": false,
+      "secs": 116.3
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "secs": 6.4
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "secs": 5.2
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "secs": 3.9
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": true,
+      "secs": 6.0
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": true,
+      "secs": 4.8
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "secs": 4.3
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": true,
+      "secs": 6.3
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "secs": 6.1
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "secs": 10.7
+    }
+  ],
+  "tasks": {
+    "adherence": {
+      "chars": 362,
+      "secs": 4.2,
+      "code": "Y"
+    },
+    "expense-tracker": {
+      "chars": 34141,
+      "secs": 53.7,
+      "code": "Y"
+    },
+    "fake-desktop": {
+      "chars": 35593,
+      "secs": 55.5,
+      "code": "Y"
+    },
+    "kanban": {
+      "chars": 24774,
+      "secs": 55.3,
+      "code": "Y"
+    },
+    "reasoning": {
+      "chars": 38350,
+      "secs": 54.2,
+      "code": "N"
+    }
+  },
+  "agency": 2,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "list_active_eng",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "count_eng",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "list_support_platform",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "book_room_b",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "book_room_a",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "check_room_b",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "ticket_manager",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "ticket_platform",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": [],
+      "calls": []
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": []
+    },
+    {
+      "name": "focus_team",
+      "pass": [],
+      "calls": []
+    }
+  ],
+  "throughput": {
+    "completion_tokens": 432,
+    "prompt_tokens": 50,
+    "secs": 2.6,
+    "tok_per_sec": 164.5
+  },
+  "toolcall": {
+    "emitted": false,
+    "args": null,
+    "secs": 0.4
+  },
+  "timestamp": "2026-09-10 17:51:07"
+}
