@@ -1,0 +1,39 @@
+{
+  "label": "gemma4-26b-qat-tasks-tp-fixed",
+  "model": "google/gemma-4-26b-a4b-qat",
+  "tasks": {
+    "adherence": {
+      "chars": 382,
+      "secs": 130.3,
+      "code": "Y"
+    },
+    "expense-tracker": {
+      "chars": 21974,
+      "secs": 79.1,
+      "code": "Y"
+    },
+    "fake-desktop": {
+      "chars": 113408,
+      "secs": 444.6,
+      "code": "Y"
+    },
+    "kanban": {
+      "chars": 27070,
+      "secs": 123.9,
+      "code": "Y"
+    },
+    "reasoning": {
+      "chars": 1794,
+      "secs": 186.5,
+      "code": "Y"
+    }
+  },
+  "throughput": {
+    "completion_tokens": 1950,
+    "prompt_tokens": 56,
+    "secs": 23.4,
+    "tok_per_sec": 83.3
+  },
+  "sampling": "temp0.5+rep1.2",
+  "timestamp": "2026-09-09 20:38:04"
+}

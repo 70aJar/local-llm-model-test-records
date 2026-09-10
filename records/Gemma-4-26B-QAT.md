@@ -22,7 +22,7 @@
 
 ## Notes
 - A4B MoE: 78.9 tok/s at 26B total — very fast dense-equivalent.
-- **Verbosity problem**: adherence produced a 116K-char prompt echo (371 fake bullets) — grader hardened to catch (>20K chars = fail). Real build tasks also verbose (fake-desktop 104K, reasoning 78K chars) but code-correct.
+- **VERBOSITY FIXED (Sep 9)**: default greedy temp (0.2) causes late-onset degenerate repetition loops (399 repeated chunks in fake-desktop, 104-116K chars, length-capped). Card sampling (temp 0.5 + repeat-penalty 1.2) eliminates it: same fake-desktop prompt → 20.6K chars, 0 repeats, natural stop. Harness now supports TASK_TEMP / TASK_REP_PEN. 26B needs these settings for build tasks.
 - Passes reasoning ✓, fails adherence ✗ — inverted profile vs most models.
 
 ## Verdict

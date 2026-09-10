@@ -18,6 +18,12 @@ OUT_DIR = "/Users/pasc/Projects/AlitaAICore/benchmarks/results"
 
 def chat(messages, max_tokens=4000, temp=0.2, tools=None):
     payload = {"model": MODEL, "messages": messages, "max_tokens": max_tokens, "temperature": temp}
+    # Sampling overrides for repetition-prone models (e.g. gemma-4-26B loops at
+    # greedy temp; card requires temp 0.3-0.7 + rep-pen). Env:
+    # TASK_TEMP / TASK_REP_PEN (used by run_tasks), AGENCY_TEMP (used by agency).
+    rp = os.environ.get("TASK_REP_PEN", "")
+    if rp:
+        payload["repetition_penalty"] = float(rp)
     # Optional reasoning-effort override (Qwen/Dirk chat_template_kwargs) — used by
     # the low/medium/high-thinking runs. Env: REASONING_EFFORT=low|medium|xhigh
     effort = os.environ.get("REASONING_EFFORT", "")
@@ -176,7 +182,8 @@ def run_tasks():
         try:
             prompt = open(os.path.join(TASK_DIR, t + ".txt")).read()
             mt = int(os.environ.get("TASK_MAX_TOKENS", "32000"))
-            msg, elapsed, usage = chat([{"role": "user", "content": prompt}], max_tokens=mt)
+            tt = float(os.environ.get("TASK_TEMP", "0.2"))
+            msg, elapsed, usage = chat([{"role": "user", "content": prompt}], max_tokens=mt, temp=tt)
             content = msg.get("content") or msg.get("reasoning_content") or ""
             try:
                 with open(os.path.join(OUT_DIR, f"{LABEL}.task-{t}.txt"), "w") as tf:
