@@ -61,6 +61,7 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 
 | Date | Model | Engine | HE | Tasks | Agency | tok/s | Tool-call | Record |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-09 | grug-27b-oQ8e-fp16 (full-GPU) | oMLX | 17/20 | 4/5 | 14/15 | 13.7 | ✅ | [records/grug-27b-oQ8e-fp16.md](records/grug-27b-oQ8e-fp16.md) |
 | 2026-09-09 | Ornith-1.5-35B-A3B-oQ4e-fp16-mtp (22GB) | oMLX | 20/20 | 4/5 | 14/15 | 67.0 | ✅ | [records/Ornith-1.5-35B-A3B-oQ4e-mtp.md](records/Ornith-1.5-35B-A3B-oQ4e-mtp.md) |
 | 2026-09-09 | google/gemma-4-26b-a4b-qat | LM Studio | 20/20 | 4/5 | 14/15 | 78.9 | ✅ | [records/Gemma-4-26B-QAT.md](records/Gemma-4-26B-QAT.md) |
 | 2026-09-08 | gemma4-coding-agent (E4B Inst., Q4_K_M, Desktop GPU) | LM Studio (LM Link) | 19/20 | 5/5 | 15/15 | 77.8 | ✅ | [records/gemma4-coding-agent.md](records/gemma4-coding-agent.md) |
