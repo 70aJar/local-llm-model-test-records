@@ -1,0 +1,23 @@
+{
+  "label": "qwen3.6-27b-fable-fusion-711-dequantized",
+  "model": "Qwen3.6-27B-Fable-Fusion-711-Uncensored-Heretic-NM-DAU-NEO-MAX-MTP-GGUF-dequantized",
+  "timestamp": "2026-09-11 00:43:05",
+  "probes": {
+    "code": {
+      "tps": 1.6,
+      "secs": 315.5,
+      "tokens": 500,
+      "correct": true,
+      "verbosity": "thinking leaked to content, capped mid-answer"
+    },
+    "tool": {
+      "json_tool_calls": true,
+      "args": {
+        "a": 37,
+        "b": 15
+      },
+      "secs": 75.8
+    }
+  },
+  "verdict": "NOT adopted \u2014 1.6 t/s dequantized is unusable for fleet work; MLX sibling qwen3.6-27b-coder-mlx is the 15/15-20.4t/s choice"
+}
