@@ -29,3 +29,14 @@
 Harness: `harness/full_test_model.py` | Data: `results/deepseek-v4-reap37-full.json`
 
 > **Retested 2026-09-11 (reasoning):** initial Tasks grading used a code heuristic on a prose puzzle (harness bug) + 8K token cap that truncated mid-thought. Fixed grader + 32K budget → reasoning PASSES (17-min bridge, 10-prisoner binary, 1 pair). Tasks 4/5 → **5/5**. See harness reasoning grader fix.
+
+## HE accuracy caveat (2026-09-11 probe)
+- Battery scored **13/20** under the default fence-style prompt ("provide only the complete
+  function implementation" → markdown fences).
+- **No-fence probe flips HE/15 + HE/17 to PASS** (full brackets emitted) → effective **17/20 (85%)**.
+- Root cause: this model's fence-emission path truncates the FINAL closing bracket
+  (`return [.. + 1)` → missing `]`, finish=stop). Not a coding-ability failure.
+- HE/1 + HE/10: genuine degenerate reasoning loops (26-28 min rambling, never emits code)
+  — same repetition-loop class as gemma-4-26B under long budgets.
+- HE/14: persistent fence truncation even under no-fence instruction.
+- Lesson: fence-style HE prompts understate this model ~2 pts; use no-fence for DeepSeek-family.
