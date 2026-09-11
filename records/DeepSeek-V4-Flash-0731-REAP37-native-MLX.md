@@ -12,7 +12,7 @@
 | Section | Score | Notes |
 |---|---|---|
 | HumanEval (HE20) | **13/20** | mid-tier code |
-| Tasks (5) | **4/5** | adherence ✓ · expense-tracker ✓ (33KB) · fake-desktop ✓ (34KB) · kanban ✓ (30KB) · reasoning ✗ |
+| Tasks (5) | **5/5** | adherence ✓ · expense-tracker ✓ (33KB) · fake-desktop ✓ (34KB) · kanban ✓ (30KB) · reasoning ✓ (all 3 correct: 17min bridge, 10-prisoner binary search, 1 pair) |
 | Agency (15) | **13/15** | strong — room-booking tool-loop pattern only |
 | Throughput | **26.0 tok/s** | 4× faster than earlier estimates (~6 t/s) |
 | Tool-call | **OK** | schema-compliant {'a': 37, 'b': 15} |
@@ -27,3 +27,5 @@
 
 ---
 Harness: `harness/full_test_model.py` | Data: `results/deepseek-v4-reap37-full.json`
+
+> **Retested 2026-09-11 (reasoning):** initial Tasks grading used a code heuristic on a prose puzzle (harness bug) + 8K token cap that truncated mid-thought. Fixed grader + 32K budget → reasoning PASSES (17-min bridge, 10-prisoner binary, 1 pair). Tasks 4/5 → **5/5**. See harness reasoning grader fix.
