@@ -1,41 +1,43 @@
-# Model Scorecard — MiniCPM5-2B (CORRECTED — XML tool protocol)
+# Model Scorecard — MiniCPM5-2B (CORRECTED — XML tool protocol, FULL QUANT MATRIX)
 
 | Field | Value |
 |---|---|
 | **Date tested** | 2026-09-10 |
 | **Model** | MiniCPM5-2B (OpenBMB, 2026-09-07) — 2,516,756,480 params, 42 layers, 131K ctx |
-| **Key protocol fact** | MiniCPM5 emits **XML-style tool calls** (`harness/minicpm5_toolcheck.py`), NOT OpenAI-JSON `tool_calls` |
+| **Key protocol fact** | MiniCPM5 emits **XML-style tool calls** (`harness/minicpm5_toolcheck.py`), NOT OpenAI-JSON `tool_calls`. Generic JSON-only harnesses UNDER-REPORT this family. |
 
-## ⚠️ IMPORTANT CORRECTION
-An initial verdict of "Agency 2/15, NO tool call at every precision" was WRONG.
-Cause: the generic harness (OpenAI-JSON tool_calls parser) is **incompatible with
-MiniCPM5's XML tool protocol**. The model answers tool calls as XML
-`<function name="..."><param name="...">value</param></function>` (as its chat
-template hardwires), which generic JSON parsing never sees.
+## ⚠️ IMPORTANT CORRECTION (2026-09-10)
+Initial verdict "Agency 2/15, NO tool call at every precision" was **WRONG — a testing fault**.
+The generic harness parses only OpenAI-JSON `tool_calls`; MiniCPM5 answers with XML
+`<function name="..."><param ...>...</function>` (per its chat_template.jinja), so the
+generic parser reported nothing. XML-aware checkers in harness/ (`minicpm5_toolcheck.py`,
+`minicpm5_agency_check.py`) prove the model calls tools correctly.
 
-With the XML-aware checker (`minicpm5_toolcheck.py`): **5/5 tool scenarios matched**
-(add 37+15, weather Lahore, convert 100 USD→EUR, book Room B May 12, lookup Jane Smith).
-OpenAI tool_calls field = 0 on every one — the model is correct; the parser was blind.
+## Full quant matrix (XML-aware methods)
 
-## Results (all three precisions — full battery each)
-| Section | BF16 original (5.03GB) | MLX 8-bit (oMLX) | MLX 4-bit (LM Studio) |
-|---|---|---|---|
-| HumanEval (HE20) | **19/20** | 18/20 | 15/20 |
-| Tasks (5) | 3/5 | 4/5 | 3/5 |
-| Agency (15) | 2/15 ⚠️ (XML-incompatible harness) | 2/15 ⚠️ | 2/15 ⚠️ |
-| Throughput | 84.6 tok/s | 164.5 tok/s | 243.6 tok/s |
-| Tool-call (generic) | NO ⚠️ | NO ⚠️ | NO ⚠️ |
-| **Tool-call (XML-aware)** | **5/5 MATCH** | — | — |
+| Quant | HE20 | Tasks5 | Agency15 (XML) | Tool-call (XML) | tok/s |
+|---|---|---|---|---|---|
+| **BF16 original** (openbmb 5.03GB) | **19/20** | 3/5 | **13/15** | **5/5** | 84.6 |
+| **MLX 8-bit** (abenzerps 2.5GB) | 18/20 | 4/5 | **12/15** | **5/5** | 164.5 |
+| **MLX 4-bit** (openbmb 1.3GB) | 15/20 | 3/5 | **12/15** | **5/5** | 243.6 |
 
-## Verdict (corrected)
-- **MiniCPM5-2B CAN call tools correctly** — 5/5 in its native XML protocol.
-- The generic `full_test_model.py` Agency/Tool-call sections are NOT meaningful for
-  this model family; use `minicpm5_toolcheck.py` (in harness/) instead.
-- SGLang with `--tool-call-parser minicpm5` is the official way to get OpenAI-JSON
-  tool_calls from this model (parser merged May 2026; needs SGLang from source until v0.5.13).
-- Deployment: works as an edge coder (19/20 HE @ 84.6 t/s BF16); add an XML→JSON
-  layer (SGLang parser or local patch) to use it as an agent.
+- **Tool-calling = perfect at every quantization (5/5)**: add/weather/convert/book/lookup
+  all emitted as correct XML calls.
+- **Agency = 12-13/15 with XML-aware parsing** (was 2/15 with JSON-blind harness). Real
+  misses are model judgment: "book room" scenarios sometimes choose check_availability;
+  one assign-ticket scenario chose lookup_employee first.
+- HE scales with precision (15→19/20); agency/tool are quant-stable.
+
+## Verdict
+- MiniCPM5-2B is a genuinely capable agent for a 2.5B — tool-calling flawless, agency
+  strong — but you MUST understand its XML protocol (SGLang `--tool-call-parser minicpm5`
+  official, or the harness scripts here) before judging it.
+- 5/5 XML tool calls at every quant: 4-bit (1.3GB @ 243.6 t/s) is the pragmatic pick for
+  edge/agent work.
+- SGLang parser needed for full OpenAI-JSON integration (merged May 2026; source build
+  until v0.5.13).
 
 ---
-Generic battery: `harness/full_test_model.py` · XML checker: `harness/minicpm5_toolcheck.py`
-Data: `results/minicpm5-2b-bf16-original-full.json`, `results/minicpm5-2b-toolcheck-xml.json`
+Generic battery: `harness/full_test_model.py` · XML tool: `harness/minicpm5_toolcheck.py` ·
+XML agency: `harness/minicpm5_agency_check.py`
+Data: `results/minicpm5-2b-{bf16,8bit,4bit}-{agency,toolcheck}-xml.json` + `*-full.json`

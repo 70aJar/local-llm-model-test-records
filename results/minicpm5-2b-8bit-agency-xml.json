@@ -1,0 +1,124 @@
+{
+  "label": "minicpm5-2b-8bit-agency-xml",
+  "model": "MiniCPM5-2B-MLX-8bit",
+  "score": "12/15",
+  "timestamp": "2026-09-10 23:58:42",
+  "note": "XML-aware agency (MiniCPM5 protocol). Generic JSON-only agency reports ~2/15 for this family because XML calls are ignored.",
+  "scenarios": [
+    {
+      "scenario": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "raw": "<function name=\"lookup_employee\"><param name=\"query\">Alice Chen</param></function>"
+    },
+    {
+      "scenario": "list_active_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "raw": "<function name=\"search_directory\"><param name=\"department\">Engineering</param><param name=\"active\">True</param></function>"
+    },
+    {
+      "scenario": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "raw": "<function name=\"search_directory\"><param name=\"department\">Engineering</param></function>"
+    },
+    {
+      "scenario": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory",
+        "search_directory"
+      ],
+      "raw": "<function name=\"search_directory\"><param name=\"department\">Support</param></function>\n<function name=\"search_directory\"><param name=\"department\">Platform</param></function>"
+    },
+    {
+      "scenario": "book_room_b",
+      "pass": "set()",
+      "calls": [
+        "check_availability"
+      ],
+      "raw": "<function name=\"check_availability\"><param name=\"room\">Conference Room B</param><param name=\"start\">2023-10-27T14:00:00Z</param><param name=\"end\">2023-10-27T15:00:00Z</param></function>"
+    },
+    {
+      "scenario": "book_room_a",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ],
+      "raw": "<function name=\"book_room\"><param name=\"room\">Room A</param><param name=\"start\">2023-10-13T09:00:00Z</param><param name=\"end\">2023-10-13T10:00:00Z</param></function>"
+    },
+    {
+      "scenario": "check_room_b",
+      "pass": true,
+      "calls": [
+        "check_availability"
+      ],
+      "raw": "<function name=\"check_availability\"><param name=\"room\">Conference Room B</param><param name=\"start\">14:00:00</param><param name=\"end\">15:00:00</param></function>"
+    },
+    {
+      "scenario": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "open_ticket"
+      ],
+      "raw": "<function name=\"open_ticket\"><param name=\"title\">Budget report outdated</param><param name=\"project\">finance</param><param name=\"severity\">medium</param></function>"
+    },
+    {
+      "scenario": "ticket_support_lead",
+      "pass": "set()",
+      "calls": [
+        "open_ticket"
+      ],
+      "raw": "<function name=\"open_ticket\"><param name=\"title\">Slow login</param><param name=\"project\">healthcheck</param><param name=\"severity\">medium</param></function>"
+    },
+    {
+      "scenario": "ticket_platform",
+      "pass": true,
+      "calls": [
+        "open_ticket"
+      ],
+      "raw": "<function name=\"open_ticket\"><param name=\"title\">Cron job failing</param><param name=\"project\">platform</param><param name=\"severity\">low</param></function>"
+    },
+    {
+      "scenario": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "raw": "<function name=\"convert_currency\"><param name=\"amount\">50.0</param><param name=\"from\">EUR</param><param name=\"to\">USD</param></function>"
+    },
+    {
+      "scenario": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "raw": "<function name=\"convert_currency\"><param name=\"amount\">75.0</param><param name=\"from\">USD</param><param name=\"to\">JPY</param></function>"
+    },
+    {
+      "scenario": "restraint_thanks",
+      "pass": true,
+      "calls": [],
+      "raw": "You're welcome! If you need any further assistance in the future, feel free to ask. Have a great day!"
+    },
+    {
+      "scenario": "restraint_weather",
+      "pass": true,
+      "calls": [],
+      "raw": "I'm doing well, thank you! How can I assist you today?"
+    },
+    {
+      "scenario": "focus_team",
+      "pass": "set()",
+      "calls": [],
+      "raw": "The user is asking for the ticket status related to \"team X,\" but the available tools only allow checking the status of a specific ticket ID via `get_ticket_status`. There is no function to retrieve t"
+    }
+  ]
+}

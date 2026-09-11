@@ -1,0 +1,45 @@
+{
+  "label": "minicpm5-2b-4bit-toolcheck-xml",
+  "model": "minicpm5-2b-mlx",
+  "server": "http://127.0.0.1:1234/v1/chat/completions",
+  "timestamp": "2026-09-11 00:00:56",
+  "scenarios": [
+    {
+      "scenario": "add-37-15",
+      "emitted_calls": 1,
+      "match": true,
+      "raw": "\n\n<function name=\"add\"><param name=\"a\">37</param><param name=\"b\">15</param></function>",
+      "secs": 0.4
+    },
+    {
+      "scenario": "weather-lahore",
+      "emitted_calls": 1,
+      "match": true,
+      "raw": "\n\n<function name=\"get_weather\"><param name=\"city\">Lahore</param></function>",
+      "secs": 0.2
+    },
+    {
+      "scenario": "convert-100-usd-eur",
+      "emitted_calls": 1,
+      "match": true,
+      "raw": "\n\n<function name=\"convert_currency\"><param name=\"amount\">100.0</param><param name=\"from\">USD</param><param name=\"to\">EUR</param></function>",
+      "secs": 0.4
+    },
+    {
+      "scenario": "book-room-b-0512",
+      "emitted_calls": 1,
+      "match": true,
+      "raw": "\n\n<function name=\"book_room\"><param name=\"room\">Room B</param><param name=\"date\">May 12</param></function>",
+      "secs": 0.4
+    },
+    {
+      "scenario": "lookup-jane",
+      "emitted_calls": 1,
+      "match": true,
+      "raw": "\n\n<function name=\"lookup_employee\"><param name=\"name\">Jane Smith</param></function>",
+      "secs": 0.2
+    }
+  ],
+  "score": "5/5",
+  "note": "MiniCPM5 XML tool protocol: <function name=...><param name=...>...</param></function>. Generic OpenAI-JSON tool_calls parsing will report 0/5 even when the model calls correctly."
+}

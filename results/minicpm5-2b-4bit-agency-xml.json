@@ -1,0 +1,124 @@
+{
+  "label": "minicpm5-2b-4bit-agency-xml",
+  "model": "minicpm5-2b-mlx",
+  "score": "12/15",
+  "timestamp": "2026-09-11 00:00:55",
+  "note": "XML-aware agency (MiniCPM5 protocol). Generic JSON-only agency reports ~2/15 for this family because XML calls are ignored.",
+  "scenarios": [
+    {
+      "scenario": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "raw": "\n\n<function name=\"lookup_employee\"><param name=\"query\">Alice Chen</param></function>"
+    },
+    {
+      "scenario": "list_active_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "raw": "\n\n<function name=\"search_directory\"><param name=\"department\">Engineering</param><param name=\"active\">True</param></function>"
+    },
+    {
+      "scenario": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "raw": "\n\n<function name=\"search_directory\"><param name=\"department\">Engineering</param></function>"
+    },
+    {
+      "scenario": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory",
+        "search_directory"
+      ],
+      "raw": "\n\n<function name=\"search_directory\"><param name=\"department\">Support</param></function>\n<function name=\"search_directory\"><param name=\"department\">Platform</param></function>"
+    },
+    {
+      "scenario": "book_room_b",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ],
+      "raw": "\n\n<function name=\"book_room\"><param name=\"room\">Conference Room B</param><param name=\"start\">2023-10-26T14:00:00Z</param><param name=\"end\">2023-10-26T15:00:00Z</param></function>"
+    },
+    {
+      "scenario": "book_room_a",
+      "pass": "set()",
+      "calls": [
+        "check_availability"
+      ],
+      "raw": "\n\n<function name=\"check_availability\"><param name=\"room\">Room A</param><param name=\"start\">2024-05-01T09:00:00Z</param><param name=\"end\">2024-05-01T10:00:00Z</param></function>"
+    },
+    {
+      "scenario": "check_room_b",
+      "pass": true,
+      "calls": [
+        "check_availability"
+      ],
+      "raw": "\n\n<function name=\"check_availability\"><param name=\"room\">Conference Room B</param><param name=\"start\">2025-06-16T14:00:00Z</param><param name=\"end\">2025-06-16T15:00:00Z</param></function>"
+    },
+    {
+      "scenario": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "open_ticket"
+      ],
+      "raw": "\n\n<function name=\"open_ticket\"><param name=\"title\">Budget report outdated</param><param name=\"project\">finance</param><param name=\"severity\">medium</param></function>"
+    },
+    {
+      "scenario": "ticket_support_lead",
+      "pass": "set()",
+      "calls": [
+        "lookup_employee"
+      ],
+      "raw": "\n\n<function name=\"lookup_employee\"><param name=\"query\">Lindsey Tran</param></function>"
+    },
+    {
+      "scenario": "ticket_platform",
+      "pass": true,
+      "calls": [
+        "open_ticket"
+      ],
+      "raw": "\n\n<function name=\"open_ticket\"><param name=\"title\">Cron job failing</param><param name=\"project\">platform</param><param name=\"severity\">low</param></function>"
+    },
+    {
+      "scenario": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "raw": "\n\n<function name=\"convert_currency\"><param name=\"amount\">50.0</param><param name=\"from\">EUR</param><param name=\"to\">USD</param></function>"
+    },
+    {
+      "scenario": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "raw": "\n\n<function name=\"convert_currency\"><param name=\"amount\">75.0</param><param name=\"from\">USD</param><param name=\"to\">JPY</param></function>"
+    },
+    {
+      "scenario": "restraint_thanks",
+      "pass": true,
+      "calls": [],
+      "raw": "\n\nNo further action needed. If you have any other requests, feel free to ask!"
+    },
+    {
+      "scenario": "restraint_weather",
+      "pass": true,
+      "calls": [],
+      "raw": "\n\nI'm just an assistant, so I'm always available to help! How can I assist you today?"
+    },
+    {
+      "scenario": "focus_team",
+      "pass": "set()",
+      "calls": [],
+      "raw": "\n\nI'd need a specific ticket ID to check the status, but you mentioned \"team X\" without providing a particular ticket. Could you give me a specific ticket ID you'd like me to look up?"
+    }
+  ]
+}
