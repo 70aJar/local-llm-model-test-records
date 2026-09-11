@@ -40,3 +40,14 @@ Harness: `harness/full_test_model.py` | Data: `results/deepseek-v4-reap37-full.j
   — same repetition-loop class as gemma-4-26B under long budgets.
 - HE/14: persistent fence truncation even under no-fence instruction.
 - Lesson: fence-style HE prompts understate this model ~2 pts; use no-fence for DeepSeek-family.
+
+## Thinking-mode comparison (2026-09-11, 7 failing HE problems)
+| Variant | HE passes | Speed | Truncation? | Verdict |
+|---|---|---|---|---|
+| Thinking ON (default) | FLIP 16,19 only | HE/1=28min, HE/10=26min | YES (fence cut) | ❌ loops, slow |
+| **Thinking OFF** (enable_thinking=false) | **5/7 — 14,15,16,17,19 ALL pass** | HE/1=14.8s | **NO** | ✅ **best config: HE≈18/20** |
+| Low thinking (reasoning_effort=low) | behaves like ON | slow (loop on HE/1) | YES | ❌ no benefit |
+
+**Winner: THINKING OFF.** Fence truncation disappears, loops collapse (28min→15s),
+tasks complete (reasoning 30min→39s), Agency 13/15 + tool OK stable. Effective HE ≈ 18/20.
+Full no-think battery: HE 18/20-eff · Tasks 5/5 · Agency 13/15 · 22.2 tok/s · tool OK.
