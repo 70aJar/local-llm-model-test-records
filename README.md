@@ -82,3 +82,4 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 ---
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,
 open an issue — the harness is in this repo.*
+| 2026-09-11 | Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit (31B MoE-class dense) | oMLX | 20/20 | 5/5 | 15/15 | 22.4 | ✅ | [records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md](records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md) |
