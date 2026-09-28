@@ -123,3 +123,8 @@ off the 35B-A3B family's 13/15.
 Harness: `harness/full_test_model.py` (HE20+Tasks5+Agency15+throughput+toolcall) — the copy here includes
 the tool-call unwrapper and `REASON_MODE` / `TEMP` / `TOP_K` / `MIN_P` / `TOP_P` / `REP_PEN` knobs.
 Data: `results/lfm2.5-2.6b-*.json` (six runs: baseline, default+unwrap, off, low, medium, medium+samplers).
+
+**Testing notes (harness config, raw per-item observations, caveats):** see
+[`notes/LFM2.5-2.6B-testing-notes.md`](../notes/LFM2.5-2.6B-testing-notes.md) — includes the exact
+reproduction commands, the HumanEval failure sets and timings per configuration, the full agency call
+sequence table, and the throughput confound warning.

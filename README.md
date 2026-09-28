@@ -30,7 +30,13 @@ from `harness/`, thinking on/off per model card. Host: Apple Silicon M5 Max / 12
 └── records/
     ├── Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp.md
     └── ...                   → one scorecard per tested model
+└── notes/
+    └── <MODEL>-testing-notes.md → harness config, raw observations, caveats
 ```
+
+Every scorecard has a companion **testing-notes** file in `notes/` recording the exact harness
+configuration, the raw per-item observations it was derived from, and the caveats that bound the
+result. Read both before comparing two models.
 
 ## Datasets (all public)
 
@@ -53,9 +59,12 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
    LM_API="http://127.0.0.1:1234/v1/chat/completions" \
    HE_N=20 python3 harness/full_test_model.py "<engine-model-id>" "<label>"
    ```
-3. Copy `MODEL_SCORECARD.md.template` → `records/<label>.md`, fill from the
-   printed scorecard, add the results JSON from `benchmarks/results/`.
-4. Add a row to the index table and open a PR.
+3. Copy `MODEL_SCORECARD.md.template` → `records/<MODEL>.md`, fill from the
+ printed scorecard, add the results JSON from `benchmarks/results/`.
+4. Add a companion `notes/<MODEL>-testing-notes.md`: exact harness config (engine, quant, context,
+ env vars), the raw per-item observations behind each score, and the caveats. Use
+ `notes/LFM2.5-2.6B-testing-notes.md` as the reference shape.
+5. Add a row to the index table and open a PR.
 
 ## Index
 
