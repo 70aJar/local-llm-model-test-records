@@ -1,0 +1,308 @@
+{
+  "label": "lfm2.5-2.6b-qwen3.8-turbo-brilliance-power-x12-neo-max-off-v2",
+  "model": "lfm2.5-2.6b-qwen3.8-turbo-brilliance-power-x12-neo-max",
+  "humaneval": 19,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "answered": "answered",
+      "secs": 5.5
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": true,
+      "answered": "answered",
+      "secs": 111.9
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": true,
+      "answered": "answered",
+      "secs": 8.5
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "answered": "answered",
+      "secs": 7.5
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "answered": "answered",
+      "secs": 16.6
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "answered": "answered",
+      "secs": 33.5
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": true,
+      "answered": "answered",
+      "secs": 15.3
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "answered": "answered",
+      "secs": 6.6
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": true,
+      "answered": "answered",
+      "secs": 3.0
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "answered": "answered",
+      "secs": 11.4
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": true,
+      "answered": "answered",
+      "secs": 25.1
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "answered": "answered",
+      "secs": 28.5
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "answered": "answered",
+      "secs": 21.6
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "answered": "answered",
+      "secs": 7.0
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": false,
+      "answered": "answered",
+      "secs": 4.4
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": true,
+      "answered": "answered",
+      "secs": 3.6
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "answered": "answered",
+      "secs": 5.9
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": true,
+      "answered": "answered",
+      "secs": 14.0
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "answered": "answered",
+      "secs": 28.9
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "answered": "answered",
+      "secs": 12.0
+    }
+  ],
+  "tasks": {
+    "adherence": {
+      "chars": 418,
+      "secs": 16.5,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "expense-tracker": {
+      "chars": 4974,
+      "secs": 19.3,
+      "code": "N",
+      "answered": "answered"
+    },
+    "fake-desktop": {
+      "chars": 23259,
+      "secs": 87.6,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "kanban": {
+      "chars": 28880,
+      "secs": 110.5,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "reasoning": {
+      "chars": 4448,
+      "secs": 78.7,
+      "code": "Y",
+      "answered": "answered"
+    }
+  },
+  "agency": 12,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "list_active_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory",
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "book_room_b",
+      "pass": [],
+      "calls": [
+        "check_availability"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "book_room_a",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "check_room_b",
+      "pass": true,
+      "calls": [
+        "check_availability"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": [],
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_platform",
+      "pass": [],
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": true,
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "focus_team",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    }
+  ],
+  "throughput": {
+    "completion_tokens": 1265,
+    "prompt_tokens": 51,
+    "secs": 15.3,
+    "tok_per_sec": 82.5
+  },
+  "toolcall": {
+    "emitted": true,
+    "args": {
+      "a": 37,
+      "b": 15
+    },
+    "secs": 0.8
+  },
+  "answered": {
+    "humaneval": {
+      "answered": 20
+    },
+    "agency": {
+      "answered": 15
+    },
+    "tasks": {
+      "answered": 5
+    },
+    "humaneval_answered_rate": 1.0,
+    "agency_answered_rate": 1.0,
+    "tasks_answered_rate": 1.0
+  },
+  "timestamp": "2026-09-28 18:45:34"
+}

@@ -61,6 +61,8 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 
 | Date | Model | Engine | HE | Tasks | Agency | tok/s | Tool-call | Record |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-28 | **LFM2.5-2.6B Turbo-Brilliance Power X12 NEO MAX** (DavidAU re-tune, Q8_0, 3.1GB) | LM Studio | **19/20**² | **4/5** | 12/15 | 82.5 | ✅ | [records/LFM2.5-2.6B-Turbo-Brilliance.md](records/LFM2.5-2.6B-Turbo-Brilliance.md) |
+| 2026-09-11 | Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit (31B MoE-class dense) | oMLX | 20/20 | 5/5 | 15/15 | 22.4 | ✅ | [records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md](records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md) |
 | 2026-09-10 | DeepSeek-V4-Flash-0731-REAP37-native-MLX (96GB MoE) | oMLX | 13/20 | 5/5 | 13/15 | 26.0 | ✅ | [records/DeepSeek-V4-Flash-0731-REAP37-native-MLX.md](records/DeepSeek-V4-Flash-0731-REAP37-native-MLX.md) |
 | 2026-09-10 | Qwen3.6-27B Fable-Fusion-711 (dequantized) | oMLX | smoke ✓ correctness | — | — | 1.6 | ✅ native JSON | [records/Qwen3.6-27B-Fable-Fusion-711-dequantized.md](records/Qwen3.6-27B-Fable-Fusion-711-dequantized.md) |
 | 2026-09-10 | MiniCPM5-2B (BF16/8bit/4bit; XML protocol) | oMLX + LM Studio | 15-19/20 | 3-4/5 | 12-13/15 ✓ | 84.6-243.6 | 5/5 XML ✓ | [records/MiniCPM5-2B.md](records/MiniCPM5-2B.md) |
@@ -79,7 +81,15 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 ¹ Agency = 6/15 on strict name matching; intent was correct on 9 of the misses
 (`employee_lookup`, `book_meeting_room`, `currency_conversion` etc.) — see scorecard.
 
+² **LFM2.5-2.6B Turbo-Brilliance — read the scorecard before comparing this row.** The 19/20 was
+measured with `{REASON:off}`. The same model, same quant, same host scored **0/20** under its default
+mode with a harness that could not parse its Pythonic tool-call output format, and **11/20** once only
+the parser was fixed. Six configurations are recorded (0, 11, 13, 15, 15, **19**). This is a deliberate
+example of harness sensitivity, not a tuning trick — see `records/LFM2.5-2.6B-Turbo-Brilliance.md`.
+Also note: **the modes HURT at 2.6B** (`off 19 > low 15 = medium 15 > high 11`); the author's card warns
+the system scales with size, so this does not generalise to Turbo Brilliance as a method.
+
 ---
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,
 open an issue — the harness is in this repo.*
-| 2026-09-11 | Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit (31B MoE-class dense) | oMLX | 20/20 | 5/5 | 15/15 | 22.4 | ✅ | [records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md](records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md) |
+
