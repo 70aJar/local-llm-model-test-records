@@ -70,6 +70,7 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 
 | Date | Model | Engine | HE | Tasks | Agency | tok/s | Tool-call | Record |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-28 | **Qwen3.5-9B The Defiant Fable Uncensored Heretic NEO IMATRIX MAX MTP** (DavidAU, Q4_K_S, 8.4GB) | LM Studio | **19/20**³ | **5/5** | **15/15**⁴ | 51.9 | ✅ | [records/Qwen3.5-9B-Defiant-Fable.md](records/Qwen3.5-9B-Defiant-Fable.md) |
 | 2026-09-28 | **LFM2.5-2.6B Turbo-Brilliance Power X12 NEO MAX** (DavidAU re-tune, Q8_0, 3.1GB) | LM Studio | **19/20**² | **4/5** | 12/15 | 82.5 | ✅ | [records/LFM2.5-2.6B-Turbo-Brilliance.md](records/LFM2.5-2.6B-Turbo-Brilliance.md) |
 | 2026-09-11 | Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit (31B MoE-class dense) | oMLX | 20/20 | 5/5 | 15/15 | 22.4 | ✅ | [records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md](records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md) |
 | 2026-09-10 | DeepSeek-V4-Flash-0731-REAP37-native-MLX (96GB MoE) | oMLX | 13/20 | 5/5 | 13/15 | 26.0 | ✅ | [records/DeepSeek-V4-Flash-0731-REAP37-native-MLX.md](records/DeepSeek-V4-Flash-0731-REAP37-native-MLX.md) |
@@ -97,6 +98,18 @@ the parser was fixed. Six configurations are recorded (0, 11, 13, 15, 15, **19**
 example of harness sensitivity, not a tuning trick — see `records/LFM2.5-2.6B-Turbo-Brilliance.md`.
 Also note: **the modes HURT at 2.6B** (`off 19 > low 15 = medium 15 > high 11`); the author's card warns
 the system scales with size, so this does not generalise to Turbo Brilliance as a method.
+
+³ **Qwen3.5-9B Defiant Fable — 19/20 is the published figure across two full runs.** Run A (card's *general*
+sampler, temp 1.0) scored 20/20; Run B (card's *coding* sampler, temp 0.6) scored 19/20. **19 of 20 items
+pass in both runs** — only `HumanEval/10` moves. The 20/20 is recorded as an observed sample, not the score.
+±1 on HE is this model's real variance; do not read 20 vs 19 as a capability difference.
+
+⁴ **15/15 agency — perfect, and reproducible.** Identical across both runs with **zero** differing
+scenarios. This model solves **both** halves of the room-booking pair (`book_room_a` + `book_room_b`),
+which every other model we have tested fails at least one of, and `ticket_support_lead`, which failed all
+six runs of the previous model. It also correctly **abstains** on the no-valid-tool restraint scenarios
+instead of reaching for the `wiki_search` decoy. Agency is graded on tool selection rather than generated
+code, so it is far less sampler-sensitive than HumanEval — this is the most trustworthy number in the row.
 
 ---
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,

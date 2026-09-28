@@ -1,0 +1,308 @@
+{
+  "label": "A1-qwen3.5-9b-defiant-fable-q4ks-thinking",
+  "model": "qwen3.5-9b-the-defiant-fable-uncensored-heretic-neo-imatrix-max-mtp",
+  "humaneval": 20,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "answered": "answered",
+      "secs": 14.4
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": true,
+      "answered": "answered",
+      "secs": 11.2
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": true,
+      "answered": "answered",
+      "secs": 5.7
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "answered": "answered",
+      "secs": 4.9
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "answered": "answered",
+      "secs": 7.3
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "answered": "answered",
+      "secs": 12.9
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": true,
+      "answered": "answered",
+      "secs": 16.1
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "answered": "answered",
+      "secs": 5.9
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": true,
+      "answered": "answered",
+      "secs": 8.2
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "answered": "answered",
+      "secs": 8.2
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": true,
+      "answered": "answered",
+      "secs": 17.8
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "answered": "answered",
+      "secs": 6.2
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "answered": "answered",
+      "secs": 176.1
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "answered": "answered",
+      "secs": 13.3
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": true,
+      "answered": "answered",
+      "secs": 4.4
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": true,
+      "answered": "answered",
+      "secs": 5.6
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "answered": "answered",
+      "secs": 4.8
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": true,
+      "answered": "answered",
+      "secs": 12.4
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "answered": "answered",
+      "secs": 12.6
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "answered": "answered",
+      "secs": 10.6
+    }
+  ],
+  "tasks": {
+    "adherence": {
+      "chars": 452,
+      "secs": 69.0,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "expense-tracker": {
+      "chars": 30436,
+      "secs": 134.4,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "fake-desktop": {
+      "chars": 28452,
+      "secs": 133.5,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "kanban": {
+      "chars": 41851,
+      "secs": 205.0,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "reasoning": {
+      "chars": 2676,
+      "secs": 115.9,
+      "code": "Y",
+      "answered": "answered"
+    }
+  },
+  "agency": 15,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "list_active_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory",
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "book_room_b",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "book_room_a",
+      "pass": true,
+      "calls": [
+        "book_room"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "check_room_b",
+      "pass": true,
+      "calls": [
+        "check_availability"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_platform",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": true,
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "focus_team",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    }
+  ],
+  "throughput": {
+    "completion_tokens": 3529,
+    "prompt_tokens": 49,
+    "secs": 64.1,
+    "tok_per_sec": 55.1
+  },
+  "toolcall": {
+    "emitted": true,
+    "args": {
+      "a": 37,
+      "b": 15
+    },
+    "secs": 1.7
+  },
+  "answered": {
+    "humaneval": {
+      "answered": 20
+    },
+    "agency": {
+      "answered": 15
+    },
+    "tasks": {
+      "answered": 5
+    },
+    "humaneval_answered_rate": 1.0,
+    "agency_answered_rate": 1.0,
+    "tasks_answered_rate": 1.0
+  },
+  "timestamp": "2026-09-28 23:31:36"
+}
