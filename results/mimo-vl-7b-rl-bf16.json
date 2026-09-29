@@ -1,0 +1,452 @@
+{
+  "label": "A3-MiMo-VL-7B-RL-BF16",
+  "model": "mimo-vl-7b-rl",
+  "humaneval": 20,
+  "humaneval_detail": [
+    {
+      "task": "HumanEval/0",
+      "pass": true,
+      "answered": "answered",
+      "secs": 61.4
+    },
+    {
+      "task": "HumanEval/1",
+      "pass": true,
+      "answered": "answered",
+      "secs": 261.0
+    },
+    {
+      "task": "HumanEval/2",
+      "pass": true,
+      "answered": "answered",
+      "secs": 19.3
+    },
+    {
+      "task": "HumanEval/3",
+      "pass": true,
+      "answered": "answered",
+      "secs": 28.5
+    },
+    {
+      "task": "HumanEval/4",
+      "pass": true,
+      "answered": "answered",
+      "secs": 28.6
+    },
+    {
+      "task": "HumanEval/5",
+      "pass": true,
+      "answered": "answered",
+      "secs": 32.5
+    },
+    {
+      "task": "HumanEval/6",
+      "pass": true,
+      "answered": "answered",
+      "secs": 49.6
+    },
+    {
+      "task": "HumanEval/7",
+      "pass": true,
+      "answered": "answered",
+      "secs": 22.5
+    },
+    {
+      "task": "HumanEval/8",
+      "pass": true,
+      "answered": "answered",
+      "secs": 19.8
+    },
+    {
+      "task": "HumanEval/9",
+      "pass": true,
+      "answered": "answered",
+      "secs": 26.8
+    },
+    {
+      "task": "HumanEval/10",
+      "pass": true,
+      "answered": "answered",
+      "secs": 331.4
+    },
+    {
+      "task": "HumanEval/11",
+      "pass": true,
+      "answered": "answered",
+      "secs": 74.4
+    },
+    {
+      "task": "HumanEval/12",
+      "pass": true,
+      "answered": "answered",
+      "secs": 40.4
+    },
+    {
+      "task": "HumanEval/13",
+      "pass": true,
+      "answered": "answered",
+      "secs": 45.2
+    },
+    {
+      "task": "HumanEval/14",
+      "pass": true,
+      "answered": "answered",
+      "secs": 23.9
+    },
+    {
+      "task": "HumanEval/15",
+      "pass": true,
+      "answered": "answered",
+      "secs": 44.8
+    },
+    {
+      "task": "HumanEval/16",
+      "pass": true,
+      "answered": "answered",
+      "secs": 20.4
+    },
+    {
+      "task": "HumanEval/17",
+      "pass": true,
+      "answered": "answered",
+      "secs": 47.7
+    },
+    {
+      "task": "HumanEval/18",
+      "pass": true,
+      "answered": "answered",
+      "secs": 49.2
+    },
+    {
+      "task": "HumanEval/19",
+      "pass": true,
+      "answered": "answered",
+      "secs": 49.3
+    }
+  ],
+  "tasks": {
+    "adherence": {
+      "chars": 3999,
+      "secs": 31.4,
+      "code": "N",
+      "answered": "answered"
+    },
+    "expense-tracker": {
+      "chars": 2791,
+      "secs": 21.6,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "fake-desktop": {
+      "chars": 3904,
+      "secs": 30.3,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "kanban": {
+      "chars": 8724,
+      "secs": 67.8,
+      "code": "Y",
+      "answered": "answered"
+    },
+    "reasoning": {
+      "chars": 26001,
+      "secs": 388.2,
+      "code": "Y",
+      "answered": "answered"
+    }
+  },
+  "agency": 10,
+  "agency_detail": [
+    {
+      "name": "dept_lookup",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "list_active_eng",
+      "pass": [],
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "count_eng",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "list_support_platform",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "book_room_b",
+      "pass": [],
+      "calls": [
+        "check_availability"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "book_room_a",
+      "pass": [],
+      "calls": [
+        "check_availability"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "check_room_b",
+      "pass": [],
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_manager",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_support_lead",
+      "pass": true,
+      "calls": [
+        "search_directory"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "ticket_platform",
+      "pass": true,
+      "calls": [
+        "search_directory",
+        "create_ticket"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "convert_eur_usd",
+      "pass": true,
+      "calls": [
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate",
+        "convert_currency",
+        "get_exchange_rate"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "convert_usd_jpy",
+      "pass": true,
+      "calls": [
+        "convert_currency"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "restraint_thanks",
+      "pass": false,
+      "calls": [
+        "get_exchange_rate"
+      ],
+      "answered": "answered"
+    },
+    {
+      "name": "restraint_weather",
+      "pass": true,
+      "calls": [],
+      "answered": "answered"
+    },
+    {
+      "name": "focus_team",
+      "pass": true,
+      "calls": [
+        "lookup_employee"
+      ],
+      "answered": "answered"
+    }
+  ],
+  "throughput": {
+    "completion_tokens": 1540,
+    "prompt_tokens": 64,
+    "secs": 56.1,
+    "tok_per_sec": 27.4
+  },
+  "toolcall": {
+    "emitted": true,
+    "args": {
+      "a": 37,
+      "b": 15
+    },
+    "secs": 2.7
+  },
+  "answered": {
+    "humaneval": {
+      "answered": 20
+    },
+    "agency": {
+      "answered": 15
+    },
+    "tasks": {
+      "answered": 5
+    },
+    "humaneval_answered_rate": 1.0,
+    "agency_answered_rate": 1.0,
+    "tasks_answered_rate": 1.0
+  },
+  "timestamp": "2026-09-29 04:03:38"
+}

@@ -70,6 +70,9 @@ python3 harness/full_test_model.py "<engine-model-id>" "<label>"
 
 | Date | Model | Engine | HE | Tasks | Agency | tok/s | Tool-call | Record |
 |---|---|---|---|---|---|---|---|---|
+| 2026-09-29 | **MiMo-VL-7B-RL-2508** (bartowski Q8_0, 9.5GB, `qwen2vl`) — A3b | LM Studio | **20/20** | 4/5⁶ | **14/15** | 16.7 | ✅ | [records/MiMo-VL-7B-RL.md](records/MiMo-VL-7B-RL.md) |
+| 2026-09-29 | **MiMo-VL-7B-RL** (XiaomiMiMo BF16, 16.6GB, `qwen2vl`) — A3 | LM Studio | **20/20** | 4/5⁶ | 10/15 | 27.4 | ✅ | [records/MiMo-VL-7B-RL.md](records/MiMo-VL-7B-RL.md) |
+| 2026-09-29 | **MiMo-V2.6-Distill-Qwen-9B-Ablitrated-i1** (Q6_K, 7.4GB) — A2 | LM Studio | 13/20 | **2/5**⁵ | 13/15 | 41.7 | ⚠️ intermittent⁷ | [records/MiMo-9B-Abliterated.md](records/MiMo-9B-Abliterated.md) |
 | 2026-09-28 | **Qwen3.5-9B The Defiant Fable Uncensored Heretic NEO IMATRIX MAX MTP** (DavidAU, Q4_K_S, 8.4GB) | LM Studio | **19/20**³ | **5/5** | **15/15**⁴ | 51.9 | ✅ | [records/Qwen3.5-9B-Defiant-Fable.md](records/Qwen3.5-9B-Defiant-Fable.md) |
 | 2026-09-28 | **LFM2.5-2.6B Turbo-Brilliance Power X12 NEO MAX** (DavidAU re-tune, Q8_0, 3.1GB) | LM Studio | **19/20**² | **4/5** | 12/15 | 82.5 | ✅ | [records/LFM2.5-2.6B-Turbo-Brilliance.md](records/LFM2.5-2.6B-Turbo-Brilliance.md) |
 | 2026-09-11 | Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit (31B MoE-class dense) | oMLX | 20/20 | 5/5 | 15/15 | 22.4 | ✅ | [records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md](records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md) |
@@ -110,6 +113,33 @@ which every other model we have tested fails at least one of, and `ticket_suppor
 six runs of the previous model. It also correctly **abstains** on the no-valid-tool restraint scenarios
 instead of reaching for the `wiki_search` decoy. Agency is graded on tool selection rather than generated
 code, so it is far less sampler-sensitive than HumanEval — this is the most trustworthy number in the row.
+
+⁵ **MiMo-9B-Abliterated — the 2/5 is NOT a capability score.** Four of the five tasks were **cut off
+mid-generation**: it produced ~200,000 characters per task (expense-tracker 195K, fake-desktop 215K,
+kanban 205K, reasoning 165K) and never terminated, burning the full 32K-token budget each time. Both of
+its two "passes" came from truncated output that happened to contain code. Read this row as *failure to
+terminate*, not as wrong code. It also carries a ⚠️ on tool-calling — see footnote ⁷.
+
+⁶ **MiMo-VL tasks 4/5 — the failure is the same single task in both variants** (`adherence`), and both
+completed the other four fully with no truncation (43K–74K chars). Both scored **20/20 HumanEval with
+100% coverage**, equal to the best recorded here. **A3 and A3b are NOT the same weights**: `MiMo-VL-7B-RL`
+(BF16) and `MiMo-VL-7B-RL-2508` (Q8_0) are **different checkpoints**, so this is not a precision A/B —
+model revision and quant are confounded. A3b is 43% smaller yet 39% slower (16.7 vs 27.4 tok/s), which a
+re-quant would not explain; the cause is unverified.
+
+⁷ **MiMo-9B-Abliterated — tool-call channel is intermittent, and its failure mode is fabrication.** The
+probe passed on one load (`tool_calls` → `lookup_employee({"name":"Sarah Chen"})`) and failed on another,
+returning **no tool call** plus a fabricated record as prose:
+
+```
+{"employee_id": 1042, "first_name": "Sarah", "last_name": "Chen",
+ "job_title": "Senior Accountant", "department": "Finance"}
+```
+
+It invented the result rather than calling the tool that would have looked it up. This is worse than a low
+score: a plausible fabricated record raises nothing downstream. Its agency score is still 13/15 because the
+scenarios did elicit real calls — the fault is intermittent, which is the hardest kind to catch. Compare
+A1 Heretic on the same base family: 19/20 HE vs 13/20, 5/5 tasks vs runaway generation, and reliable tools.
 
 ---
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,
