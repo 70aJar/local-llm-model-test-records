@@ -142,6 +142,44 @@ scenarios did elicit real calls — the fault is intermittent, which is the hard
 A1 Heretic on the same base family: 19/20 HE vs 13/20, 5/5 tasks vs runaway generation, and reliable tools.
 
 ---
+
+### Vision suite — 602 items / 602 images, 6 benchmarks (seed 20260929)
+
+Run separately from the battery above, **one VL model resident at a time**, `-c 65536`,
+scored on accuracy only. Full method + grader corrections in the linked records.
+
+| Benchmark | A1 Qwen3.5-9B | A3 MiMo-VL BF16 | A3b MiMo-VL-2508 Q8 | Chance |
+|---|---|---|---|---|
+| MMStar | **64.0%** | 61.0% | 58.0% | 25% |
+| RealWorldQA | **77.0%** | 70.0% | 70.0% | 25% |
+| OCRBench | **87.0%** | 79.0% | 73.0% | — |
+| AI2D | 71.0% | 69.0% | **86.0%** | 25% |
+| ChartQA | 75.0% | **77.0%** | 63.0% | — |
+| POPE | 84.3% | **85.3%** | 83.3% | 50% |
+| **Overall** | **460/602 = 76.4%** | 443/602 = 73.6% | 435/602 = 72.3% | — |
+
+A **text-first 9B** model wins overall, ahead of two purpose-built VL models — and
+**A1 wins 4 of 6 benchmarks**, with its biggest margins on OCRBench (+8/+14) and
+RealWorldQA (+7), the benchmarks hardest to pass without genuinely reading the image.
+
+The counter-example is what makes the table worth reading: **A3b beats A1 by 15 points
+on AI2D** (science diagrams), and beat its own sibling by 17. No model leads everywhere;
+the 3-way overall spread is 4.1 points while per-benchmark gaps reach 24. Pick on the
+benchmark that matches your task, not on the total.
+
+⚠️ **A1 requires ≥3072 output tokens** — it reasons before answering. At the 1536 default
+it scored ~0% everywhere and looked blind (0 ch content, 4128 ch reasoning, `finish=length`).
+It is not blind. **Probe and run must share one budget.**
+
+⚠️ **Do not read the durations as model speed.** A1's run overlapped a neighbour model
+loaded on demand by another app: 33–45 s/item with it resident, **20–21 s/item** without.
+Accuracy is unaffected — the suite is accuracy-scored — but contended durations are not
+performance figures.
+
+[records/Vision-Suite-Qwen3.5-9B-Defiant-Fable.md](records/Vision-Suite-Qwen3.5-9B-Defiant-Fable.md) ·
+[records/Vision-Suite-MiMo-VL.md](records/Vision-Suite-MiMo-VL.md)
+
+---
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,
 open an issue — the harness is in this repo.*
 

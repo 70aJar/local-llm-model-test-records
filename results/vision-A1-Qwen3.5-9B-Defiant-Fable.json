@@ -1,0 +1,6403 @@
+{
+  "label": "A1-Qwen3.5-9B-Defiant-Fable",
+  "model": "qwen3.5-9b-the-defiant-fable-uncensored-heretic-neo-imatrix-max-mtp",
+  "started": "2026-09-29 09:28:11",
+  "benchmarks": {
+    "mmstar": {
+      "total": 100,
+      "correct": 64,
+      "by_capability": {
+        "vision-centric MCQ": {
+          "n": 100,
+          "ok": 64
+        }
+      },
+      "by_category": {
+        "category=coarse perception": {
+          "n": 17,
+          "ok": 13
+        },
+        "category=fine-grained perception": {
+          "n": 17,
+          "ok": 11
+        },
+        "category=instance reasoning": {
+          "n": 17,
+          "ok": 12
+        },
+        "category=logical reasoning": {
+          "n": 17,
+          "ok": 12
+        },
+        "category=math": {
+          "n": 16,
+          "ok": 11
+        },
+        "category=science & technology": {
+          "n": 16,
+          "ok": 5
+        }
+      },
+      "failures": [
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0002",
+          "ok": false,
+          "how": "letter-wrong(B!=C)",
+          "gold": "C",
+          "answer": "The people in the image are wearing athletic gear with sponsor logos (like Swatch) and official race bibs (one has the number 9). They are posing with ski/snowboard equipment and a sponsorship sign (\"Big Mountain Pferdgrund\") in a snowy mountain setting. This context indicates they are athletes participating in a sponsored sporting event, likely as colleagues or competitors.\n\nAnswer: B",
+          "pred": "The people in the image are wearing athletic gear with sponsor logos (like Swatch) and official race bibs (one has the number 9). They are posing with ski/snowboard equipment and a sponsorship sign (\"Big Mountain Pferdgrund\") in a snowy mountain setting. This context indicates they are athletes participating in a sponsored sporting event, likely as colleagues or competitors.\n\nAnswer: B"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0005",
+          "ok": false,
+          "how": "empty",
+          "gold": "D",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0011",
+          "ok": false,
+          "how": "letter-wrong(D!=A)",
+          "gold": "A",
+          "answer": "(D)",
+          "pred": "(D)"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0014",
+          "ok": false,
+          "how": "letter-wrong(A!=D)",
+          "gold": "D",
+          "answer": "A: Put a piece of iron into water.",
+          "pred": "A: Put a piece of iron into water."
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0018",
+          "ok": false,
+          "how": "letter-wrong(C!=A)",
+          "gold": "A",
+          "answer": "C: soccer",
+          "pred": "C: soccer"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0021",
+          "ok": false,
+          "how": "empty",
+          "gold": "C",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0022",
+          "ok": false,
+          "how": "empty",
+          "gold": "B",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0034",
+          "ok": false,
+          "how": "no-letter",
+          "gold": "A",
+          "answer": "The diagonals of a rhombus (diamond) bisect each other at right angles. Let's call the intersection point $O$.\n\n1.  **Find the lengths of the half-diagonals:**\n    *   Since diagonal $AC = 12$, then $AO = \\frac{1}{2} \\times AC = \\frac{1}{2} \\times 12 = 6$.\n    *   Since diagonal $BD = 16$, then $BO = \\frac{1}{2} \\times BD = \\frac{1}{2} \\times 16 = 8$.\n\n2.  **Use the Pythagorean theorem:**\n    The ",
+          "pred": "The diagonals of a rhombus (diamond) bisect each other at right angles. Let's call the intersection point $O$.\n\n1.  **Find the lengths of the half-diagonals:**\n    *   Since diagonal $AC = 12$, then $AO = \\frac{1}{2} \\times AC = \\frac{1}{2} \\times 12 = 6$.\n    *   Since diagonal $BD = 16$, then $BO = \\frac{1}{2} \\times BD = \\frac{1}{2} \\times 16 = 8$.\n\n2.  **Use the Pythagorean theorem:**\n    The diagonals form four right-angled triangles (like $\\triangle AOB$). In $\\triangle AOB$, the sides $AO$ and $BO$ are perpendicular. We can find the length of side $AB$ (which is an edge of the rhombus) using the Pythagorean theorem ($a^2 + b^2 = c^2$):\n    $$AB^2 = AO^2 + BO^2$$\n    $$AB^2 = 6^2 + 8^2$$\n    $$AB^2 = 36 + 64$$\n    $$AB^2 = 100$$\n    $$AB = \\sqrt{100}$$\n    $$AB = 10$$\n\nTherefore, the edge length of the diamond is 10.\n\nA"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0035",
+          "ok": false,
+          "how": "no-letter",
+          "gold": "B",
+          "answer": "The correct answer is **B**.\n\n**Reasoning:**\n1.  **Image A** shows a single parent cell with organelles (red dots) clustered on one side. This is the starting stage.\n2.  **Image C** shows the cell in the process of dividing (cytokinesis), with chromosomes being pulled apart and the cell membrane pinching inward. While division is happening, the cells are not yet fully separate entities.\n3.  **Imag",
+          "pred": "The correct answer is **B**.\n\n**Reasoning:**\n1.  **Image A** shows a single parent cell with organelles (red dots) clustered on one side. This is the starting stage.\n2.  **Image C** shows the cell in the process of dividing (cytokinesis), with chromosomes being pulled apart and the cell membrane pinching inward. While division is happening, the cells are not yet fully separate entities.\n3.  **Image B** shows two distinct, separate circles representing the final daughter cells. One contains the cluster of organelles, and the other does not, illustrating that they have different contents. This corresponds to the stage where two different daughter cells are formed.\n\nTherefore, the letter corresponding to this stage is **B**. Looking at your options, Option B lists \"B\" as the answer."
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0037",
+          "ok": false,
+          "how": "letter-wrong(D!=B)",
+          "gold": "B",
+          "answer": "D",
+          "pred": "D"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0039",
+          "ok": false,
+          "how": "no-letter",
+          "gold": "A",
+          "answer": "The correct code is **A**.\n\nHere is the breakdown:\n*   `print str` outputs: **Hello World!**\n*   `print str[0]` outputs: **H** (the first character)\n*   `print str[2:5]` outputs: **llo** (characters at indices 2, 3, and 4)\n*   `print str[2:]` outputs: **llo World!** (from index 2 to the end)\n*   `print str * 2` outputs: **Hello World!Hello World!** (concatenated twice)\n*   `print str + \"TEST\"` out",
+          "pred": "The correct code is **A**.\n\nHere is the breakdown:\n*   `print str` outputs: **Hello World!**\n*   `print str[0]` outputs: **H** (the first character)\n*   `print str[2:5]` outputs: **llo** (characters at indices 2, 3, and 4)\n*   `print str[2:]` outputs: **llo World!** (from index 2 to the end)\n*   `print str * 2` outputs: **Hello World!Hello World!** (concatenated twice)\n*   `print str + \"TEST\"` outputs: **Hello World!TEST**"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0041",
+          "ok": false,
+          "how": "empty",
+          "gold": "A",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0042",
+          "ok": false,
+          "how": "letter-wrong(D!=B)",
+          "gold": "B",
+          "answer": "D: Blue",
+          "pred": "D: Blue"
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0047",
+          "ok": false,
+          "how": "empty",
+          "gold": "B",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "mmstar",
+          "id": "mmstar-0048",
+          "ok": false,
+          "how": "letter-wrong(B!=D)",
+          "gold": "D",
+          "answer": "The main color scheme of this image is best described as **B: White and blue**.\n\nHere's why:\n*   **White:** The singer is wearing a bright white t-shirt, which is a large, central element in the frame.\n*   **Blue:** There is a strong, cool cyan/blue ambient light washing over the background and illuminating parts of her hair and shoulders, creating a distinct contrast with her shirt.\n\nWhile there ",
+          "pred": "The main color scheme of this image is best described as **B: White and blue**.\n\nHere's why:\n*   **White:** The singer is wearing a bright white t-shirt, which is a large, central element in the frame.\n*   **Blue:** There is a strong, cool cyan/blue ambient light washing over the background and illuminating parts of her hair and shoulders, creating a distinct contrast with her shirt.\n\nWhile there are accents of red/orange lighting on her torso and black in the background equipment, the combination of the white subject against the blue environment is the most dominant visual characteristic."
+        }
+      ],
+      "secs": 3215.4,
+      "accuracy": 0.64
+    },
+    "realworldqa": {
+      "total": 100,
+      "correct": 77,
+      "by_capability": {
+        "real-world photo QA": {
+          "n": 100,
+          "ok": 77
+        }
+      },
+      "by_category": {},
+      "failures": [
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0002",
+          "ok": false,
+          "how": "empty",
+          "gold": "C",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0004",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "Yes",
+          "answer": "No",
+          "pred": "No"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0005",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "Yes",
+          "answer": "No",
+          "pred": "No"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0008",
+          "ok": false,
+          "how": "empty",
+          "gold": "C",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0011",
+          "ok": false,
+          "how": "letter-wrong(B!=C)",
+          "gold": "C",
+          "answer": "B",
+          "pred": "B"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0012",
+          "ok": false,
+          "how": "empty",
+          "gold": "0",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0013",
+          "ok": false,
+          "how": "letter-wrong(B!=C)",
+          "gold": "C",
+          "answer": "B",
+          "pred": "B"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0015",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "No",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0016",
+          "ok": false,
+          "how": "empty",
+          "gold": "C",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0017",
+          "ok": false,
+          "how": "empty",
+          "gold": "C",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0019",
+          "ok": false,
+          "how": "text-miss",
+          "gold": "Red",
+          "answer": "Yellow",
+          "pred": "Yellow"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0033",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "No",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0036",
+          "ok": false,
+          "how": "empty",
+          "gold": "A",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0037",
+          "ok": false,
+          "how": "empty",
+          "gold": "A",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "realworldqa",
+          "id": "realworldqa-0056",
+          "ok": false,
+          "how": "num",
+          "gold": "3",
+          "answer": "4",
+          "pred": "4"
+        }
+      ],
+      "secs": 2832.4,
+      "accuracy": 0.77
+    },
+    "ocrbench": {
+      "total": 100,
+      "correct": 87,
+      "by_capability": {
+        "OCR / text-in-image": {
+          "n": 100,
+          "ok": 87
+        }
+      },
+      "by_category": {
+        "question_type=Artistic Text Recognition": {
+          "n": 10,
+          "ok": 10
+        },
+        "question_type=Digit String Recognition": {
+          "n": 10,
+          "ok": 7
+        },
+        "question_type=Doc-oriented VQA": {
+          "n": 10,
+          "ok": 7
+        },
+        "question_type=Handwriting Recognition": {
+          "n": 10,
+          "ok": 9
+        },
+        "question_type=Handwritten Mathematical Expression Recognition": {
+          "n": 10,
+          "ok": 5
+        },
+        "question_type=Irregular Text Recognition": {
+          "n": 10,
+          "ok": 10
+        },
+        "question_type=Key Information Extraction": {
+          "n": 10,
+          "ok": 10
+        },
+        "question_type=Non-Semantic Text Recognition": {
+          "n": 10,
+          "ok": 9
+        },
+        "question_type=Regular Text Recognition": {
+          "n": 10,
+          "ok": 10
+        },
+        "question_type=Scene Text-centric VQA": {
+          "n": 10,
+          "ok": 10
+        }
+      },
+      "failures": [
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0004",
+          "ok": false,
+          "how": "text-miss",
+          "gold": "\\cos c = \\frac { a ^ { 2 } + b ^ { 2 } - c ^ { 2 } } { 2 a b }\n",
+          "answer": "$$\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$$",
+          "pred": "$$\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$$"
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0014",
+          "ok": false,
+          "how": "empty",
+          "gold": "O P = y = k _ { 1 } x\n",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0021",
+          "ok": false,
+          "how": "num",
+          "gold": "76961",
+          "answer": "The number in the image is **7686**.",
+          "pred": "The number in the image is **7686**."
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0027",
+          "ok": false,
+          "how": "text-miss",
+          "gold": "rcaihttnu",
+          "answer": "rcaihhtnu",
+          "pred": "rcaihhtnu"
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0032",
+          "ok": false,
+          "how": "num",
+          "gold": "15.9",
+          "answer": "The infant mortality rate in Vietnam in 2019 was **15.9** deaths per 1,000 live births.",
+          "pred": "The infant mortality rate in Vietnam in 2019 was **15.9** deaths per 1,000 live births."
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0034",
+          "ok": false,
+          "how": "text-miss",
+          "gold": "\\angle E B F = \\frac { 1 } { 2 } 7 0 ^ { \\circ } = 3 5 ^ { \\circ }\n",
+          "answer": "$$\\angle E B F = \\frac { 1 } { 2 } 7 0 ^ { \\circ } \\Rightarrow 3 5 ^ { \\circ }$$",
+          "pred": "$$\\angle E B F = \\frac { 1 } { 2 } 7 0 ^ { \\circ } \\Rightarrow 3 5 ^ { \\circ }$$"
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0042",
+          "ok": false,
+          "how": "empty",
+          "gold": "australia",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0054",
+          "ok": false,
+          "how": "text-miss",
+          "gold": "\\angle B D E = \\angle B E D = \\frac { 1 } { 2 } ( 1 8 0 ^ { \\circ } - 3 0 ^ { \\circ } ) = 7 5 ^ { \\circ }\n",
+          "answer": "\\angle BDE=\\angle BED=\\frac{1}{2}(180^{\\circ}-30^{\\circ})=75^{\\circ}",
+          "pred": "\\angle BDE=\\angle BED=\\frac{1}{2}(180^{\\circ}-30^{\\circ})=75^{\\circ}"
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0071",
+          "ok": false,
+          "how": "empty",
+          "gold": "4922",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0072",
+          "ok": false,
+          "how": "num",
+          "gold": "5910",
+          "answer": "1,408",
+          "pred": "1,408"
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0073",
+          "ok": false,
+          "how": "empty",
+          "gold": "beer",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0081",
+          "ok": false,
+          "how": "empty",
+          "gold": "33779",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ocrbench",
+          "id": "ocrbench-0084",
+          "ok": false,
+          "how": "empty",
+          "gold": "a = \\frac { 9 5 } { 8 6 1 }\n",
+          "answer": "",
+          "pred": ""
+        }
+      ],
+      "secs": 1875.1,
+      "accuracy": 0.87
+    },
+    "ai2d": {
+      "total": 100,
+      "correct": 71,
+      "by_capability": {
+        "science diagrams": {
+          "n": 100,
+          "ok": 71
+        }
+      },
+      "by_category": {},
+      "failures": [
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0000",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "2",
+          "answer": "B",
+          "pred": "B"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0001",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "1",
+          "answer": "B",
+          "pred": "B"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0003",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "3",
+          "answer": "D",
+          "pred": "D"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0009",
+          "ok": false,
+          "how": "empty",
+          "gold": "2",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0011",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "3",
+          "answer": "D",
+          "pred": "D"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0015",
+          "ok": false,
+          "how": "empty",
+          "gold": "2",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0016",
+          "ok": false,
+          "how": "empty",
+          "gold": "3",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0024",
+          "ok": false,
+          "how": "empty",
+          "gold": "0",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0027",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "1",
+          "answer": "B",
+          "pred": "B"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0029",
+          "ok": false,
+          "how": "empty",
+          "gold": "0",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0030",
+          "ok": false,
+          "how": "empty",
+          "gold": "1",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0032",
+          "ok": false,
+          "how": "empty",
+          "gold": "1",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0034",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "0",
+          "answer": "A",
+          "pred": "A"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0035",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "3",
+          "answer": "C",
+          "pred": "C"
+        },
+        {
+          "bench": "ai2d",
+          "id": "ai2d-0043",
+          "ok": false,
+          "how": "opt-miss",
+          "gold": "0",
+          "answer": "A",
+          "pred": "A"
+        }
+      ],
+      "secs": 3422.8,
+      "accuracy": 0.71
+    },
+    "chartqa": {
+      "total": 100,
+      "correct": 75,
+      "by_capability": {
+        "charts / plots": {
+          "n": 100,
+          "ok": 75
+        }
+      },
+      "by_category": {
+        "type=augmented_test": {
+          "n": 50,
+          "ok": 35
+        },
+        "type=human_test": {
+          "n": 50,
+          "ok": 40
+        }
+      },
+      "failures": [
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0005",
+          "ok": false,
+          "how": "empty",
+          "gold": "1",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0010",
+          "ok": false,
+          "how": "num",
+          "gold": "31.7",
+          "answer": "Based on the chart, the infant mortality rate in the UK in 1950 was approximately **32 deaths per 1,000 live births**.",
+          "pred": "Based on the chart, the infant mortality rate in the UK in 1950 was approximately **32 deaths per 1,000 live births**."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0012",
+          "ok": false,
+          "how": "empty",
+          "gold": "8092208",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0017",
+          "ok": false,
+          "how": "num",
+          "gold": "59.9",
+          "answer": "Based on the provided chart, absolute numbers are not listed; only percentages are shown. However, for people aged **80 years and above**, the data indicates:\n\n*   **80\u201389 years:** 40.5%\n*   **90 years and older:** 19.4%",
+          "pred": "Based on the provided chart, absolute numbers are not listed; only percentages are shown. However, for people aged **80 years and above**, the data indicates:\n\n*   **80\u201389 years:** 40.5%\n*   **90 years and older:** 19.4%"
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0021",
+          "ok": false,
+          "how": "num",
+          "gold": "2.125694444",
+          "answer": "Based on the chart:\n\n*   **Largest Difference:** In 2002, the blue line (\"Dissatisfied\") is at **71** and the green line (\"Satisfied\") is at **20**. The difference is $71 - 20 = 51$.\n*   **Smallest Difference:** Around 2012\u20132014, the lines are very close. For example, in 2012, the values are **46** (blue) and **45** (green), a difference of $1$. Similarly, in 2013 ($57$ vs $56$) and roughly 2014 (",
+          "pred": "Based on the chart:\n\n*   **Largest Difference:** In 2002, the blue line (\"Dissatisfied\") is at **71** and the green line (\"Satisfied\") is at **20**. The difference is $71 - 20 = 51$.\n*   **Smallest Difference:** Around 2012\u20132014, the lines are very close. For example, in 2012, the values are **46** (blue) and **45** (green), a difference of $1$. Similarly, in 2013 ($57$ vs $56$) and roughly 2014 ($37$ vs $36$).\n\nThe ratio of the largest difference to the smallest difference is **51:1**."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0029",
+          "ok": false,
+          "how": "num",
+          "gold": "74",
+          "answer": "The sum of the blue and black bars in 2018 is 74%.",
+          "pred": "The sum of the blue and black bars in 2018 is 74%."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0034",
+          "ok": false,
+          "how": "num",
+          "gold": "18.1",
+          "answer": "In 2019, there were **18.1 million** arrivals in short-stay accommodation in Belgium.",
+          "pred": "In 2019, there were **18.1 million** arrivals in short-stay accommodation in Belgium."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0036",
+          "ok": false,
+          "how": "num",
+          "gold": "28.31",
+          "answer": "The average ticket price for Detroit Tigers games in 2019 was **$28.31**.",
+          "pred": "The average ticket price for Detroit Tigers games in 2019 was **$28.31**."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0041",
+          "ok": false,
+          "how": "num",
+          "gold": "12",
+          "answer": "Based on the chart, for deaths among children aged 1\u201359 months (represented by the light blue bars), the percentages are:\n\n*   **AIDS:** 1%\n*   **Malaria:** 5%\n*   **Injury:** 6%\n\nAdding these together: 1 + 5 + 6 = **12%**.",
+          "pred": "Based on the chart, for deaths among children aged 1\u201359 months (represented by the light blue bars), the percentages are:\n\n*   **AIDS:** 1%\n*   **Malaria:** 5%\n*   **Injury:** 6%\n\nAdding these together: 1 + 5 + 6 = **12%**."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0043",
+          "ok": false,
+          "how": "num",
+          "gold": "15",
+          "answer": "Based on the chart, the quarterly average rate in Q4 was **160** for 2017 and **150** for 2010. Therefore, the difference is **10 euros**.",
+          "pred": "Based on the chart, the quarterly average rate in Q4 was **160** for 2017 and **150** for 2010. Therefore, the difference is **10 euros**."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0044",
+          "ok": false,
+          "how": "empty",
+          "gold": "8.12",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0048",
+          "ok": false,
+          "how": "text-miss",
+          "gold": "Catalonia",
+          "answer": "Melilla",
+          "pred": "Melilla"
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0057",
+          "ok": false,
+          "how": "empty",
+          "gold": "1",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0058",
+          "ok": false,
+          "how": "num",
+          "gold": "130.57",
+          "answer": "The house price index in Croatia for the quarter ending June 2020 (Q2 '20) was **130.57**.",
+          "pred": "The house price index in Croatia for the quarter ending June 2020 (Q2 '20) was **130.57**."
+        },
+        {
+          "bench": "chartqa",
+          "id": "chartqa-0062",
+          "ok": false,
+          "how": "num",
+          "gold": "5.23",
+          "answer": "Puma's global revenue in 2020 was 5.23 billion euros.",
+          "pred": "Puma's global revenue in 2020 was 5.23 billion euros."
+        }
+      ],
+      "secs": 1875.8,
+      "accuracy": 0.75
+    },
+    "pope": {
+      "total": 102,
+      "correct": 86,
+      "by_capability": {
+        "object hallucination (yes/no)": {
+          "n": 102,
+          "ok": 86
+        }
+      },
+      "by_category": {
+        "category=adversarial": {
+          "n": 34,
+          "ok": 24
+        },
+        "category=popular": {
+          "n": 34,
+          "ok": 28
+        },
+        "category=random": {
+          "n": 34,
+          "ok": 34
+        }
+      },
+      "failures": [
+        {
+          "bench": "pope",
+          "id": "pope-0004",
+          "ok": false,
+          "how": "empty",
+          "gold": "yes",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0007",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0008",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "yes",
+          "pred": "yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0010",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0012",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "yes",
+          "answer": "no",
+          "pred": "no"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0013",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0014",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "yes",
+          "pred": "yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0022",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "yes",
+          "pred": "yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0030",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "yes",
+          "pred": "yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0033",
+          "ok": false,
+          "how": "empty",
+          "gold": "no",
+          "answer": "",
+          "pred": ""
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0034",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0037",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "Yes",
+          "pred": "Yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0040",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "yes",
+          "answer": "no",
+          "pred": "no"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0050",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "yes",
+          "pred": "yes"
+        },
+        {
+          "bench": "pope",
+          "id": "pope-0055",
+          "ok": false,
+          "how": "yesno-wrong",
+          "gold": "no",
+          "answer": "Yes",
+          "pred": "Yes"
+        }
+      ],
+      "secs": 959.1,
+      "accuracy": 0.8431
+    }
+  },
+  "items": [
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0000",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C: Happy",
+      "pred": "C: Happy"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0001",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0002",
+      "ok": false,
+      "how": "letter-wrong(B!=C)",
+      "gold": "C",
+      "answer": "The people in the image are wearing athletic gear with sponsor logos (like Swatch) and official race bibs (one has the number 9). They are posing with ski/snowboard equipment and a sponsorship sign (\"Big Mountain Pferdgrund\") in a snowy mountain setting. This context indicates they are athletes participating in a sponsored sporting event, likely as colleagues or competitors.\n\nAnswer: B",
+      "pred": "The people in the image are wearing athletic gear with sponsor logos (like Swatch) and official race bibs (one has the number 9). They are posing with ski/snowboard equipment and a sponsorship sign (\"Big Mountain Pferdgrund\") in a snowy mountain setting. This context indicates they are athletes participating in a sponsored sporting event, likely as colleagues or competitors.\n\nAnswer: B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0003",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0004",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "(D)",
+      "pred": "(D)"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0005",
+      "ok": false,
+      "how": "empty",
+      "gold": "D",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0006",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0007",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0008",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: Solution A",
+      "pred": "A: Solution A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0009",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0010",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "To find $\\tan X$, we need to determine the lengths of the sides of the right triangle relative to angle $X$.\n\n1.  **Identify the known sides:**\n    *   The hypotenuse is given as $13$.\n    *   The side adjacent to angle $X$ (the vertical leg) is given as $5$.\n\n2.  **Find the length of the opposite side:**\n    Using the Pythagorean theorem ($a^2 + b^2 = c^2$), let's find the length of the bottom ho",
+      "pred": "To find $\\tan X$, we need to determine the lengths of the sides of the right triangle relative to angle $X$.\n\n1.  **Identify the known sides:**\n    *   The hypotenuse is given as $13$.\n    *   The side adjacent to angle $X$ (the vertical leg) is given as $5$.\n\n2.  **Find the length of the opposite side:**\n    Using the Pythagorean theorem ($a^2 + b^2 = c^2$), let's find the length of the bottom horizontal side, which is opposite to angle $X$. Let this length be $x$.\n    $$x^2 + 5^2 = 13^2$$\n    $$x^2 + 25 = 169$$\n    $$x^2 = 169 - 25$$\n    $$x^2 = 144$$\n    $$x = \\sqrt{144}$$\n    $$x = 12$$\n\n3.  **Calculate $\\tan X$:**\n    The tangent of an angle in a right triangle is defined as the ratio of the length of the opposite side to the length of the adjacent side.\n    $$\\tan X = \\frac{\\text{Opposite}}{\\text{Adjacent}}$$\n    $$\\tan X = \\frac{12}{5}$$\n\nComparing this result with the given choices:\n(A) $\\frac{5}{12}$\n(B) $\\frac{12}{13}$\n(C) $\\frac{17}{12}$\n(D) $\\frac{12}{5}$\n\nThe correct option is (D).\n\nD"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0011",
+      "ok": false,
+      "how": "letter-wrong(D!=A)",
+      "gold": "A",
+      "answer": "(D)",
+      "pred": "(D)"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0012",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: Sad",
+      "pred": "A: Sad"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0013",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: Standing on the right side of the stage",
+      "pred": "B: Standing on the right side of the stage"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0014",
+      "ok": false,
+      "how": "letter-wrong(A!=D)",
+      "gold": "D",
+      "answer": "A: Put a piece of iron into water.",
+      "pred": "A: Put a piece of iron into water."
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0015",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C: Can't be determined",
+      "pred": "C: Can't be determined"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0016",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0017",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0018",
+      "ok": false,
+      "how": "letter-wrong(C!=A)",
+      "gold": "A",
+      "answer": "C: soccer",
+      "pred": "C: soccer"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0019",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0020",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: A building with a clock",
+      "pred": "A: A building with a clock"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0021",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0022",
+      "ok": false,
+      "how": "empty",
+      "gold": "B",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0023",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "Based on the visual evidence:\n- The moon in letter **B** has its right side illuminated and left side in shadow. This indicates a **waxing** phase (the light is growing).\n- Comparing it to image G (First Quarter, exactly half lit) and image F (Waxing Gibbous, more than half lit), the illuminated portion of B is less than half of the moon's disk. It appears as a crescent shape on the right side.\n\nT",
+      "pred": "Based on the visual evidence:\n- The moon in letter **B** has its right side illuminated and left side in shadow. This indicates a **waxing** phase (the light is growing).\n- Comparing it to image G (First Quarter, exactly half lit) and image F (Waxing Gibbous, more than half lit), the illuminated portion of B is less than half of the moon's disk. It appears as a crescent shape on the right side.\n\nTherefore, letter B depicts a **waxing crescent**.\n\nAnswer: D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0024",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0025",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0026",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0027",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0028",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0029",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "To find the maximum shortening of the spring, we use the principle of conservation of energy. The potential energy lost by the block as it falls and compresses the spring is converted into elastic potential energy stored in the spring.\n\nLet $x$ be the maximum compression (shortening) of the spring.\nThe total distance the block falls is $h + x$.\n\n**Energy Balance:**\n$$ \\text{Potential Energy Lost} ",
+      "pred": "To find the maximum shortening of the spring, we use the principle of conservation of energy. The potential energy lost by the block as it falls and compresses the spring is converted into elastic potential energy stored in the spring.\n\nLet $x$ be the maximum compression (shortening) of the spring.\nThe total distance the block falls is $h + x$.\n\n**Energy Balance:**\n$$ \\text{Potential Energy Lost} = \\text{Elastic Potential Energy Gained} $$\n$$ W(h + x) = \\frac{1}{2}kx^2 $$\n\nSubstitute the given values ($W = 5.0\\text{ N}$, $h = 0.2\\text{ m}$, $k = 90\\text{ N/m}$):\n$$ 5.0(0.2 + x) = \\frac{1}{2}(90)x^2 $$\n$$ 1.0 + 5x = 45x^2 $$\n\nRearrange into a standard quadratic equation ($ax^2 + bx + c = 0$):\n$$ 45x^2 - 5x - 1 = 0 $$\n\nUse the quadratic formula to solve for $x$:\n$$ x = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} $$\n$$ x = \\frac{5 \\pm \\sqrt{(-5)^2 - 4(45)(-1)}}{2(45)} $$\n$$ x = \\frac{5 \\pm \\sqrt{25 + 180}}{90} $$\n$$ x = \\frac{5 \\pm \\sqrt{205}}{90} $$\n\nTaking the positive root (since compression must be positive):\n$$ x \\approx \\frac{5 + 14.3178}{90} $$\n$$ x \\approx \\frac{19.3178}{90} $$\n$$ x \\approx 0.21464\\text{ m} $$\n\nConvert to millimeters:\n$$ x \\approx 214.64\\text{ mm} $$\n\nThis corresponds "
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0030",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: Christmas Eve party",
+      "pred": "B: Christmas Eve party"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0031",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0032",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0033",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0034",
+      "ok": false,
+      "how": "no-letter",
+      "gold": "A",
+      "answer": "The diagonals of a rhombus (diamond) bisect each other at right angles. Let's call the intersection point $O$.\n\n1.  **Find the lengths of the half-diagonals:**\n    *   Since diagonal $AC = 12$, then $AO = \\frac{1}{2} \\times AC = \\frac{1}{2} \\times 12 = 6$.\n    *   Since diagonal $BD = 16$, then $BO = \\frac{1}{2} \\times BD = \\frac{1}{2} \\times 16 = 8$.\n\n2.  **Use the Pythagorean theorem:**\n    The ",
+      "pred": "The diagonals of a rhombus (diamond) bisect each other at right angles. Let's call the intersection point $O$.\n\n1.  **Find the lengths of the half-diagonals:**\n    *   Since diagonal $AC = 12$, then $AO = \\frac{1}{2} \\times AC = \\frac{1}{2} \\times 12 = 6$.\n    *   Since diagonal $BD = 16$, then $BO = \\frac{1}{2} \\times BD = \\frac{1}{2} \\times 16 = 8$.\n\n2.  **Use the Pythagorean theorem:**\n    The diagonals form four right-angled triangles (like $\\triangle AOB$). In $\\triangle AOB$, the sides $AO$ and $BO$ are perpendicular. We can find the length of side $AB$ (which is an edge of the rhombus) using the Pythagorean theorem ($a^2 + b^2 = c^2$):\n    $$AB^2 = AO^2 + BO^2$$\n    $$AB^2 = 6^2 + 8^2$$\n    $$AB^2 = 36 + 64$$\n    $$AB^2 = 100$$\n    $$AB = \\sqrt{100}$$\n    $$AB = 10$$\n\nTherefore, the edge length of the diamond is 10.\n\nA"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0035",
+      "ok": false,
+      "how": "no-letter",
+      "gold": "B",
+      "answer": "The correct answer is **B**.\n\n**Reasoning:**\n1.  **Image A** shows a single parent cell with organelles (red dots) clustered on one side. This is the starting stage.\n2.  **Image C** shows the cell in the process of dividing (cytokinesis), with chromosomes being pulled apart and the cell membrane pinching inward. While division is happening, the cells are not yet fully separate entities.\n3.  **Imag",
+      "pred": "The correct answer is **B**.\n\n**Reasoning:**\n1.  **Image A** shows a single parent cell with organelles (red dots) clustered on one side. This is the starting stage.\n2.  **Image C** shows the cell in the process of dividing (cytokinesis), with chromosomes being pulled apart and the cell membrane pinching inward. While division is happening, the cells are not yet fully separate entities.\n3.  **Image B** shows two distinct, separate circles representing the final daughter cells. One contains the cluster of organelles, and the other does not, illustrating that they have different contents. This corresponds to the stage where two different daughter cells are formed.\n\nTherefore, the letter corresponding to this stage is **B**. Looking at your options, Option B lists \"B\" as the answer."
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0036",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0037",
+      "ok": false,
+      "how": "letter-wrong(D!=B)",
+      "gold": "B",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0038",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C: To the side of the man",
+      "pred": "C: To the side of the man"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0039",
+      "ok": false,
+      "how": "no-letter",
+      "gold": "A",
+      "answer": "The correct code is **A**.\n\nHere is the breakdown:\n*   `print str` outputs: **Hello World!**\n*   `print str[0]` outputs: **H** (the first character)\n*   `print str[2:5]` outputs: **llo** (characters at indices 2, 3, and 4)\n*   `print str[2:]` outputs: **llo World!** (from index 2 to the end)\n*   `print str * 2` outputs: **Hello World!Hello World!** (concatenated twice)\n*   `print str + \"TEST\"` out",
+      "pred": "The correct code is **A**.\n\nHere is the breakdown:\n*   `print str` outputs: **Hello World!**\n*   `print str[0]` outputs: **H** (the first character)\n*   `print str[2:5]` outputs: **llo** (characters at indices 2, 3, and 4)\n*   `print str[2:]` outputs: **llo World!** (from index 2 to the end)\n*   `print str * 2` outputs: **Hello World!Hello World!** (concatenated twice)\n*   `print str + \"TEST\"` outputs: **Hello World!TEST**"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0040",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "To find the number of bags with at least 60 red buttons but fewer than 81 red buttons, we need to interpret the stem-and-leaf plot.\n\nThe \"Stem\" represents the tens digit and the \"Leaf\" represents the ones digit. Let's list out the values that fall within the range $[60, 81)$:\n\n*   **Stem 6:** There are no leaves listed for stem 6, so there are no bags with a count in the 60s.\n*   **Stem 7:** The l",
+      "pred": "To find the number of bags with at least 60 red buttons but fewer than 81 red buttons, we need to interpret the stem-and-leaf plot.\n\nThe \"Stem\" represents the tens digit and the \"Leaf\" represents the ones digit. Let's list out the values that fall within the range $[60, 81)$:\n\n*   **Stem 6:** There are no leaves listed for stem 6, so there are no bags with a count in the 60s.\n*   **Stem 7:** The leaves are 5 and 7. This corresponds to values **75** and **77**. Both of these numbers are at least 60 and fewer than 81.\n*   **Stem 8:** The leaves are 4, 7, and 8. This corresponds to values 84, 87, and 88. These are all greater than or equal to 81, so they are not included.\n\nSo, the bags meeting the criteria have counts of 75 and 77. There are exactly **2** such bags.\n\n(D)"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0041",
+      "ok": false,
+      "how": "empty",
+      "gold": "A",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0042",
+      "ok": false,
+      "how": "letter-wrong(D!=B)",
+      "gold": "B",
+      "answer": "D: Blue",
+      "pred": "D: Blue"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0043",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0044",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "The object closest to the crowd is the large commercial aircraft parked on the tarmac right next to them. While technically a jet, the term **Airliner** specifically describes a commercial passenger aircraft like the British Airways plane shown in the image.\n\nAnswer: A: Airliner",
+      "pred": "The object closest to the crowd is the large commercial aircraft parked on the tarmac right next to them. While technically a jet, the term **Airliner** specifically describes a commercial passenger aircraft like the British Airways plane shown in the image.\n\nAnswer: A: Airliner"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0045",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0046",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0047",
+      "ok": false,
+      "how": "empty",
+      "gold": "B",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0048",
+      "ok": false,
+      "how": "letter-wrong(B!=D)",
+      "gold": "D",
+      "answer": "The main color scheme of this image is best described as **B: White and blue**.\n\nHere's why:\n*   **White:** The singer is wearing a bright white t-shirt, which is a large, central element in the frame.\n*   **Blue:** There is a strong, cool cyan/blue ambient light washing over the background and illuminating parts of her hair and shoulders, creating a distinct contrast with her shirt.\n\nWhile there ",
+      "pred": "The main color scheme of this image is best described as **B: White and blue**.\n\nHere's why:\n*   **White:** The singer is wearing a bright white t-shirt, which is a large, central element in the frame.\n*   **Blue:** There is a strong, cool cyan/blue ambient light washing over the background and illuminating parts of her hair and shoulders, creating a distinct contrast with her shirt.\n\nWhile there are accents of red/orange lighting on her torso and black in the background equipment, the combination of the white subject against the blue environment is the most dominant visual characteristic."
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0049",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0050",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: Competitive relationships",
+      "pred": "B: Competitive relationships"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0051",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: Sunbathing",
+      "pred": "A: Sunbathing"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0052",
+      "ok": false,
+      "how": "empty",
+      "gold": "D",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0053",
+      "ok": false,
+      "how": "empty",
+      "gold": "A",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0054",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0055",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0056",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: Standing apart from each other",
+      "pred": "B: Standing apart from each other"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0057",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0058",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "To find the rate of change between 2013 and 2014, we use the formula:\n\nRate of Change = (Change in Number of Entries) / (Change in Time)\n\nFrom the table:\n*   In 2013, there were 39 entries.\n*   In 2014, there were 46 entries.\n\nCalculation:\nRate of Change = (46 - 39) / (2014 - 2013)\nRate of Change = 7 / 1\nRate of Change = 7\n\nThe rate of change is 7 entries per year. This corresponds to option (C).\n",
+      "pred": "To find the rate of change between 2013 and 2014, we use the formula:\n\nRate of Change = (Change in Number of Entries) / (Change in Time)\n\nFrom the table:\n*   In 2013, there were 39 entries.\n*   In 2014, there were 46 entries.\n\nCalculation:\nRate of Change = (46 - 39) / (2014 - 2013)\nRate of Change = 7 / 1\nRate of Change = 7\n\nThe rate of change is 7 entries per year. This corresponds to option (C).\n\nC"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0059",
+      "ok": false,
+      "how": "no-letter",
+      "gold": "B",
+      "answer": "The correct answer is **B**.\n\n**Reasoning:**\n*   The Earth rotates on its axis once every 24 hours.\n*   The linear speed of rotation depends on how far a point is from the axis of rotation (the poles).\n*   Points closer to the equator travel a larger circle in the same amount of time, so they move faster.\n*   **Point B** is located on the equator, which has the largest circumference. The rotationa",
+      "pred": "The correct answer is **B**.\n\n**Reasoning:**\n*   The Earth rotates on its axis once every 24 hours.\n*   The linear speed of rotation depends on how far a point is from the axis of rotation (the poles).\n*   Points closer to the equator travel a larger circle in the same amount of time, so they move faster.\n*   **Point B** is located on the equator, which has the largest circumference. The rotational speed at the equator is approximately 1670 km/hr (about 1040 mph).\n*   Point D is at the pole where speed is zero. Points A and C are at mid-latitudes where the speed is slower than at the equator."
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0060",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: The grassy field",
+      "pred": "B: The grassy field"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0061",
+      "ok": false,
+      "how": "letter-wrong(A!=C)",
+      "gold": "C",
+      "answer": "A: In the foreground",
+      "pred": "A: In the foreground"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0062",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C: Brother and sister",
+      "pred": "C: Brother and sister"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0063",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: Competitive relationships",
+      "pred": "B: Competitive relationships"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0064",
+      "ok": false,
+      "how": "no-letter",
+      "gold": "C",
+      "answer": "To find the percentage of jewelry sales in January that were Rings, we need to estimate the values for each category from the blue bars and then calculate the proportion.\n\n1.  **Estimate the number of items sold for each category in January (blue bars):**\n    *   **Necklaces:** The bar is between 50 and 60, appearing to be around 57.\n    *   **Earrings:** The bar reaches the line for 20. Let's est",
+      "pred": "To find the percentage of jewelry sales in January that were Rings, we need to estimate the values for each category from the blue bars and then calculate the proportion.\n\n1.  **Estimate the number of items sold for each category in January (blue bars):**\n    *   **Necklaces:** The bar is between 50 and 60, appearing to be around 57.\n    *   **Earrings:** The bar reaches the line for 20. Let's estimate it at 20.\n    *   **Rings:** The bar is halfway between 50 and 60, perhaps slightly lower. Let's estimate it at 55.\n    *   **Bracelets:** The bar is a bit above the line for 40. Let's estimate it at 43.\n\n2.  **Calculate the total sales in January:**\n    Total = 57 (Necklaces) + 20 (Earrings) + 55 (Rings) + 43 (Bracelets) = 175 items.\n\n3.  **Calculate the percentage for Rings:**\n    Percentage = (Ring Sales / Total Sales) * 100\n    Percentage \u2248 (55 / 175) * 100\n    Percentage \u2248 0.314 * 100\n    Percentage \u2248 31.4%\n\nThis value is closest to \"Around 31%\".\n\nC"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0065",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0066",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0067",
+      "ok": false,
+      "how": "letter-wrong(A!=B)",
+      "gold": "B",
+      "answer": "A: Brown",
+      "pred": "A: Brown"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0068",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: fragile",
+      "pred": "A: fragile"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0069",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0070",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "The figure shown is a trapezoid with parallel bases of lengths $41\\text{ ft}$ and $53\\text{ ft}$. The height corresponding to these bases is the vertical side on the left, which measures $48\\text{ ft}$.\n\nThe formula for the area of a trapezoid is:\n$$A = \\frac{1}{2}(b_1 + b_2)h$$\n\nSubstitute the given values into the formula:\n- $b_1 = 41$\n- $b_2 = 53$\n- $h = 48$\n\n$$A = \\frac{1}{2}(41 + 53)(48)$$\n$$",
+      "pred": "The figure shown is a trapezoid with parallel bases of lengths $41\\text{ ft}$ and $53\\text{ ft}$. The height corresponding to these bases is the vertical side on the left, which measures $48\\text{ ft}$.\n\nThe formula for the area of a trapezoid is:\n$$A = \\frac{1}{2}(b_1 + b_2)h$$\n\nSubstitute the given values into the formula:\n- $b_1 = 41$\n- $b_2 = 53$\n- $h = 48$\n\n$$A = \\frac{1}{2}(41 + 53)(48)$$\n$$A = \\frac{1}{2}(94)(48)$$\n$$A = 47 \\cdot 48$$\n$$A = 2256$$\n\nThe area is $2256\\text{ sq ft}$. This matches choice (C).\n\nC"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0071",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "Based on the visual sequence of frost wedging shown in the diagram:\n\n1.  The block labeled **B** shows a thin crack filled with water (\"water-filled cracks\").\n2.  The block labeled **C** (with the floating letter D above it) shows the crack widening and filling with a large mass of ice. This represents the phase where the water freezes and expands, exerting pressure on the rock walls. This corresp",
+      "pred": "Based on the visual sequence of frost wedging shown in the diagram:\n\n1.  The block labeled **B** shows a thin crack filled with water (\"water-filled cracks\").\n2.  The block labeled **C** (with the floating letter D above it) shows the crack widening and filling with a large mass of ice. This represents the phase where the water freezes and expands, exerting pressure on the rock walls. This corresponds to **\"freezes to ice\"**.\n3.  The block labeled **A** shows the rock having split into two separate pieces (\"breaks rock\").\n\nTherefore, the stage shown at letter C is when the water freezes into a large wedge of ice.\n\nAnswer: D"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0072",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: spring",
+      "pred": "A: spring"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0073",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D: White",
+      "pred": "D: White"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0074",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0075",
+      "ok": false,
+      "how": "letter-wrong(B!=A)",
+      "gold": "A",
+      "answer": "The correct answer is **B: Quadratic**.\n\n**Reasoning:**\nLooking at the distribution of points (red triangles vs. blue circles), a straight line cannot cleanly separate the two classes without misclassifying many points or cutting through dense clusters. The classes are offset and somewhat interleaved, suggesting that a non-linear boundary is required. A quadratic curve provides enough flexibility ",
+      "pred": "The correct answer is **B: Quadratic**.\n\n**Reasoning:**\nLooking at the distribution of points (red triangles vs. blue circles), a straight line cannot cleanly separate the two classes without misclassifying many points or cutting through dense clusters. The classes are offset and somewhat interleaved, suggesting that a non-linear boundary is required. A quadratic curve provides enough flexibility to create a curved decision boundary that can wrap around the clusters better than a linear line, while being simpler (and less prone to overfitting) than a high-order cubic polynomial for this dataset size."
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0076",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0077",
+      "ok": false,
+      "how": "empty",
+      "gold": "A",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0078",
+      "ok": false,
+      "how": "letter-wrong(D!=C)",
+      "gold": "C",
+      "answer": "D: Urban street style",
+      "pred": "D: Urban street style"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0079",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: 3",
+      "pred": "B: 3"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0080",
+      "ok": false,
+      "how": "letter-wrong(C!=D)",
+      "gold": "D",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0081",
+      "ok": false,
+      "how": "letter-wrong(B!=C)",
+      "gold": "C",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0082",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0083",
+      "ok": false,
+      "how": "letter-wrong(A!=D)",
+      "gold": "D",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0084",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0085",
+      "ok": false,
+      "how": "letter-wrong(C!=D)",
+      "gold": "D",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0086",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B: Solution B",
+      "pred": "B: Solution B"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0087",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0088",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "The problem asks for the length of $BH$ in a rhombus $ABCD$ where diagonals $AC=4$ and $BD=3$, and $BH \\perp AD$.\n\n**Step 1: Calculate the area of the rhombus using its diagonals.**\nThe formula for the area of a rhombus given diagonals $d_1$ and $d_2$ is:\n$$ \\text{Area} = \\frac{1}{2} \\times d_1 \\times d_2 $$\nSubstituting the given values:\n$$ \\text{Area} = \\frac{1}{2} \\times 4 \\times 3 = 6 $$\n\n**St",
+      "pred": "The problem asks for the length of $BH$ in a rhombus $ABCD$ where diagonals $AC=4$ and $BD=3$, and $BH \\perp AD$.\n\n**Step 1: Calculate the area of the rhombus using its diagonals.**\nThe formula for the area of a rhombus given diagonals $d_1$ and $d_2$ is:\n$$ \\text{Area} = \\frac{1}{2} \\times d_1 \\times d_2 $$\nSubstituting the given values:\n$$ \\text{Area} = \\frac{1}{2} \\times 4 \\times 3 = 6 $$\n\n**Step 2: Find the length of side $AD$.**\nThe diagonals of a rhombus bisect each other at right angles. Let $O$ be the intersection point. Then triangle $AOD$ is a right-angled triangle with legs:\n$$ AO = \\frac{AC}{2} = \\frac{4}{2} = 2 $$\n$$ DO = \\frac{BD}{2} = \\frac{3}{2} = 1.5 $$\nUsing the Pythagorean theorem to find the hypotenuse $AD$:\n$$ AD = \\sqrt{AO^2 + DO^2} = \\sqrt{2^2 + (1.5)^2} = \\sqrt{4 + 2.25} = \\sqrt{6.25} = 2.5 $$\n\n**Step 3: Calculate $BH$ using the area formula with base and height.**\nThe area of a rhombus can also be calculated as $\\text{base} \\times \\text{height}$. Here, the base is side $AD$ and the corresponding height is $BH$.\n$$ \\text{Area} = AD \\times BH $$\nSubstituting the known values:\n$$ 6 = 2.5 \\times BH $$\nSolving for $BH$:\n$$ BH = \\frac{6}{2.5} = \\frac{60}{25} = 2."
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0089",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0090",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D: Playing guitar",
+      "pred": "D: Playing guitar"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0091",
+      "ok": false,
+      "how": "letter-wrong(C!=B)",
+      "gold": "B",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0092",
+      "ok": false,
+      "how": "letter-wrong(A!=C)",
+      "gold": "C",
+      "answer": "A: The panel is next to the door",
+      "pred": "A: The panel is next to the door"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0093",
+      "ok": false,
+      "how": "letter-wrong(B!=D)",
+      "gold": "D",
+      "answer": "B: Distance from the camera",
+      "pred": "B: Distance from the camera"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0094",
+      "ok": false,
+      "how": "empty",
+      "gold": "A",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0095",
+      "ok": false,
+      "how": "no-letter",
+      "gold": "A",
+      "answer": "The pedigree shows an X-linked recessive mode of inheritance. Here's the step-by-step breakdown:\n\n1.  **Determine Inheritance Pattern:**\n    *   Unaffected parents (1 and 2) have an affected son (7), indicating a recessive trait.\n    *   Affected father (3) has unaffected daughters (9, 12 is affected though). Wait, let's look at the rule provided: \"Individuals marrying into this family DO NOT have",
+      "pred": "The pedigree shows an X-linked recessive mode of inheritance. Here's the step-by-step breakdown:\n\n1.  **Determine Inheritance Pattern:**\n    *   Unaffected parents (1 and 2) have an affected son (7), indicating a recessive trait.\n    *   Affected father (3) has unaffected daughters (9, 12 is affected though). Wait, let's look at the rule provided: \"Individuals marrying into this family DO NOT have the disease-associated allele unless shaded\".\n    *   Look at individuals 15 and 16. Individual 15 is an unaffected female who is the daughter of an affected father (7). If it were autosomal recessive, she would be a carrier (Aa). She marries individual 16, who marries into the family and is unshaded. According to the rule, he has no disease allele (AA). Their children would all be unaffected carriers or homozygous normal. However, they have an affected son (18). This contradiction rules out autosomal recessive inheritance under the given rule.\n    *   Therefore, it must be **X-linked recessive**.\n        *   Affected father (7) is X^aY. He passes his Y to sons and X^a to daughters. His daughter 15 is a carrier (X^AX^a).\n        *   Individual 16 marries in, unshaded male -> X^AY.\n       "
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0096",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A: At the center of the image",
+      "pred": "A: At the center of the image"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0097",
+      "ok": false,
+      "how": "letter-wrong(C!=D)",
+      "gold": "D",
+      "answer": "C: Grey",
+      "pred": "C: Grey"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0098",
+      "ok": false,
+      "how": "letter-wrong(D!=C)",
+      "gold": "C",
+      "answer": "D: above it",
+      "pred": "D: above it"
+    },
+    {
+      "bench": "mmstar",
+      "id": "mmstar-0099",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0000",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0001",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0002",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0003",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0004",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "Yes",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0005",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "Yes",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0006",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0007",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0008",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0009",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0010",
+      "ok": true,
+      "how": "exact",
+      "gold": "Green",
+      "answer": "Green",
+      "pred": "Green"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0011",
+      "ok": false,
+      "how": "letter-wrong(B!=C)",
+      "gold": "C",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0012",
+      "ok": false,
+      "how": "empty",
+      "gold": "0",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0013",
+      "ok": false,
+      "how": "letter-wrong(B!=C)",
+      "gold": "C",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0014",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0015",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "No",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0016",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0017",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0018",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0019",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "Red",
+      "answer": "Yellow",
+      "pred": "Yellow"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0020",
+      "ok": true,
+      "how": "num",
+      "gold": "2",
+      "answer": "2",
+      "pred": "2"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0021",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0022",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0023",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0024",
+      "ok": true,
+      "how": "num",
+      "gold": "0",
+      "answer": "0",
+      "pred": "0"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0025",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0026",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0027",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0028",
+      "ok": true,
+      "how": "exact",
+      "gold": "Green",
+      "answer": "Green",
+      "pred": "Green"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0029",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0030",
+      "ok": true,
+      "how": "num",
+      "gold": "0",
+      "answer": "0",
+      "pred": "0"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0031",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0032",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0033",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "No",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0034",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0035",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0036",
+      "ok": false,
+      "how": "empty",
+      "gold": "A",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0037",
+      "ok": false,
+      "how": "empty",
+      "gold": "A",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0038",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0039",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0040",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0041",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0042",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0043",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0044",
+      "ok": true,
+      "how": "num",
+      "gold": "1",
+      "answer": "1",
+      "pred": "1"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0045",
+      "ok": true,
+      "how": "num",
+      "gold": "0",
+      "answer": "0",
+      "pred": "0"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0046",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0047",
+      "ok": true,
+      "how": "exact",
+      "gold": "Red",
+      "answer": "Red",
+      "pred": "Red"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0048",
+      "ok": true,
+      "how": "letter",
+      "gold": "D",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0049",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0050",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0051",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0052",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0053",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0054",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0055",
+      "ok": true,
+      "how": "num",
+      "gold": "0",
+      "answer": "0",
+      "pred": "0"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0056",
+      "ok": false,
+      "how": "num",
+      "gold": "3",
+      "answer": "4",
+      "pred": "4"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0057",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0058",
+      "ok": false,
+      "how": "num",
+      "gold": "2",
+      "answer": "1",
+      "pred": "1"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0059",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0060",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0061",
+      "ok": true,
+      "how": "num",
+      "gold": "3",
+      "answer": "3",
+      "pred": "3"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0062",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0063",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0064",
+      "ok": true,
+      "how": "num",
+      "gold": "1",
+      "answer": "1",
+      "pred": "1"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0065",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0066",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0067",
+      "ok": true,
+      "how": "exact",
+      "gold": "Blue",
+      "answer": "blue",
+      "pred": "blue"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0068",
+      "ok": true,
+      "how": "exact",
+      "gold": "Green",
+      "answer": "Green",
+      "pred": "Green"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0069",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0070",
+      "ok": true,
+      "how": "exact",
+      "gold": "Green",
+      "answer": "Green",
+      "pred": "Green"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0071",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0072",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0073",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0074",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0075",
+      "ok": false,
+      "how": "num",
+      "gold": "3",
+      "answer": "4",
+      "pred": "4"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0076",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0077",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0078",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0079",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0080",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0081",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0082",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0083",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0084",
+      "ok": false,
+      "how": "empty",
+      "gold": "Red",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0085",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0086",
+      "ok": true,
+      "how": "letter",
+      "gold": "A",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0087",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0088",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0089",
+      "ok": false,
+      "how": "empty",
+      "gold": "1",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0090",
+      "ok": false,
+      "how": "empty",
+      "gold": "C",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0091",
+      "ok": false,
+      "how": "num",
+      "gold": "0",
+      "answer": "1",
+      "pred": "1"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0092",
+      "ok": true,
+      "how": "num",
+      "gold": "1",
+      "answer": "1",
+      "pred": "1"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0093",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0094",
+      "ok": true,
+      "how": "letter",
+      "gold": "C",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0095",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0096",
+      "ok": false,
+      "how": "letter-wrong(C!=A)",
+      "gold": "A",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0097",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0098",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "realworldqa",
+      "id": "realworldqa-0099",
+      "ok": true,
+      "how": "letter",
+      "gold": "B",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0000",
+      "ok": true,
+      "how": "exact",
+      "gold": "BOGUS",
+      "answer": "BOGUS",
+      "pred": "BOGUS"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0001",
+      "ok": true,
+      "how": "num",
+      "gold": "8440",
+      "answer": "8440",
+      "pred": "8440"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0002",
+      "ok": true,
+      "how": "num",
+      "gold": "74.4",
+      "answer": "74.4 million",
+      "pred": "74.4 million"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0003",
+      "ok": true,
+      "how": "exact",
+      "gold": "thoroughly",
+      "answer": "thoroughly",
+      "pred": "thoroughly"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0004",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "\\cos c = \\frac { a ^ { 2 } + b ^ { 2 } - c ^ { 2 } } { 2 a b }\n",
+      "answer": "$$\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$$",
+      "pred": "$$\\cos C = \\frac{a^2 + b^2 - c^2}{2ab}$$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0005",
+      "ok": true,
+      "how": "exact",
+      "gold": "dairy",
+      "answer": "DAIRY",
+      "pred": "DAIRY"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0006",
+      "ok": true,
+      "how": "exact",
+      "gold": "FOUNTAIN COUPLE",
+      "answer": "FOUNTAIN COUPLE",
+      "pred": "FOUNTAIN COUPLE"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0007",
+      "ok": true,
+      "how": "exact",
+      "gold": "urcinsean",
+      "answer": "urcinsean",
+      "pred": "urcinsean"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0008",
+      "ok": true,
+      "how": "contains",
+      "gold": "hollywood",
+      "answer": "The image contains the word:\n\n**HOLLYWOOD**",
+      "pred": "The image contains the word:\n\n**HOLLYWOOD**"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0009",
+      "ok": true,
+      "how": "contains",
+      "gold": "monday",
+      "answer": "According to the sign, the new series starts on **Monday nights**.",
+      "pred": "According to the sign, the new series starts on **Monday nights**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0010",
+      "ok": true,
+      "how": "contains",
+      "gold": "Together",
+      "answer": "The image displays the word \"**together**\" written in colorful, cursive script. Above it, there are partial rainbow-colored letters visible at the top edge.",
+      "pred": "The image displays the word \"**together**\" written in colorful, cursive script. Above it, there are partial rainbow-colored letters visible at the top edge."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0011",
+      "ok": true,
+      "how": "num",
+      "gold": "4950",
+      "answer": "The number in the image is **4950**.",
+      "pred": "The number in the image is **4950**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0012",
+      "ok": true,
+      "how": "num",
+      "gold": "50.6",
+      "answer": "The average of all \"No confidence\" data is **50.6%**.",
+      "pred": "The average of all \"No confidence\" data is **50.6%**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0013",
+      "ok": true,
+      "how": "exact",
+      "gold": "tread",
+      "answer": "tread",
+      "pred": "tread"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0014",
+      "ok": false,
+      "how": "empty",
+      "gold": "O P = y = k _ { 1 } x\n",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0015",
+      "ok": true,
+      "how": "exact",
+      "gold": "this",
+      "answer": "this",
+      "pred": "this"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0016",
+      "ok": true,
+      "how": "exact",
+      "gold": "666 Fifth Avenue",
+      "answer": "666 Fifth Avenue",
+      "pred": "666 Fifth Avenue"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0017",
+      "ok": true,
+      "how": "exact",
+      "gold": "beabd",
+      "answer": "beabd",
+      "pred": "beabd"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0018",
+      "ok": true,
+      "how": "exact",
+      "gold": "times",
+      "answer": "TIMES",
+      "pred": "TIMES"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0019",
+      "ok": true,
+      "how": "exact",
+      "gold": "Bottom Right",
+      "answer": "Bottom Right",
+      "pred": "Bottom Right"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0020",
+      "ok": true,
+      "how": "contains",
+      "gold": "face",
+      "answer": "The image contains the word \"**face**\" written in a stylized, blue font with white outlining.",
+      "pred": "The image contains the word \"**face**\" written in a stylized, blue font with white outlining."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0021",
+      "ok": false,
+      "how": "num",
+      "gold": "76961",
+      "answer": "The number in the image is **7686**.",
+      "pred": "The number in the image is **7686**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0022",
+      "ok": true,
+      "how": "exact",
+      "gold": "direct sourcing",
+      "answer": "Direct Sourcing",
+      "pred": "Direct Sourcing"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0023",
+      "ok": true,
+      "how": "exact",
+      "gold": "male",
+      "answer": "male",
+      "pred": "male"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0024",
+      "ok": true,
+      "how": "exact",
+      "gold": "\\frac { 1 } { x + y } = \\frac { 1 } { 2 }\n",
+      "answer": "$$\\frac { 1 } { x + y } = \\frac { 1 } { 2 }$$",
+      "pred": "$$\\frac { 1 } { x + y } = \\frac { 1 } { 2 }$$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0025",
+      "ok": true,
+      "how": "exact",
+      "gold": "SHOP",
+      "answer": "SHOP",
+      "pred": "SHOP"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0026",
+      "ok": true,
+      "how": "contains",
+      "gold": "5.9g",
+      "answer": "Based on the image, the Total carbohydrate value per 100g is **5.9g**.",
+      "pred": "Based on the image, the Total carbohydrate value per 100g is **5.9g**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0027",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "rcaihttnu",
+      "answer": "rcaihhtnu",
+      "pred": "rcaihhtnu"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0028",
+      "ok": true,
+      "how": "exact",
+      "gold": "under",
+      "answer": "Under",
+      "pred": "Under"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0029",
+      "ok": true,
+      "how": "exact",
+      "gold": "Raven Hail",
+      "answer": "Raven Hail",
+      "pred": "Raven Hail"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0030",
+      "ok": true,
+      "how": "contains",
+      "gold": "christmas",
+      "answer": "The image displays the words \"**Merry Christmas**\" in a cursive wooden cutout style.",
+      "pred": "The image displays the words \"**Merry Christmas**\" in a cursive wooden cutout style."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0031",
+      "ok": true,
+      "how": "num",
+      "gold": "100972",
+      "answer": "100972",
+      "pred": "100972"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0032",
+      "ok": false,
+      "how": "num",
+      "gold": "15.9",
+      "answer": "The infant mortality rate in Vietnam in 2019 was **15.9** deaths per 1,000 live births.",
+      "pred": "The infant mortality rate in Vietnam in 2019 was **15.9** deaths per 1,000 live births."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0033",
+      "ok": true,
+      "how": "contains",
+      "gold": "experimenta",
+      "answer": "The image contains handwritten text that appears to be the word **\"experimenta-\"** (likely cut off from \"experimental\" or similar).\n\nIt could also potentially be the Russian word **\"\u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442\u0430-\"** written in cursive Cyrillic script, which looks very similar.",
+      "pred": "The image contains handwritten text that appears to be the word **\"experimenta-\"** (likely cut off from \"experimental\" or similar).\n\nIt could also potentially be the Russian word **\"\u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442\u0430-\"** written in cursive Cyrillic script, which looks very similar."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0034",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "\\angle E B F = \\frac { 1 } { 2 } 7 0 ^ { \\circ } = 3 5 ^ { \\circ }\n",
+      "answer": "$$\\angle E B F = \\frac { 1 } { 2 } 7 0 ^ { \\circ } \\Rightarrow 3 5 ^ { \\circ }$$",
+      "pred": "$$\\angle E B F = \\frac { 1 } { 2 } 7 0 ^ { \\circ } \\Rightarrow 3 5 ^ { \\circ }$$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0035",
+      "ok": true,
+      "how": "exact",
+      "gold": "hutchinson",
+      "answer": "HUTCHINSON",
+      "pred": "HUTCHINSON"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0036",
+      "ok": true,
+      "how": "exact",
+      "gold": "Lorillard Tobacco Company",
+      "answer": "Lorillard Tobacco Company",
+      "pred": "Lorillard Tobacco Company"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0037",
+      "ok": true,
+      "how": "exact",
+      "gold": "maek",
+      "answer": "maek",
+      "pred": "maek"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0038",
+      "ok": true,
+      "how": "contains",
+      "gold": "grocery",
+      "answer": "The image contains the word:\n\n**GROCERY**",
+      "pred": "The image contains the word:\n\n**GROCERY**"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0039",
+      "ok": true,
+      "how": "num",
+      "gold": "72.7",
+      "answer": "72.7%",
+      "pred": "72.7%"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0040",
+      "ok": true,
+      "how": "contains",
+      "gold": "When",
+      "answer": "The image contains the word \"**When**\".",
+      "pred": "The image contains the word \"**When**\"."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0041",
+      "ok": true,
+      "how": "num",
+      "gold": "8452",
+      "answer": "The number in the image is **8452**.",
+      "pred": "The number in the image is **8452**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0042",
+      "ok": false,
+      "how": "empty",
+      "gold": "australia",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0043",
+      "ok": true,
+      "how": "contains",
+      "gold": "understand",
+      "answer": "The image contains the handwritten word **understand**.",
+      "pred": "The image contains the handwritten word **understand**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0044",
+      "ok": true,
+      "how": "exact",
+      "gold": "- \\frac { 1 } { 2 }\n",
+      "answer": "$$ , - \\frac { 1 } { 2 } $$",
+      "pred": "$$ , - \\frac { 1 } { 2 } $$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0045",
+      "ok": true,
+      "how": "exact",
+      "gold": "ATHENS",
+      "answer": "ATHENS",
+      "pred": "ATHENS"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0046",
+      "ok": true,
+      "how": "num",
+      "gold": "11.3",
+      "answer": "Based on the text in the image, the value for Total carbohydrate per portion (serving) is **11.3**.",
+      "pred": "Based on the text in the image, the value for Total carbohydrate per portion (serving) is **11.3**."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0047",
+      "ok": true,
+      "how": "exact",
+      "gold": "iRaeenlc",
+      "answer": "iRaeenlc",
+      "pred": "iRaeenlc"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0048",
+      "ok": true,
+      "how": "exact",
+      "gold": "pigeons",
+      "answer": "PIGEONS",
+      "pred": "PIGEONS"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0049",
+      "ok": true,
+      "how": "exact",
+      "gold": "Calendars",
+      "answer": "Calendars",
+      "pred": "Calendars"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0050",
+      "ok": true,
+      "how": "contains",
+      "gold": "Lioness",
+      "answer": "The image contains the word \"**lioness**\" written in a stylized, bubbly blue font with red shadows against a pink background.",
+      "pred": "The image contains the word \"**lioness**\" written in a stylized, bubbly blue font with red shadows against a pink background."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0051",
+      "ok": true,
+      "how": "num",
+      "gold": "17100",
+      "answer": "17000",
+      "pred": "17000"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0052",
+      "ok": true,
+      "how": "num",
+      "gold": "3300",
+      "answer": "3300",
+      "pred": "3300"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0053",
+      "ok": true,
+      "how": "contains",
+      "gold": "quarrel",
+      "answer": "The image contains the handwritten word: **quarrel**",
+      "pred": "The image contains the handwritten word: **quarrel**"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0054",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "\\angle B D E = \\angle B E D = \\frac { 1 } { 2 } ( 1 8 0 ^ { \\circ } - 3 0 ^ { \\circ } ) = 7 5 ^ { \\circ }\n",
+      "answer": "\\angle BDE=\\angle BED=\\frac{1}{2}(180^{\\circ}-30^{\\circ})=75^{\\circ}",
+      "pred": "\\angle BDE=\\angle BED=\\frac{1}{2}(180^{\\circ}-30^{\\circ})=75^{\\circ}"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0055",
+      "ok": true,
+      "how": "exact",
+      "gold": "VALVE",
+      "answer": "VALVE",
+      "pred": "VALVE"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0056",
+      "ok": true,
+      "how": "exact",
+      "gold": "5/26/93",
+      "answer": "5/26/93",
+      "pred": "5/26/93"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0057",
+      "ok": true,
+      "how": "contains",
+      "gold": "meLtiid",
+      "answer": "The image contains the text: meLtiid",
+      "pred": "The image contains the text: meLtiid"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0058",
+      "ok": true,
+      "how": "exact",
+      "gold": "fitting",
+      "answer": "Fitting",
+      "pred": "Fitting"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0059",
+      "ok": true,
+      "how": "contains",
+      "gold": "garage",
+      "answer": "This is in **New Orleans**, Louisiana (specifically in the Warehouse District or French Quarter area). The building features iconic green brick architecture common to that region and was a popular spot known as \"The Garage\" for food trucks and events.",
+      "pred": "This is in **New Orleans**, Louisiana (specifically in the Warehouse District or French Quarter area). The building features iconic green brick architecture common to that region and was a popular spot known as \"The Garage\" for food trucks and events."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0060",
+      "ok": true,
+      "how": "contains",
+      "gold": "thankful",
+      "answer": "The image primarily features the word \"**thankful**\" written in black cursive script against a yellow watercolor background. There are fragments of other words visible at the very top and bottom edges, but they are cut off and incomplete.",
+      "pred": "The image primarily features the word \"**thankful**\" written in black cursive script against a yellow watercolor background. There are fragments of other words visible at the very top and bottom edges, but they are cut off and incomplete."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0061",
+      "ok": true,
+      "how": "num",
+      "gold": "92548",
+      "answer": "92548",
+      "pred": "92548"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0062",
+      "ok": true,
+      "how": "num",
+      "gold": "20.6",
+      "answer": "20.6",
+      "pred": "20.6"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0063",
+      "ok": true,
+      "how": "contains",
+      "gold": "brought",
+      "answer": "The image contains the handwritten word: **brought**",
+      "pred": "The image contains the handwritten word: **brought**"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0064",
+      "ok": true,
+      "how": "exact",
+      "gold": "9 . 3 \\times 5 . 6 = 5 2 . 0 8 ( m ^ { 2 } )\n",
+      "answer": "$$9 . 3 \\times 5 . 6 = 5 2 . 0 8 ( m ^ { 2 } )$$",
+      "pred": "$$9 . 3 \\times 5 . 6 = 5 2 . 0 8 ( m ^ { 2 } )$$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0065",
+      "ok": true,
+      "how": "contains",
+      "gold": "WORLD",
+      "answer": "The image contains the word \"WORLD\" written in red capital letters.",
+      "pred": "The image contains the word \"WORLD\" written in red capital letters."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0066",
+      "ok": true,
+      "how": "num",
+      "gold": "4.30",
+      "answer": "Based on the receipt, the total amount is **4.30**. This is confirmed by:\n- The sum of the items: 2.30 + 2.00 = 4.30.\n- The \"SUB-TOTAL\" line showing 4.30.\n- The payment section where \"PAY CASH\" is 5.00 and \"CHANGE\" is 0.70 (5.00 - 0.70 = 4.30).\n- A handwritten note at the bottom right also says \"4.30\".",
+      "pred": "Based on the receipt, the total amount is **4.30**. This is confirmed by:\n- The sum of the items: 2.30 + 2.00 = 4.30.\n- The \"SUB-TOTAL\" line showing 4.30.\n- The payment section where \"PAY CASH\" is 5.00 and \"CHANGE\" is 0.70 (5.00 - 0.70 = 4.30).\n- A handwritten note at the bottom right also says \"4.30\"."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0067",
+      "ok": true,
+      "how": "exact",
+      "gold": "ANKBNIG",
+      "answer": "ANKBNIG",
+      "pred": "ANKBNIG"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0068",
+      "ok": true,
+      "how": "exact",
+      "gold": "TIMES",
+      "answer": "TIMES",
+      "pred": "TIMES"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0069",
+      "ok": true,
+      "how": "exact",
+      "gold": "Vans",
+      "answer": "VANS",
+      "pred": "VANS"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0070",
+      "ok": true,
+      "how": "contains",
+      "gold": "YOUR",
+      "answer": "The image contains the word \"**YOUR**\" written in black, textured capital letters on a white background.",
+      "pred": "The image contains the word \"**YOUR**\" written in black, textured capital letters on a white background."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0071",
+      "ok": false,
+      "how": "empty",
+      "gold": "4922",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0072",
+      "ok": false,
+      "how": "num",
+      "gold": "5910",
+      "answer": "1,408",
+      "pred": "1,408"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0073",
+      "ok": false,
+      "how": "empty",
+      "gold": "beer",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0074",
+      "ok": true,
+      "how": "exact",
+      "gold": "\\rho = \\frac { m } { V } = \\frac { 2 k g } { 2 . 5 \\times 1 0 ^ { - 3 } m ^ { 3 } } = 8 0 0 k g / m ^ { 3 }\n",
+      "answer": "$$\\rho = \\frac { m } { V } = \\frac { 2 k g } { 2 . 5 \\times 1 0 ^ { - 3 } m ^ { 3 } } = 8 0 0 k g / m ^ { 3 }$$",
+      "pred": "$$\\rho = \\frac { m } { V } = \\frac { 2 k g } { 2 . 5 \\times 1 0 ^ { - 3 } m ^ { 3 } } = 8 0 0 k g / m ^ { 3 }$$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0075",
+      "ok": true,
+      "how": "contains",
+      "gold": "ATTACK",
+      "answer": "The image contains the word: ATTACK",
+      "pred": "The image contains the word: ATTACK"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0076",
+      "ok": true,
+      "how": "exact",
+      "gold": "Metal \"Pack\" Plaque",
+      "answer": "Metal \"Pack\" Plaque",
+      "pred": "Metal \"Pack\" Plaque"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0077",
+      "ok": true,
+      "how": "exact",
+      "gold": "tniUs",
+      "answer": "tniUs",
+      "pred": "tniUs"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0078",
+      "ok": true,
+      "how": "exact",
+      "gold": "college",
+      "answer": "COLLEGE",
+      "pred": "COLLEGE"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0079",
+      "ok": true,
+      "how": "contains",
+      "gold": "taxi",
+      "answer": "The sign says \"**Taxi**\" with a black arrow pointing upwards below it.",
+      "pred": "The sign says \"**Taxi**\" with a black arrow pointing upwards below it."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0080",
+      "ok": true,
+      "how": "exact",
+      "gold": "Times",
+      "answer": "Times",
+      "pred": "Times"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0081",
+      "ok": false,
+      "how": "empty",
+      "gold": "33779",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0082",
+      "ok": true,
+      "how": "num",
+      "gold": "12721",
+      "answer": "12,721 million U.S. dollars",
+      "pred": "12,721 million U.S. dollars"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0083",
+      "ok": true,
+      "how": "exact",
+      "gold": "corners",
+      "answer": "corners",
+      "pred": "corners"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0084",
+      "ok": false,
+      "how": "empty",
+      "gold": "a = \\frac { 9 5 } { 8 6 1 }\n",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0085",
+      "ok": true,
+      "how": "exact",
+      "gold": "METHODIST",
+      "answer": "METHODIST",
+      "pred": "METHODIST"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0086",
+      "ok": true,
+      "how": "exact",
+      "gold": "YONG TAT HARDWARE TRADING",
+      "answer": "YONG TAT HARDWARE TRADING",
+      "pred": "YONG TAT HARDWARE TRADING"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0087",
+      "ok": true,
+      "how": "exact",
+      "gold": "TISPPIP",
+      "answer": "TISPPIP",
+      "pred": "TISPPIP"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0088",
+      "ok": true,
+      "how": "exact",
+      "gold": "under",
+      "answer": "UNDER",
+      "pred": "UNDER"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0089",
+      "ok": true,
+      "how": "exact",
+      "gold": "lufthansa",
+      "answer": "Lufthansa",
+      "pred": "Lufthansa"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0090",
+      "ok": true,
+      "how": "exact",
+      "gold": "CHARTRES",
+      "answer": "CHARTRES",
+      "pred": "CHARTRES"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0091",
+      "ok": true,
+      "how": "num",
+      "gold": "7962",
+      "answer": "7962",
+      "pred": "7962"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0092",
+      "ok": true,
+      "how": "exact",
+      "gold": "gary alexander",
+      "answer": "Gary Alexander",
+      "pred": "Gary Alexander"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0093",
+      "ok": true,
+      "how": "contains",
+      "gold": "most",
+      "answer": "The image contains the handwritten word: **most**",
+      "pred": "The image contains the handwritten word: **most**"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0094",
+      "ok": true,
+      "how": "exact",
+      "gold": "\\frac { 9 } { 1 0 } = \\frac { 2 7 } { 3 0 }\n",
+      "answer": "$$\\frac { 9 } { 1 0 } = \\frac { 2 7 } { 3 0 }$$",
+      "pred": "$$\\frac { 9 } { 1 0 } = \\frac { 2 7 } { 3 0 }$$"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0095",
+      "ok": true,
+      "how": "contains",
+      "gold": "TOREADOR",
+      "answer": "Toreador DOMESTIC &",
+      "pred": "Toreador DOMESTIC &"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0096",
+      "ok": true,
+      "how": "contains",
+      "gold": "109 kJ",
+      "answer": "Based on the image, the value for Energy per 100ml is:\n\n**26 kcal (109 kJ)**",
+      "pred": "Based on the image, the value for Energy per 100ml is:\n\n**26 kcal (109 kJ)**"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0097",
+      "ok": true,
+      "how": "exact",
+      "gold": "TAEST",
+      "answer": "TAEST",
+      "pred": "TAEST"
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0098",
+      "ok": true,
+      "how": "contains",
+      "gold": "euro",
+      "answer": "The image contains the word **EURO** written in a pixelated, green-on-dark digital display font.",
+      "pred": "The image contains the word **EURO** written in a pixelated, green-on-dark digital display font."
+    },
+    {
+      "bench": "ocrbench",
+      "id": "ocrbench-0099",
+      "ok": true,
+      "how": "exact",
+      "gold": "Pooped Puppies",
+      "answer": "Pooped Puppies",
+      "pred": "Pooped Puppies"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0000",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "2",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0001",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0002",
+      "ok": true,
+      "how": "opt-value",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0003",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0004",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0005",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0006",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0007",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0008",
+      "ok": true,
+      "how": "opt-value",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0009",
+      "ok": false,
+      "how": "empty",
+      "gold": "2",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0010",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0011",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0012",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0013",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0014",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0015",
+      "ok": false,
+      "how": "empty",
+      "gold": "2",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0016",
+      "ok": false,
+      "how": "empty",
+      "gold": "3",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0017",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0018",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0019",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0020",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0021",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0022",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0023",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0024",
+      "ok": false,
+      "how": "empty",
+      "gold": "0",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0025",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0026",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0027",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0028",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0029",
+      "ok": false,
+      "how": "empty",
+      "gold": "0",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0030",
+      "ok": false,
+      "how": "empty",
+      "gold": "1",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0031",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0032",
+      "ok": false,
+      "how": "empty",
+      "gold": "1",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0033",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0034",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0035",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "3",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0036",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0037",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0038",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0039",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0040",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0041",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0042",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0043",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0044",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0045",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0046",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0047",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0048",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0049",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0050",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0051",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0052",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0053",
+      "ok": false,
+      "how": "empty",
+      "gold": "0",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0054",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0055",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0056",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0057",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0058",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0059",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0060",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0061",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0062",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "2",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0063",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0064",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0065",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0066",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0067",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "0",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0068",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0069",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0070",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0071",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0072",
+      "ok": false,
+      "how": "empty",
+      "gold": "1",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0073",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0074",
+      "ok": false,
+      "how": "empty",
+      "gold": "2",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0075",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0076",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0077",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0078",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0079",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0080",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0081",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0082",
+      "ok": false,
+      "how": "empty",
+      "gold": "2",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0083",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0084",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "3",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0085",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0086",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0087",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0088",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "3",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0089",
+      "ok": false,
+      "how": "empty",
+      "gold": "3",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0090",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0091",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0092",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "2",
+      "answer": "C",
+      "pred": "C"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0093",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0094",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0095",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "1",
+      "answer": "D",
+      "pred": "D"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0096",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0097",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "1",
+      "answer": "B",
+      "pred": "B"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0098",
+      "ok": false,
+      "how": "opt-miss",
+      "gold": "2",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "ai2d",
+      "id": "ai2d-0099",
+      "ok": true,
+      "how": "opt-position",
+      "gold": "0",
+      "answer": "A",
+      "pred": "A"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0000",
+      "ok": true,
+      "how": "num",
+      "gold": "189",
+      "answer": "$189",
+      "pred": "$189"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0001",
+      "ok": true,
+      "how": "num",
+      "gold": "11.4",
+      "answer": "11.4",
+      "pred": "11.4"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0002",
+      "ok": true,
+      "how": "exact",
+      "gold": "Medicaid",
+      "answer": "Medicaid",
+      "pred": "Medicaid"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0003",
+      "ok": true,
+      "how": "num",
+      "gold": "11",
+      "answer": "11",
+      "pred": "11"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0004",
+      "ok": true,
+      "how": "exact",
+      "gold": "Aeroflot",
+      "answer": "Aeroflot",
+      "pred": "Aeroflot"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0005",
+      "ok": false,
+      "how": "empty",
+      "gold": "1",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0006",
+      "ok": true,
+      "how": "exact",
+      "gold": "2020/2021",
+      "answer": "2020/2021",
+      "pred": "2020/2021"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0007",
+      "ok": true,
+      "how": "contains",
+      "gold": "Female",
+      "answer": "Based on the chart, **Females** had the highest share (31%) of Americans with at least one tattoo in 2015.",
+      "pred": "Based on the chart, **Females** had the highest share (31%) of Americans with at least one tattoo in 2015."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0008",
+      "ok": true,
+      "how": "num",
+      "gold": "150",
+      "answer": "150 million euros",
+      "pred": "150 million euros"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0009",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes, the median (1,294) is slightly larger than the average (~1,258).",
+      "pred": "Yes, the median (1,294) is slightly larger than the average (~1,258)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0010",
+      "ok": false,
+      "how": "num",
+      "gold": "31.7",
+      "answer": "Based on the chart, the infant mortality rate in the UK in 1950 was approximately **32 deaths per 1,000 live births**.",
+      "pred": "Based on the chart, the infant mortality rate in the UK in 1950 was approximately **32 deaths per 1,000 live births**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0011",
+      "ok": true,
+      "how": "num",
+      "gold": "505",
+      "answer": "Based on the chart, the number of franchise restaurants increased by **505** between 2011 and 2020 (rising from 1,592 to 2,097).",
+      "pred": "Based on the chart, the number of franchise restaurants increased by **505** between 2011 and 2020 (rising from 1,592 to 2,097)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0012",
+      "ok": false,
+      "how": "empty",
+      "gold": "8092208",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0013",
+      "ok": true,
+      "how": "num",
+      "gold": "42",
+      "answer": "42",
+      "pred": "42"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0014",
+      "ok": true,
+      "how": "num",
+      "gold": "27573",
+      "answer": "Based on the chart provided, Google spent **$27,573 million** (or approximately **$27.6 billion**) on R&D in 2020.",
+      "pred": "Based on the chart provided, Google spent **$27,573 million** (or approximately **$27.6 billion**) on R&D in 2020."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0015",
+      "ok": true,
+      "how": "num",
+      "gold": "5",
+      "answer": "Based on the chart labels, there are **5** categories of percentages:\n\n1.  More than 20% (5%)\n2.  15 \u2013 20% (12%)\n3.  10 \u2013 15% (21%)\n4.  5 \u2013 10% (41%)\n5.  0 \u2013 5% (21%)",
+      "pred": "Based on the chart labels, there are **5** categories of percentages:\n\n1.  More than 20% (5%)\n2.  15 \u2013 20% (12%)\n3.  10 \u2013 15% (21%)\n4.  5 \u2013 10% (41%)\n5.  0 \u2013 5% (21%)"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0016",
+      "ok": true,
+      "how": "num",
+      "gold": "3710",
+      "answer": "3,760",
+      "pred": "3,760"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0017",
+      "ok": false,
+      "how": "num",
+      "gold": "59.9",
+      "answer": "Based on the provided chart, absolute numbers are not listed; only percentages are shown. However, for people aged **80 years and above**, the data indicates:\n\n*   **80\u201389 years:** 40.5%\n*   **90 years and older:** 19.4%",
+      "pred": "Based on the provided chart, absolute numbers are not listed; only percentages are shown. However, for people aged **80 years and above**, the data indicates:\n\n*   **80\u201389 years:** 40.5%\n*   **90 years and older:** 19.4%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0018",
+      "ok": true,
+      "how": "num",
+      "gold": "907",
+      "answer": "907",
+      "pred": "907"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0019",
+      "ok": true,
+      "how": "num",
+      "gold": "5",
+      "answer": "5%",
+      "pred": "5%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0020",
+      "ok": true,
+      "how": "num",
+      "gold": "114.7",
+      "answer": "Marlboro sold 114.7 billion cigarettes in 2013.",
+      "pred": "Marlboro sold 114.7 billion cigarettes in 2013."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0021",
+      "ok": false,
+      "how": "num",
+      "gold": "2.125694444",
+      "answer": "Based on the chart:\n\n*   **Largest Difference:** In 2002, the blue line (\"Dissatisfied\") is at **71** and the green line (\"Satisfied\") is at **20**. The difference is $71 - 20 = 51$.\n*   **Smallest Difference:** Around 2012\u20132014, the lines are very close. For example, in 2012, the values are **46** (blue) and **45** (green), a difference of $1$. Similarly, in 2013 ($57$ vs $56$) and roughly 2014 (",
+      "pred": "Based on the chart:\n\n*   **Largest Difference:** In 2002, the blue line (\"Dissatisfied\") is at **71** and the green line (\"Satisfied\") is at **20**. The difference is $71 - 20 = 51$.\n*   **Smallest Difference:** Around 2012\u20132014, the lines are very close. For example, in 2012, the values are **46** (blue) and **45** (green), a difference of $1$. Similarly, in 2013 ($57$ vs $56$) and roughly 2014 ($37$ vs $36$).\n\nThe ratio of the largest difference to the smallest difference is **51:1**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0022",
+      "ok": true,
+      "how": "num",
+      "gold": "5.8",
+      "answer": "The rating was 5.8.",
+      "pred": "The rating was 5.8."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0023",
+      "ok": true,
+      "how": "num",
+      "gold": "0.63",
+      "answer": "0.63",
+      "pred": "0.63"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0024",
+      "ok": true,
+      "how": "num",
+      "gold": "120",
+      "answer": "Out of every thousand individuals, there were **120 women** and **77 men** who were divorced or separated.",
+      "pred": "Out of every thousand individuals, there were **120 women** and **77 men** who were divorced or separated."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0025",
+      "ok": true,
+      "how": "num",
+      "gold": "1",
+      "answer": "1",
+      "pred": "1"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0026",
+      "ok": true,
+      "how": "num",
+      "gold": "6.78",
+      "answer": "6.78",
+      "pred": "6.78"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0027",
+      "ok": true,
+      "how": "num",
+      "gold": "828",
+      "answer": "The difference is **828** pupils (3,996 - 3,168).",
+      "pred": "The difference is **828** pupils (3,996 - 3,168)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0028",
+      "ok": true,
+      "how": "num",
+      "gold": "7.3",
+      "answer": "OPPO shipped 7.3 million smartphones in the first quarter of 2015.",
+      "pred": "OPPO shipped 7.3 million smartphones in the first quarter of 2015."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0029",
+      "ok": false,
+      "how": "num",
+      "gold": "74",
+      "answer": "The sum of the blue and black bars in 2018 is 74%.",
+      "pred": "The sum of the blue and black bars in 2018 is 74%."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0030",
+      "ok": true,
+      "how": "num",
+      "gold": "11.7",
+      "answer": "11.7",
+      "pred": "11.7"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0031",
+      "ok": true,
+      "how": "num",
+      "gold": "2014",
+      "answer": "2014",
+      "pred": "2014"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0032",
+      "ok": true,
+      "how": "exact",
+      "gold": "Germany",
+      "answer": "Germany",
+      "pred": "Germany"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0033",
+      "ok": true,
+      "how": "num",
+      "gold": "62",
+      "answer": "62%",
+      "pred": "62%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0034",
+      "ok": false,
+      "how": "num",
+      "gold": "18.1",
+      "answer": "In 2019, there were **18.1 million** arrivals in short-stay accommodation in Belgium.",
+      "pred": "In 2019, there were **18.1 million** arrivals in short-stay accommodation in Belgium."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0035",
+      "ok": true,
+      "how": "num",
+      "gold": "7.53",
+      "answer": "7.53",
+      "pred": "7.53"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0036",
+      "ok": false,
+      "how": "num",
+      "gold": "28.31",
+      "answer": "The average ticket price for Detroit Tigers games in 2019 was **$28.31**.",
+      "pred": "The average ticket price for Detroit Tigers games in 2019 was **$28.31**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0037",
+      "ok": true,
+      "how": "num",
+      "gold": "62",
+      "answer": "62%",
+      "pred": "62%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0038",
+      "ok": true,
+      "how": "num",
+      "gold": "336.6",
+      "answer": "336.6 billion GBP",
+      "pred": "336.6 billion GBP"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0039",
+      "ok": true,
+      "how": "num",
+      "gold": "2020",
+      "answer": "2020",
+      "pred": "2020"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0040",
+      "ok": true,
+      "how": "num",
+      "gold": "69.88",
+      "answer": "69.88 million U.S. dollars",
+      "pred": "69.88 million U.S. dollars"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0041",
+      "ok": false,
+      "how": "num",
+      "gold": "12",
+      "answer": "Based on the chart, for deaths among children aged 1\u201359 months (represented by the light blue bars), the percentages are:\n\n*   **AIDS:** 1%\n*   **Malaria:** 5%\n*   **Injury:** 6%\n\nAdding these together: 1 + 5 + 6 = **12%**.",
+      "pred": "Based on the chart, for deaths among children aged 1\u201359 months (represented by the light blue bars), the percentages are:\n\n*   **AIDS:** 1%\n*   **Malaria:** 5%\n*   **Injury:** 6%\n\nAdding these together: 1 + 5 + 6 = **12%**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0042",
+      "ok": true,
+      "how": "num",
+      "gold": "1.88",
+      "answer": "Belize's population increased by **1.88%** in 2019.",
+      "pred": "Belize's population increased by **1.88%** in 2019."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0043",
+      "ok": false,
+      "how": "num",
+      "gold": "15",
+      "answer": "Based on the chart, the quarterly average rate in Q4 was **160** for 2017 and **150** for 2010. Therefore, the difference is **10 euros**.",
+      "pred": "Based on the chart, the quarterly average rate in Q4 was **160** for 2017 and **150** for 2010. Therefore, the difference is **10 euros**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0044",
+      "ok": false,
+      "how": "empty",
+      "gold": "8.12",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0045",
+      "ok": true,
+      "how": "yesno",
+      "gold": "Yes",
+      "answer": "Yes, the sum of the smallest two bars (United States at 21.05% and Costa Rica at 24.87%, totaling roughly 46%) is greater than the value of the largest bar (Greece at 35.84%).",
+      "pred": "Yes, the sum of the smallest two bars (United States at 21.05% and Costa Rica at 24.87%, totaling roughly 46%) is greater than the value of the largest bar (Greece at 35.84%)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0046",
+      "ok": true,
+      "how": "num",
+      "gold": "24",
+      "answer": "24 million",
+      "pred": "24 million"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0047",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No, this statement is incorrect.\n\nBased on the chart:\n*   **Africa + Northern America + South America** \u2248 227.8 + 172.6 + 113.8 = **~514 million**\n*   **Europe** = **549.33 million**\n\nThe combined population of those three regions is less than the population of Europe.",
+      "pred": "No, this statement is incorrect.\n\nBased on the chart:\n*   **Africa + Northern America + South America** \u2248 227.8 + 172.6 + 113.8 = **~514 million**\n*   **Europe** = **549.33 million**\n\nThe combined population of those three regions is less than the population of Europe."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0048",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "Catalonia",
+      "answer": "Melilla",
+      "pred": "Melilla"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0049",
+      "ok": true,
+      "how": "num",
+      "gold": "1992",
+      "answer": "1992",
+      "pred": "1992"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0050",
+      "ok": true,
+      "how": "num",
+      "gold": "1615.6",
+      "answer": "Exports to the US generated **1,615.6 million euros** in revenue.",
+      "pred": "Exports to the US generated **1,615.6 million euros** in revenue."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0051",
+      "ok": true,
+      "how": "num",
+      "gold": "5",
+      "answer": "5%",
+      "pred": "5%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0052",
+      "ok": true,
+      "how": "num",
+      "gold": "120",
+      "answer": "Based on the chart provided, the average distance traveled by surface rail per person per year was **120 miles**.",
+      "pred": "Based on the chart provided, the average distance traveled by surface rail per person per year was **120 miles**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0053",
+      "ok": true,
+      "how": "num",
+      "gold": "64.6",
+      "answer": "64.6 million U.S. dollars",
+      "pred": "64.6 million U.S. dollars"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0054",
+      "ok": true,
+      "how": "num",
+      "gold": "1.6",
+      "answer": "1.6",
+      "pred": "1.6"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0055",
+      "ok": true,
+      "how": "exact",
+      "gold": "Belarus",
+      "answer": "Belarus",
+      "pred": "Belarus"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0056",
+      "ok": true,
+      "how": "num",
+      "gold": "64.9",
+      "answer": "Based on the chart, 64.9% of Nigeria's population will access the internet by 2025.",
+      "pred": "Based on the chart, 64.9% of Nigeria's population will access the internet by 2025."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0057",
+      "ok": false,
+      "how": "empty",
+      "gold": "1",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0058",
+      "ok": false,
+      "how": "num",
+      "gold": "130.57",
+      "answer": "The house price index in Croatia for the quarter ending June 2020 (Q2 '20) was **130.57**.",
+      "pred": "The house price index in Croatia for the quarter ending June 2020 (Q2 '20) was **130.57**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0059",
+      "ok": true,
+      "how": "num",
+      "gold": "5",
+      "answer": "There are 5 bars in the graph.",
+      "pred": "There are 5 bars in the graph."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0060",
+      "ok": true,
+      "how": "exact",
+      "gold": "Rice",
+      "answer": "Rice",
+      "pred": "Rice"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0061",
+      "ok": true,
+      "how": "num",
+      "gold": "4",
+      "answer": "Based on the chart, there are **4** categories with values greater than 10 (interpreting the axis label \"per million population\" as the scale the user is referring to):\n\n1.  Pulmonary arterial hypertension (46)\n2.  Chronic thromboembolic pulmonary hypertension (21)\n3.  Not pulmonary hypertension (11)\n4.  No diagnosis (12)",
+      "pred": "Based on the chart, there are **4** categories with values greater than 10 (interpreting the axis label \"per million population\" as the scale the user is referring to):\n\n1.  Pulmonary arterial hypertension (46)\n2.  Chronic thromboembolic pulmonary hypertension (21)\n3.  Not pulmonary hypertension (11)\n4.  No diagnosis (12)"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0062",
+      "ok": false,
+      "how": "num",
+      "gold": "5.23",
+      "answer": "Puma's global revenue in 2020 was 5.23 billion euros.",
+      "pred": "Puma's global revenue in 2020 was 5.23 billion euros."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0063",
+      "ok": true,
+      "how": "exact",
+      "gold": "50-64 years",
+      "answer": "50\u201364 years",
+      "pred": "50\u201364 years"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0064",
+      "ok": true,
+      "how": "num",
+      "gold": "41",
+      "answer": "41",
+      "pred": "41"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0065",
+      "ok": false,
+      "how": "num",
+      "gold": "4.19",
+      "answer": "The average sugar beet production for Hungary and Asia in 1961 was **4.19 million tonnes**.",
+      "pred": "The average sugar beet production for Hungary and Asia in 1961 was **4.19 million tonnes**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0066",
+      "ok": false,
+      "how": "text-miss",
+      "gold": "March 2021",
+      "answer": "Based on the chart, the Utah Jazz's Facebook page reached 1.81 million followers in **September 2019**. (The figure remained at or near this level for subsequent data points shown).",
+      "pred": "Based on the chart, the Utah Jazz's Facebook page reached 1.81 million followers in **September 2019**. (The figure remained at or near this level for subsequent data points shown)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0067",
+      "ok": false,
+      "how": "num",
+      "gold": "4",
+      "answer": "Based on the chart for the year 2017:\n*   Domestic visitors share: **80%**\n*   Foreign visitor share: **20%**\n\nThe ratio of domestic to foreign visitors is **4:1** (or simply 4).",
+      "pred": "Based on the chart for the year 2017:\n*   Domestic visitors share: **80%**\n*   Foreign visitor share: **20%**\n\nThe ratio of domestic to foreign visitors is **4:1** (or simply 4)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0068",
+      "ok": true,
+      "how": "num",
+      "gold": "4522",
+      "answer": "4,522 million U.S. dollars",
+      "pred": "4,522 million U.S. dollars"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0069",
+      "ok": true,
+      "how": "num",
+      "gold": "47.6",
+      "answer": "The difference is 47.6% (100% - 52.4%).",
+      "pred": "The difference is 47.6% (100% - 52.4%)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0070",
+      "ok": false,
+      "how": "num",
+      "gold": "810",
+      "answer": "Based on the chart, the total amount of investments in road transport infrastructure in 2016 was approximately **813 million euros**",
+      "pred": "Based on the chart, the total amount of investments in road transport infrastructure in 2016 was approximately **813 million euros**"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0071",
+      "ok": false,
+      "how": "num",
+      "gold": "1.6",
+      "answer": "In 2012\u201313, **Red 1** was at **74%** while **Red 2** was at **75.6%**, meaning Red 2 was 1.6 percentage points higher.",
+      "pred": "In 2012\u201313, **Red 1** was at **74%** while **Red 2** was at **75.6%**, meaning Red 2 was 1.6 percentage points higher."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0072",
+      "ok": true,
+      "how": "num",
+      "gold": "80.1",
+      "answer": "80.1%",
+      "pred": "80.1%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0073",
+      "ok": true,
+      "how": "exact",
+      "gold": "Rabbit**",
+      "answer": "Rabbit",
+      "pred": "Rabbit"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0074",
+      "ok": true,
+      "how": "exact",
+      "gold": "Hungary",
+      "answer": "Hungary",
+      "pred": "Hungary"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0075",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0076",
+      "ok": false,
+      "how": "empty",
+      "gold": "2020",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0077",
+      "ok": true,
+      "how": "num",
+      "gold": "30",
+      "answer": "30",
+      "pred": "30"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0078",
+      "ok": true,
+      "how": "num",
+      "gold": "19.14",
+      "answer": "The average selling price of cannabis in Oslo was 19.14 U.S. dollars.",
+      "pred": "The average selling price of cannabis in Oslo was 19.14 U.S. dollars."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0079",
+      "ok": true,
+      "how": "exact",
+      "gold": "Canada",
+      "answer": "Canada",
+      "pred": "Canada"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0080",
+      "ok": true,
+      "how": "exact",
+      "gold": "GQ",
+      "answer": "GQ",
+      "pred": "GQ"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0081",
+      "ok": true,
+      "how": "exact",
+      "gold": "Brazil",
+      "answer": "Brazil",
+      "pred": "Brazil"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0082",
+      "ok": true,
+      "how": "num",
+      "gold": "2020",
+      "answer": "2020",
+      "pred": "2020"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0083",
+      "ok": true,
+      "how": "num",
+      "gold": "2014",
+      "answer": "2014",
+      "pred": "2014"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0084",
+      "ok": true,
+      "how": "num",
+      "gold": "791",
+      "answer": "791",
+      "pred": "791"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0085",
+      "ok": true,
+      "how": "contains",
+      "gold": "Poor",
+      "answer": "Based on the chart, the **Poor** share is the highest in Brazil at **57%**.",
+      "pred": "Based on the chart, the **Poor** share is the highest in Brazil at **57%**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0086",
+      "ok": true,
+      "how": "num",
+      "gold": "39.8",
+      "answer": "39.8%",
+      "pred": "39.8%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0087",
+      "ok": true,
+      "how": "num",
+      "gold": "2015",
+      "answer": "2015",
+      "pred": "2015"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0088",
+      "ok": false,
+      "how": "num",
+      "gold": "10.3",
+      "answer": "Based on the chart, the crude birth rate of Switzerland in 2020 is expected to be approximately **10.3**.",
+      "pred": "Based on the chart, the crude birth rate of Switzerland in 2020 is expected to be approximately **10.3**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0089",
+      "ok": true,
+      "how": "num",
+      "gold": "2",
+      "answer": "Based on the chart, **2** countries (Nigeria and Honduras) reach their peak number of arrivals in the year 2006.",
+      "pred": "Based on the chart, **2** countries (Nigeria and Honduras) reach their peak number of arrivals in the year 2006."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0090",
+      "ok": false,
+      "how": "num",
+      "gold": "3922",
+      "answer": "Germany's advertising revenues in 2020 were **3,922 million euros**.",
+      "pred": "Germany's advertising revenues in 2020 were **3,922 million euros**."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0091",
+      "ok": true,
+      "how": "exact",
+      "gold": "Nicaragua",
+      "answer": "Nicaragua",
+      "pred": "Nicaragua"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0092",
+      "ok": true,
+      "how": "num",
+      "gold": "50",
+      "answer": "The market penetration rate for alcohol is 50%.",
+      "pred": "The market penetration rate for alcohol is 50%."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0093",
+      "ok": true,
+      "how": "num",
+      "gold": "31.01",
+      "answer": "31.01%",
+      "pred": "31.01%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0094",
+      "ok": false,
+      "how": "num",
+      "gold": "17.19",
+      "answer": "In 2017, approximately **17.19 million** people accessed the internet through their mobile phone in Australia.",
+      "pred": "In 2017, approximately **17.19 million** people accessed the internet through their mobile phone in Australia."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0095",
+      "ok": true,
+      "how": "num",
+      "gold": "87",
+      "answer": "87%",
+      "pred": "87%"
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0096",
+      "ok": true,
+      "how": "num",
+      "gold": "36.9",
+      "answer": "Facebook had 36.9 million users in Italy in 2020.",
+      "pred": "Facebook had 36.9 million users in Italy in 2020."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0097",
+      "ok": true,
+      "how": "num",
+      "gold": "12",
+      "answer": "The value of Approve decreases by 12 percentage points (from 33% to 21%).",
+      "pred": "The value of Approve decreases by 12 percentage points (from 33% to 21%)."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0098",
+      "ok": false,
+      "how": "num",
+      "gold": "104.73",
+      "answer": "The average ticket price in 2020 was $104.73.",
+      "pred": "The average ticket price in 2020 was $104.73."
+    },
+    {
+      "bench": "chartqa",
+      "id": "chartqa-0099",
+      "ok": true,
+      "how": "yesno",
+      "gold": "No",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0000",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0001",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0002",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0003",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0004",
+      "ok": false,
+      "how": "empty",
+      "gold": "yes",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0005",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0006",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0007",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0008",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0009",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0010",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0011",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0012",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "yes",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0013",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0014",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0015",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0016",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0017",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0018",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0019",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0020",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0021",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0022",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0023",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0024",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0025",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0026",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0027",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0028",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0029",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0030",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0031",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0032",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0033",
+      "ok": false,
+      "how": "empty",
+      "gold": "no",
+      "answer": "",
+      "pred": ""
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0034",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0035",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0036",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0037",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0038",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0039",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0040",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "yes",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0041",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0042",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0043",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0044",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0045",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0046",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0047",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0048",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0049",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0050",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0051",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0052",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0053",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0054",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0055",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "no",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0056",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0057",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0058",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0059",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0060",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0061",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0062",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0063",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0064",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0065",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0066",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0067",
+      "ok": false,
+      "how": "yesno-wrong",
+      "gold": "yes",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0068",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0069",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0070",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0071",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0072",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0073",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0074",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0075",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0076",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0077",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0078",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0079",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0080",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0081",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0082",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0083",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0084",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0085",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0086",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0087",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0088",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0089",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0090",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "yes",
+      "pred": "yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0091",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0092",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0093",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0094",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "no",
+      "pred": "no"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0095",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0096",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0097",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0098",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0099",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0100",
+      "ok": true,
+      "how": "yesno",
+      "gold": "no",
+      "answer": "No",
+      "pred": "No"
+    },
+    {
+      "bench": "pope",
+      "id": "pope-0101",
+      "ok": true,
+      "how": "yesno",
+      "gold": "yes",
+      "answer": "Yes",
+      "pred": "Yes"
+    }
+  ],
+  "total_secs": 14180.5,
+  "overall": {
+    "correct": 460,
+    "total": 602,
+    "accuracy": 0.7641
+  }
+}
