@@ -183,3 +183,70 @@ performance figures.
 *Every result is measured, wire-collected, and reproducible. If a row looks wrong,
 open an issue — the harness is in this repo.*
 
+---
+
+## Record index — every model, every number
+
+*59 records. Generated from the scorecards in `records/`; each row links to its scorecard.*
+
+| Date | Model | HE | Tasks | Agency | tok/s | Record |
+|---|---|---|---|---|---|---|
+| — | `—` | —/20 | —/5 | —/15 | — | [Vision-Suite-Qwen3.5-9B-Defiant-Fable](records/Vision-Suite-Qwen3.5-9B-Defiant-Fable.md) |
+| — | `—` | —/20 | —/5 | —/15 | — | [Vision-Suite-MiMo-VL](records/Vision-Suite-MiMo-VL.md) |
+| — | `—` | —/20 | —/5 | —/15 | 27.4 | [MiMo-VL-7B-RL](records/MiMo-VL-7B-RL.md) |
+| — | `—` | —/20 | —/5 | —/15 | — | [MiMo-9B-Abliterated](records/MiMo-9B-Abliterated.md) |
+| — | `—` | —/20 | 5/5 | 15/15 | — | [Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit](records/Gemma-4-31B-It-QAT-Uncensored-Heretic-MLX-LM-4Bit.md) |
+| 2026-10-29 | `minimax-m3.1-flash:cloud` | 19/20 | 4/5 | 13/15 | 72.2 | [minimax-m3.1-flash-ollama-cloud-64kout](records/minimax-m3.1-flash-ollama-cloud-64kout.md) |
+| 2026-10-29 | `groot-19b-a3b` | 18/20 | 5/5 | 15/15 | 103.4 | [groot-19b-a3b-q4km-llamacpp-thinkOFF](records/groot-19b-a3b-q4km-llamacpp-thinkOFF.md) |
+| 2026-10-28 | `qwen3.6-35b-a3b:gguf:q4` | 16/20 | 5/5 | 13/15 | 124.6 | [qwen3.6-35b-a3b-Q4-thinkOFF](records/qwen3.6-35b-a3b-Q4-thinkOFF.md) |
+| 2026-10-27 | `nanbeige4.3-33b-q4km` | 20/20 | 5/5 | 15/15 | 19.5 | [nanbeige4.3-33b-Q4_K_M-thinkOFF](records/nanbeige4.3-33b-Q4_K_M-thinkOFF.md) |
+| 2026-10-27 | `flint-UD-Q4_K_XL` | 20/20 | 5/5 | 14/15 | 79.9 | [flint-UD-Q4_K_XL](records/flint-UD-Q4_K_XL.md) |
+| 2026-10-25 | `saluki-27b` | 19/20 | 2/5 | 14/15 | 26.1 | [saluki-27b-IQ2-thinkOFF](records/saluki-27b-IQ2-thinkOFF.md) |
+| 2026-10-24 | `Ornith-1.5-122B-MLX-4bit` | 19/20 | 5/5 | 13/15 | 58.3 | [Ornith-1.5-122B-MLX-4bit](records/Ornith-1.5-122B-MLX-4bit.md) |
+| 2026-10-24 | `nvidia-nemotron-3.5-bolt-e4b-4gb` | 19/20 | 5/5 | 12/15 | 24.6 | [Nemotron-Bolt-E4B-Q4KM](records/Nemotron-Bolt-E4B-Q4KM.md) |
+| 2026-10-24 | `ggml-org/nvidia-nemotron-3.5-lightning-30b-a3b-gguf/nvidia-nemotron-3.5-lightning-30b-a3b-q4_0.gguf` | 20/20 | 4/5 | 13/15 | 77.9 | [Lightning-30B-A3B-Q4_0](records/Lightning-30B-A3B-Q4_0.md) |
+| 2026-10-24 | `qwen3.8-27b-defiance-uncensored-mtp@iq4_xs` | 20/20 | 5/5 | 15/15 | 26.7 | [Defiance-27B-IQ4XS-MTP](records/Defiance-27B-IQ4XS-MTP.md) |
+| 2026-10-24 | `qwen3.8-27b-turbo-brilliance-50x-reasoning-instruct-neo-max-mtp` | 20/20 | 5/5 | 13/15 | 24.7 | [Brilliance-xhigh48k](records/Brilliance-xhigh48k.md) |
+| 2026-10-19 | `nvidia/Qwen3.8-27B-NVFP4` | 20/20 | 2/5 | 13/15 | 12.9 | [lithos-Qwen3.8-27B-NVFP4-clean](records/lithos-Qwen3.8-27B-NVFP4-clean.md) |
+| 2026-10-17 | `qwen3.8-flash-next-ud@q2_k_xl` | 20/20 | 5/5 | 15/15 | 38.2 | [qwen38-flash-next-Q2-lmstudio](records/qwen38-flash-next-Q2-lmstudio.md) |
+| 2026-10-17 | `/Volumes/AIPortable/AI Shared Models/OMLX/models/mlx-community/MiniCPM-V-4.7-35B-A3B-mxfp8` | 20/20 | 5/5 | 15/15 | 11.5 | [minicpmv47-35b-a3b-mlxvlm](records/minicpmv47-35b-a3b-mlxvlm.md) |
+| 2026-10-17 | `qwen3.8-27b-ridge` | 20/20 | 5/5 | 14/15 | 21.5 | [lms-qwen38-27b-ridge-37bpw-h164](records/lms-qwen38-27b-ridge-37bpw-h164.md) |
+| 2026-10-17 | `Swift-1.5-5bit-MLX-omlx` | 20/20 | 5/5 | 14/15 | 8.2 | [Swift-1.5-5bit-MLX-omlx](records/Swift-1.5-5bit-MLX-omlx.md) |
+| 2026-10-15 | `gemma-4-26B-A4B-it-QAT-MLX-4bit` | 20/20 | 5/5 | 15/15 | 105.7 | [bakeoff-gemma26b-OMLX](records/bakeoff-gemma26b-OMLX.md) |
+| 2026-10-15 | `gemma-4-26b-a4b-it-qat:gguf:q4` | 20/20 | 5/5 | 15/15 | 123.5 | [bakeoff-gemma26b-MAGNITUDE](records/bakeoff-gemma26b-MAGNITUDE.md) |
+| 2026-10-15 | `google/gemma-4-26b-a4b-qat` | 20/20 | 5/5 | 13/15 | 93.0 | [bakeoff-gemma26b-LMSTUDIO](records/bakeoff-gemma26b-LMSTUDIO.md) |
+| 2026-10-14 | `thinkingcap-qwen3.8-27b` | 20/20 | 5/5 | 13/15 | 31.7 | [lms_thinkingcap-q4km](records/lms_thinkingcap-q4km.md) |
+| 2026-10-14 | `swift-1.5-qwen3.8-27b-gsq-rco` | 20/20 | 2/5 | 14/15 | 37.8 | [lms_swift15-iq3s-mtp](records/lms_swift15-iq3s-mtp.md) |
+| 2026-10-12 | `qwen3.8-flash-next-coder-iq1_m` | 20/20 | 5/5 | 13/15 | 54.5 | [strata-coder-iq1m](records/strata-coder-iq1m.md) |
+| 2026-10-12 | `Qwen3.8-27B-OBLITERATED-8bit` | 20/20 | 5/5 | 14/15 | 17.9 | [omlx_qwen38_obliterated8bit](records/omlx_qwen38_obliterated8bit.md) |
+| 2026-10-12 | `Qwen3.8-27B-AWQ-5.0bpw` | 20/20 | 5/5 | 13/15 | 24.3 | [omlx_qwen38_awq50bpw](records/omlx_qwen38_awq50bpw.md) |
+| 2026-10-12 | `qwen3.8-27b:gguf:q6` | 20/20 | 5/5 | 13/15 | 44.6 | [magnitude_qwen38-27b-q6-v2](records/magnitude_qwen38-27b-q6-v2.md) |
+| 2026-10-11 | `Youtu-Parsing-Omni-mlx-8bit` | 10/20 | 1/5 | 2/15 | 0.0 | [omlx_youtu-parsing-omni-b8](records/omlx_youtu-parsing-omni-b8.md) |
+| 2026-10-11 | `gemma-4-12b-it-qat:gguf:q4` | 19/20 | 5/5 | 15/15 | 50.6 | [magnitude_friday_12b](records/magnitude_friday_12b.md) |
+| 2026-10-11 | `aescode-8b` | 17/20 | 5/5 | 14/15 | 56.3 | [lms_aescode-8b](records/lms_aescode-8b.md) |
+| 2026-10-11 | `qwen/qwen3-vl-8b` | 19/20 | 5/5 | 13/15 | 16.0 | [iris_qwen3-vl-8b](records/iris_qwen3-vl-8b.md) |
+| 2026-10-08 | `/Volumes/2TBXPG/PROJECTSJARVIS/model/jarvis_production` | 17/20 | 5/5 | 2/15 | 32.4 | [jarvis_production](records/jarvis_production.md) |
+| 2026-10-08 | `gemma-4-12B-it-qat-4bit` | 19/20 | 5/5 | 15/15 | 39.3 | [gemma-4-12B-it-qat-4bit_omlx](records/gemma-4-12B-it-qat-4bit_omlx.md) |
+| 2026-10-08 | `agentworld-identity-v3-fused` | 20/20 | 4/5 | 2/15 | 114.0 | [agentworld-identity](records/agentworld-identity.md) |
+| 2026-10-08 | `Gemma-4-12B-it-AEON-Abliterated-MLX-8bit` | 19/20 | 5/5 | 15/15 | 33.8 | [Gemma-4-12B-AEON-Abliterated_omlx](records/Gemma-4-12B-AEON-Abliterated_omlx.md) |
+| 2026-10-07 | `gemma-4-31B-it-uncensored-heretic-4bit` | 19/20 | 5/5 | 15/15 | 17.3 | [gemma-4-31B-it-uncensored-heretic-4bit](records/gemma-4-31B-it-uncensored-heretic-4bit.md) |
+| 2026-10-07 | `GLM-4.6V-Flash-Heretic-MLX-8bit` | 14/20 | 5/5 | 12/15 | 43.2 | [GLM-4.6V-Flash-Heretic-MLX-8bit](records/GLM-4.6V-Flash-Heretic-MLX-8bit.md) |
+| 2026-10-04 | `Qwen3.8-27B-Heretic-Abliterated-MLX-8bit` | 19/20 | 2/5 | 13/15 | 16.3 | [Qwen3.8-27B-Heretic-thinkfalse](records/Qwen3.8-27B-Heretic-thinkfalse.md) |
+| 2026-09-29 | `Swift-Qwen3.8-27B-oQ8e-mtp` | 20/20 | 5/5 | 13/15 | 18.5 | [Swift-Qwen3.8-27B-oQ8e-mtp-CARD](records/Swift-Qwen3.8-27B-oQ8e-mtp-CARD.md) |
+| 2026-09-29 | `xiaomimimo_mimo-vl-7b-rl-2508` | 20/20 | 4/5 | 14/15 | 16.7 | [A3b-MiMo-VL-7B-RL-2508-Q8_0](records/A3b-MiMo-VL-7B-RL-2508-Q8_0.md) |
+| 2026-09-28 | `DavidAU/Qwen3.5-9B-The-Defiant-Fable-Uncensored-Heretic-NEO-IMATRIX-MAX-MTP-GGUF` | —/20 | —/5 | —/15 | — | [Qwen3.5-9B-Defiant-Fable](records/Qwen3.5-9B-Defiant-Fable.md) |
+| 2026-09-28 | `DavidAU/LFM2.5-2.6B-Qwen3.8-Turbo-Brilliance-Power-X12-NEO-MAX-GGUF` | 19/20 | 4/5 | 12/15 | 82.5 | [LFM2.5-2.6B-Turbo-Brilliance](records/LFM2.5-2.6B-Turbo-Brilliance.md) |
+| 2026-09-10 | `Qwen3.6-27B-Fable-Fusion-711-dequantized` | —/20 | —/5 | —/15 | — | [Qwen3.6-27B-Fable-Fusion-711-dequantized](records/Qwen3.6-27B-Fable-Fusion-711-dequantized.md) |
+| 2026-09-10 | `MiniCPM5-2B` | —/20 | —/5 | —/15 | — | [MiniCPM5-2B](records/MiniCPM5-2B.md) |
+| 2026-09-10 | `DeepSeek-V4-Flash-0731-REAP37-native-MLX` | 13/20 | 5/5 | 13/15 | 26.0 | [DeepSeek-V4-Flash-0731-REAP37-native-MLX](records/DeepSeek-V4-Flash-0731-REAP37-native-MLX.md) |
+| 2026-09-09 | `grug-27b-oQ8e-fp16` | 17/20 | 4/5 | 14/15 | 13.7 | [grug-27b-oQ8e-fp16](records/grug-27b-oQ8e-fp16.md) |
+| 2026-09-09 | `Ornith-1.5-35B-A3B-oQ4e-mtp` | 20/20 | 4/5 | 14/15 | 67.0 | [Ornith-1.5-35B-A3B-oQ4e-mtp](records/Ornith-1.5-35B-A3B-oQ4e-mtp.md) |
+| 2026-09-09 | `Gemma-4-26B-QAT` | 20/20 | 4/5 | 14/15 | 78.9 | [Gemma-4-26B-QAT](records/Gemma-4-26B-QAT.md) |
+| 2026-09-08 | `gemma4-coding-agent` | 19/20 | 5/5 | —/15 | 77.8 | [gemma4-coding-agent](records/gemma4-coding-agent.md) |
+| 2026-09-08 | `gemma-4-12B-QAT` | 19/20 | 5/5 | 15/15 | 33.4 | [gemma-4-12B-QAT](records/gemma-4-12B-QAT.md) |
+| 2026-09-08 | `Tiel-Coder-35B-A3B-MTP-UD` | 19/20 | 4/5 | 13/15 | 57.4 | [Tiel-Coder-35B-A3B-MTP-UD](records/Tiel-Coder-35B-A3B-MTP-UD.md) |
+| 2026-09-08 | `Ornith-1.5-35B-A3B-MLX` | 20/20 | 4/5 | 13/15 | 48.1 | [Ornith-1.5-35B-A3B-MLX](records/Ornith-1.5-35B-A3B-MLX.md) |
+| 2026-09-07 | `Gemma-4-31B-QAT` | 20/20 | 4/5 | 15/15 | 18.8 | [Gemma-4-31B-QAT](records/Gemma-4-31B-QAT.md) |
+| 2026-09-07 | `Gemma-4-31B-JANG_4M-CRACK` | 20/20 | 5/5 | 15/15 | — | [Gemma-4-31B-JANG_4M-CRACK](records/Gemma-4-31B-JANG_4M-CRACK.md) |
+| 2026-09-03 | `Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp` | 20/20 | 5/5 | 13/15 | 19.4 | [Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp](records/Qwen3.8-27B-GSQ-RCO-IQ3_S-mtp.md) |
+| 2026-09-03 | `MiniCPM-o-4_5-MLX-4bit` | 15/20 | 5/5 | 6/15 | 95.4 | [MiniCPM-o-4_5-MLX-4bit](records/MiniCPM-o-4_5-MLX-4bit.md) |
