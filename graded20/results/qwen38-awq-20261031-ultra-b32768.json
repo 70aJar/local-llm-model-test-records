@@ -1,0 +1,88 @@
+{
+ "label": "qwen38-awq-20261031-ultra-b32768",
+ "model": "Qwen3.8-27B-AWQ-5.0bpw",
+ "temperature": 0.0,
+ "max_tokens": 32768,
+ "directive": "",
+ "reasoning_effort": "ultra",
+ "started": "2026-11-01T01:06:50",
+ "suite_sha256": "188a5816a338625fb2c21e7aa267bb118b9605b6371170dff1b1f09738f1276f",
+ "questions": [
+  {
+   "id": "H1",
+   "tier": "hard",
+   "title": "Dijkstra with deterministic path",
+   "seconds": 823.3,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 129221,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "H2",
+   "tier": "hard",
+   "title": "integer expression evaluator",
+   "seconds": 617.8,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 112902,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X1",
+   "tier": "expert",
+   "title": "minimal JSON parser",
+   "seconds": 383.2,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 114261,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X2",
+   "tier": "expert",
+   "title": "regex engine with . * + ? | ( )",
+   "seconds": 422.9,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 78484,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X4",
+   "tier": "expert",
+   "title": "minimal edit script from LCS",
+   "seconds": 731.0,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 108563,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  }
+ ],
+ "tiers": {
+  "hard": {
+   "passed": 0,
+   "total": 2
+  },
+  "expert": {
+   "passed": 0,
+   "total": 3
+  }
+ },
+ "outcomes": {
+  "no_answer": 5
+ },
+ "total_passed": 0,
+ "total": 5,
+ "finished": "2026-11-01T01:56:28"
+}

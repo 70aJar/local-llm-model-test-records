@@ -57,36 +57,52 @@ python3 run_suite.py \
 Output: `results/<label>.json` — label, model, endpoint class, temperature, suite hash, per-question
 rows (seconds, pass, error, truncated answer), and tier totals.
 
-## First scorecard — `Qwen3.8-27B-AWQ-5.0bpw` (2026-10-31)
+## Scorecards — `Qwen3.8-27B-AWQ-5.0bpw` (2026-10-31)
 
-Tiered result from a single 20-question pass, temperature 0, one attempt per question, 16,384-token
-budget, served through an MLX/OpenAI-compatible endpoint on Apple Silicon.
+Three passes, same frozen question set, temperature 0, one attempt per question, served through an
+MLX/OpenAI-compatible endpoint on Apple Silicon.
 
-| Tier | Passed | Items |
+| Tier | baseline | `reasoning_effort: ultra` | ultra, 2× budget (5 silent items only) |
+|---|---|---|---|
+| easy | 4/5 | **5/5** | — |
+| normal | 4/5 | 4/5 | — |
+| hard | 3/5 | 3/5 | 0/2 |
+| expert | 2/5 | 2/5 | 0/3 |
+| **total** | **13/20** | **14/20** | **0/5** |
+| outcomes | 13 pass · 2 wrong · 5 silent | 14 pass · 6 silent | 5 silent |
+
+**Ultra thinking is not a strict improvement.** It fixed E5 (wrong → pass, 120 s → 81 s) and broke N2
+(pass → silent, 30 s → 388 s): raised effort made it over-deliberate on a task it previously solved
+cheaply. Net +1 item, but the composition changed — 0 wrong, 6 silent.
+
+### The five silent items are a termination limit, not a budget limit
+
+They never emit code at any setting tried:
+
+| Item | 16K budget | 32K budget |
 |---|---|---|
-| easy | **4/5** | E5 wrong |
-| normal | **4/5** | N2 wrong |
-| hard | **3/5** | H1, H2 produced no answer |
-| expert | **2/5** | X1, X2, X4 produced no answer |
-| **total** | **13/20** | |
+| H1 Dijkstra + tie-break | 421 s, 64K chars reasoning | 823 s, **129K** chars reasoning |
+| H2 expression evaluator | 310 s, 49K | 618 s, 113K |
+| X1 JSON parser | 257 s, 34K | 383 s, 114K |
+| X2 regex engine | 432 s, 63K | 423 s, 78K |
+| X4 LCS diff script | 356 s, 51K | 731 s, 109K |
 
-**15 of 20 answered; 13 of those 15 were correct (87%).** The other five never emitted code at all:
-they spent the entire 16,384-token budget in reasoning (`finish_reason: length`, 29K–67K characters
-of reasoning) and returned empty content. That is a real, reproducible property of this model on
-specification-heavy tasks, not a harness artifact — the same five items came back empty at a 4,096
-budget, and the fixed items (H4, X3) passed once the budget was raised.
+Doubling the budget roughly doubles the reasoning (H1: 64K → 129K characters) and still produces zero
+code (`finish_reason: length`, empty content). An answer-now system directive — *"think at most three
+sentences, then write the code, never end without code"* — changed nothing: the same five came back
+empty. This model will consume whatever budget it is given on a task that requires constructing a whole
+artifact, and will not commit to an answer.
 
-Why this is reported as `no_answer` rather than a plain fail: merging the two would say the model is
-"13/20" when it is *answered-15, correct-13, silent-5*. Those imply different work — one wants a
-better prompt loop, the other wants a model that can finish a spec.
+Practical consequence: for this model, tier scores on construction-heavy problems are capped by
+**termination**, not knowledge. A `no_answer` at a large budget is the finding.
 
 ### Reproducibility notes
 
 - Question set hash: `188a5816a338625f…` (see `suite_sha256` in each result file).
-- Wall time: 33 min for the run; the five silent items consumed 26 of those minutes.
-- A prior 4,096-budget pass is kept in `results/` as `…-20261031.json` (11/20). It is **not** the
-  score — it is the evidence that an insufficient budget silently converts a thinking model into a
-  non-answer, which is exactly the failure mode a benchmark must not hide.
+- Wall time: baseline 33 min · ultra 45 min · ultra-at-32K 50 min (five items).
+- Budget matters independently of effort: the very first pass at 4,096 is kept in `results/` as
+  `…-20261031.json` (11/20) — seven of its nine failures were empty answers, not wrong code.
+
 
 ## Reading a score
 

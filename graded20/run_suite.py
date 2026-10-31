@@ -43,14 +43,17 @@ def suite_hash(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def call(endpoint, model, prompt, temperature, max_tokens, timeout=900):
+def call(endpoint, model, prompt, temperature, max_tokens, timeout=900, system=SYSTEM,
+         reasoning_effort=""):
     payload = {
         "model": model,
-        "messages": [{"role": "system", "content": SYSTEM},
+        "messages": [{"role": "system", "content": system},
                      {"role": "user", "content": prompt}],
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
+    if reasoning_effort:
+        payload["reasoning_effort"] = reasoning_effort
     req = urllib.request.Request(endpoint, data=json.dumps(payload).encode(),
                                  headers={"Content-Type": "application/json"})
     t0 = time.time()
@@ -108,9 +111,14 @@ def main():
     ap.add_argument("--label", required=True)
     ap.add_argument("--out", default=str(HERE.parent / "results/graded20"))
     ap.add_argument("--temperature", type=float, default=0.0)
-    ap.add_argument("--max-tokens", type=int, default=4096)
+    ap.add_argument("--max-tokens", type=int, default=16384)
     ap.add_argument("--only", default="", help="comma separated ids, e.g. E1,H1")
-    ap.add_argument("--timeout", type=int, default=600)
+    ap.add_argument("--timeout", type=int, default=900)
+    ap.add_argument("--directive", default="",
+                    help="extra system instruction (e.g. an answer-now nudge); recorded in the result "
+                         "so a re-run is never confused with the baseline protocol")
+    ap.add_argument("--reasoning-effort", default="",
+                    help="passed through to the server (e.g. xhigh); recorded in the result")
     args = ap.parse_args()
 
     qs = load_questions()
@@ -126,6 +134,8 @@ def main():
         "endpoint": args.endpoint,
         "temperature": args.temperature,
         "max_tokens": args.max_tokens,
+        "directive": args.directive,
+        "reasoning_effort": args.reasoning_effort,
         "started": datetime.datetime.now().isoformat(timespec="seconds"),
         "suite_sha256": suite_hash(HERE / "questions.py"),
         "questions": [],
@@ -135,7 +145,9 @@ def main():
     outcomes = {}
     for q in qs:
         resp = call(args.endpoint, args.model, q["prompt"], args.temperature,
-                    args.max_tokens, args.timeout)
+                    args.max_tokens, args.timeout,
+                    system=SYSTEM + ("\n\n" + args.directive if args.directive else ""),
+                    reasoning_effort=args.reasoning_effort)
         content = resp["content"]
         err = resp.get("error")
         row = {"id": q["id"], "tier": q["tier"], "title": q["title"],

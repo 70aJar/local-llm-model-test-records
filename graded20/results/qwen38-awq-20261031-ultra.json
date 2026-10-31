@@ -1,0 +1,277 @@
+{
+ "label": "qwen38-awq-20261031-ultra",
+ "model": "Qwen3.8-27B-AWQ-5.0bpw",
+ "temperature": 0.0,
+ "max_tokens": 16384,
+ "directive": "",
+ "reasoning_effort": "ultra",
+ "started": "2026-11-01T00:21:43",
+ "suite_sha256": "188a5816a338625fb2c21e7aa267bb118b9605b6371170dff1b1f09738f1276f",
+ "questions": [
+  {
+   "id": "E1",
+   "tier": "easy",
+   "title": "reverse word order",
+   "seconds": 3.7,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 70,
+   "finish_reason": "stop",
+   "answer": "```python\ndef reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])\n```"
+  },
+  {
+   "id": "E2",
+   "tier": "easy",
+   "title": "count vowels",
+   "seconds": 3.4,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 85,
+   "finish_reason": "stop",
+   "answer": "```python\ndef count_vowels(s: str) -> int:\n    return sum(1 for c in s if c.lower() in \"aeiou\")\n```"
+  },
+  {
+   "id": "E3",
+   "tier": "easy",
+   "title": "layered fizzbuzz",
+   "seconds": 6.0,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 331,
+   "finish_reason": "stop",
+   "answer": "```python\ndef fizzbuzz(n: int) -> list[str]:\n    result: list[str] = []\n    for i in range(1, n + 1):\n        value = \"\"\n        if i % 3 == 0:\n            value += \"Fizz\"\n        if i % 5 == 0:\n            value += \"Buzz\"\n        if i % 7 == 0:\n            value += \"Bazz\"\n        result.append(value if value else str(i))\n    return result\n```"
+  },
+  {
+   "id": "E4",
+   "tier": "easy",
+   "title": "deep flatten",
+   "seconds": 6.8,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 181,
+   "finish_reason": "stop",
+   "answer": "```python\ndef flatten(x) -> list:\n    if isinstance(x, (list, tuple)):\n        result = []\n        for item in x:\n            result.extend(flatten(item))\n        return result\n    return [x]\n```"
+  },
+  {
+   "id": "E5",
+   "tier": "easy",
+   "title": "parse key=value",
+   "seconds": 81.2,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 686,
+   "finish_reason": "stop",
+   "answer": "```python\ndef parse_kv(s: str) -> dict:\n    result = {}\n\n    def _maybe_int(value: str):\n        if not value:\n            return value\n        start = 1 if value[0] in \"+-\" else 0\n        if start == len(value):\n            return value\n        if all(\"0\" <= ch <= \"9\" for ch in value[start:]):\n            return int(value)\n        return value\n\n    for part in s.split(\";\"):\n        part = part.strip()\n        if not part:\n            continue\n        if \"=\" not in part:\n            raise ValueError(f\"Invalid key-value pair: {part!r}\")\n        key, value = part.split(\"=\", 1)\n        key = key.strip()\n        value = value.strip()\n        result[key] = _maybe_int(value)\n\n    return result\n```"
+  },
+  {
+   "id": "N1",
+   "tier": "normal",
+   "title": "LRU cache from an operation log",
+   "seconds": 9.0,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 899,
+   "finish_reason": "stop",
+   "answer": "```python\nfrom collections import OrderedDict\n\n\nclass LRU:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def run(self, ops: list) -> list:\n        results = []\n\n        for op in ops:\n            if op[0] == \"put\":\n                _, key, value = op\n\n                if key in self.cache:\n                    self.cache[key] = value\n                    self.cache.move_to_end(key)\n                else:\n                    self.cache[key] = value\n                    if len(self.cache) > self.capacity:\n                        self.cache.popitem(last=False)\n\n            elif op[0] == \"get\":\n                _, key = op\n\n                if key in self.cache:\n                    results.append(self.cache[key])\n                    self.cache.move_to_end(key)\n                else:\n                    results.append(-1)\n\n        return results\n```"
+  },
+  {
+   "id": "N2",
+   "tier": "normal",
+   "title": "run-length encode and decode",
+   "seconds": 388.0,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 59245,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "N3",
+   "tier": "normal",
+   "title": "top-k words with deterministic tie-break",
+   "seconds": 8.4,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 325,
+   "finish_reason": "stop",
+   "answer": "```python\nimport re\nfrom collections import Counter\n\ndef top_k_words(text: str, k: int) -> list[str]:\n    if k <= 0:\n        return []\n\n    words = re.findall(r\"[a-z0-9]+\", text.lower())\n    counts = Counter(words)\n\n    return [\n        word\n        for word, _ in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:k]\n    ]\n```"
+  },
+  {
+   "id": "N4",
+   "tier": "normal",
+   "title": "merge intervals",
+   "seconds": 22.6,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 561,
+   "finish_reason": "stop",
+   "answer": "```python\ndef merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:\n    for start, end in intervals:\n        if start > end:\n            raise ValueError(f\"Invalid interval: ({start}, {end})\")\n\n    if not intervals:\n        return []\n\n    sorted_intervals = sorted(intervals)\n    merged = [sorted_intervals[0]]\n\n    for start, end in sorted_intervals[1:]:\n        if start <= merged[-1][1]:\n            if end > merged[-1][1]:\n                merged[-1] = (merged[-1][0], end)\n        else:\n            merged.append((start, end))\n\n    return merged\n```"
+  },
+  {
+   "id": "N5",
+   "tier": "normal",
+   "title": "bracket balance ignoring quoted text",
+   "seconds": 119.5,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 507,
+   "finish_reason": "stop",
+   "answer": "```python\ndef balanced(s: str) -> bool:\n    stack = []\n    in_quote = None\n    matching = {\")\": \"(\", \"]\": \"[\", \"}\": \"{\"}\n\n    for ch in s:\n        if in_quote is not None:\n            if ch == in_quote:\n                in_quote = None\n            continue\n\n        if ch in \"'\\\"\":\n            in_quote = ch\n        elif ch in \"([{\":\n            stack.append(ch)\n        elif ch in \")]}\":\n            if not stack or stack[-1] != matching[ch]:\n                return False\n            stack.pop()\n\n    return not stack\n```"
+  },
+  {
+   "id": "H1",
+   "tier": "hard",
+   "title": "Dijkstra with deterministic path",
+   "seconds": 421.9,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 63868,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "H2",
+   "tier": "hard",
+   "title": "integer expression evaluator",
+   "seconds": 310.3,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 49079,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "H3",
+   "tier": "hard",
+   "title": "token-bucket rate limiter with injected clock",
+   "seconds": 140.9,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 617,
+   "finish_reason": "stop",
+   "answer": "```python\nclass RateLimiter:\n    def __init__(self, capacity: int, refill_per_second: float):\n        self.capacity = float(max(0, capacity))\n        self.refill_per_second = max(0.0, float(refill_per_second))\n        self.tokens = self.capacity\n        self.last_time = 0.0\n\n    def allow(self, now: float) -> bool:\n        if now > self.last_time:\n            elapsed = now - self.last_time\n            self.tokens = min(self.capacity, self.tokens + self.refill_per_second * elapsed)\n            self.last_time = now\n\n        if self.tokens >= 1.0:\n            self.tokens -= 1.0\n            return True\n\n        return False\n```"
+  },
+  {
+   "id": "H4",
+   "tier": "hard",
+   "title": "edit distance with linear memory",
+   "seconds": 51.0,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 427,
+   "finish_reason": "stop",
+   "answer": "```python\ndef edit_distance(a: str, b: str) -> int:\n    if len(a) > len(b):\n        a, b = b, a\n\n    m = len(a)\n    dp = list(range(m + 1))\n\n    for i, ch in enumerate(b, 1):\n        prev_diag = dp[0]\n        dp[0] = i\n\n        for j in range(1, m + 1):\n            old = dp[j]\n            cost = 0 if ch == a[j - 1] else 1\n            dp[j] = min(dp[j] + 1, dp[j - 1] + 1, prev_diag + cost)\n            prev_diag = old\n\n    return dp[m]\n```"
+  },
+  {
+   "id": "H5",
+   "tier": "hard",
+   "title": "stable topological order with cycle detection",
+   "seconds": 30.1,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 832,
+   "finish_reason": "stop",
+   "answer": "```python\nimport heapq\n\n\ndef toposort(n: int, deps: list[tuple[int, int]]) -> list[int]:\n    if n < 0:\n        raise ValueError(\"n must be non-negative\")\n\n    adj = [set() for _ in range(n)]\n    indegree = [0] * n\n\n    for a, b in deps:\n        if a < 0 or a >= n or b < 0 or b >= n:\n            raise ValueError(\"dependency references a node outside 0..n-1\")\n        if b not in adj[a]:\n            adj[a].add(b)\n            indegree[b] += 1\n\n    heap = [i for i in range(n) if indegree[i] == 0]\n    heapq.heapify(heap)\n\n    order = []\n    while heap:\n        node = heapq.heappop(heap)\n        order.append(node)\n\n        for nxt in adj[node]:\n            indegree[nxt] -= 1\n            if indegree[nxt] == 0:\n                heapq.heappush(heap, nxt)\n\n    if len(order) != n:\n        raise ValueError(\"graph has a cycle\")\n\n    return order\n```"
+  },
+  {
+   "id": "X1",
+   "tier": "expert",
+   "title": "minimal JSON parser",
+   "seconds": 257.0,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 33941,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X2",
+   "tier": "expert",
+   "title": "regex engine with . * + ? | ( )",
+   "seconds": 431.9,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 63251,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X3",
+   "tier": "expert",
+   "title": "SPSC ring buffer under real threads",
+   "seconds": 50.8,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 1149,
+   "finish_reason": "stop",
+   "answer": "```python\nimport threading\n\n\nclass RingBuffer:\n    def __init__(self, capacity: int):\n        if capacity <= 0:\n            raise ValueError(\"capacity must be positive\")\n\n        self._capacity = capacity\n        self._buffer = [None] * capacity\n        self._head = 0\n        self._tail = 0\n        self._size = 0\n\n        self._lock = threading.Lock()\n        self._not_full = threading.Condition(self._lock)\n        self._not_empty = threading.Condition(self._lock)\n\n    def push(self, item) -> None:\n        with self._not_full:\n            while self._size == self._capacity:\n                self._not_full.wait()\n\n            self._buffer[self._head] = item\n            self._head = (self._head + 1) % self._capacity\n            self._size += 1\n\n            self._not_empty.notify()\n\n    def pop(self) -> object:\n        with self._not_empty:\n            while self._size == 0:\n                self._not_empty.wait()\n\n            item = self._buffer[self._tail]\n            self._buffer[self._tail] = None\n            self._tail = (self._tail + 1) % self._capacity\n            self._size -= 1\n\n            self._not_full.notify()\n            return item\n```"
+  },
+  {
+   "id": "X4",
+   "tier": "expert",
+   "title": "minimal edit script from LCS",
+   "seconds": 356.1,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 50739,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X5",
+   "tier": "expert",
+   "title": "fix a racy counter",
+   "seconds": 8.2,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 346,
+   "finish_reason": "stop",
+   "answer": "```python\nimport threading\n\n\nclass Counter:\n    def __init__(self):\n        self.n = 0\n        self._lock = threading.Lock()\n\n    def add(self, n=1):\n        with self._lock:\n            self.n += n\n\n    def value(self) -> int:\n        with self._lock:\n            return self.n\n\n    def reset(self) -> None:\n        with self._lock:\n            self.n = 0\n```"
+  }
+ ],
+ "tiers": {
+  "easy": {
+   "passed": 5,
+   "total": 5
+  },
+  "normal": {
+   "passed": 4,
+   "total": 5
+  },
+  "hard": {
+   "passed": 3,
+   "total": 5
+  },
+  "expert": {
+   "passed": 2,
+   "total": 5
+  }
+ },
+ "outcomes": {
+  "pass": 14,
+  "no_answer": 6
+ },
+ "total_passed": 14,
+ "total": 20,
+ "finished": "2026-11-01T01:06:50"
+}
