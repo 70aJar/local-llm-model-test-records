@@ -1,0 +1,251 @@
+{
+ "label": "qwen38-awq-20261031",
+ "model": "Qwen3.8-27B-AWQ-5.0bpw",
+ "temperature": 0.0,
+ "max_tokens": 4096,
+ "started": "2026-10-31T10:05:21",
+ "suite_sha256": "0184294dcd176ecdc3dd9225f68716a53ab9ca06b8339cd0c3713dd5109d2d73",
+ "questions": [
+  {
+   "id": "E1",
+   "tier": "easy",
+   "title": "reverse word order",
+   "seconds": 2.4,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 70,
+   "answer": "```python\ndef reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])\n```"
+  },
+  {
+   "id": "E2",
+   "tier": "easy",
+   "title": "count vowels",
+   "seconds": 3.1,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 87,
+   "answer": "```python\ndef count_vowels(s: str) -> int:\n    return sum(1 for ch in s if ch.lower() in \"aeiou\")\n```"
+  },
+  {
+   "id": "E3",
+   "tier": "easy",
+   "title": "layered fizzbuzz",
+   "seconds": 3.9,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 331,
+   "answer": "```python\ndef fizzbuzz(n: int) -> list[str]:\n    result: list[str] = []\n    for i in range(1, n + 1):\n        value = \"\"\n        if i % 3 == 0:\n            value += \"Fizz\"\n        if i % 5 == 0:\n            value += \"Buzz\"\n        if i % 7 == 0:\n            value += \"Bazz\"\n        result.append(value if value else str(i))\n    return result\n```"
+  },
+  {
+   "id": "E4",
+   "tier": "easy",
+   "title": "deep flatten",
+   "seconds": 5.6,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 181,
+   "answer": "```python\ndef flatten(x) -> list:\n    if isinstance(x, (list, tuple)):\n        result = []\n        for item in x:\n            result.extend(flatten(item))\n        return result\n    return [x]\n```"
+  },
+  {
+   "id": "E5",
+   "tier": "easy",
+   "title": "parse key=value",
+   "seconds": 79.5,
+   "transport_error": null,
+   "passed": false,
+   "error": "SyntaxError: invalid syntax",
+   "chars": 309,
+   "answer": "```python\ndef parse_kv(s: str) -> dict:\n    result = {}\n\n    for part in s.split(';'):\n        part = part.strip()\n        if not part:\n            continue\n\n        if '=' not in part:\n            raise ValueError(\"Each non-empty part must contain '='\")\n\n        key, value = part.split('=', 1)\n        key ="
+  },
+  {
+   "id": "N1",
+   "tier": "normal",
+   "title": "LRU cache from an operation log",
+   "seconds": 16.4,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 899,
+   "answer": "```python\nfrom collections import OrderedDict\n\n\nclass LRU:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def run(self, ops: list) -> list:\n        results = []\n\n        for op in ops:\n            if op[0] == \"put\":\n                _, key, value = op\n\n                if key in self.cache:\n                    self.cache[key] = value\n                    self.cache.move_to_end(key)\n                else:\n                    self.cache[key] = value\n                    if len(self.cache) > self.capacity:\n                        self.cache.popitem(last=False)\n\n            elif op[0] == \"get\":\n                _, key = op\n\n                if key in self.cache:\n                    results.append(self.cache[key])\n                    self.cache.move_to_end(key)\n                else:\n                    results.append(-1)\n\n        return results\n```"
+  },
+  {
+   "id": "N2",
+   "tier": "normal",
+   "title": "run-length encode and decode",
+   "seconds": 92.2,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'rle_encode' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmpe2a9wcae/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "N3",
+   "tier": "normal",
+   "title": "top-k words with deterministic tie-break",
+   "seconds": 8.4,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 325,
+   "answer": "```python\nimport re\nfrom collections import Counter\n\ndef top_k_words(text: str, k: int) -> list[str]:\n    if k <= 0:\n        return []\n\n    words = re.findall(r\"[a-z0-9]+\", text.lower())\n    counts = Counter(words)\n\n    return [\n        word\n        for word, _ in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:k]\n    ]\n```"
+  },
+  {
+   "id": "N4",
+   "tier": "normal",
+   "title": "merge intervals",
+   "seconds": 18.6,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 572,
+   "answer": "```python\ndef merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:\n    for start, end in intervals:\n        if start > end:\n            raise ValueError(\"Interval start cannot be greater than its end.\")\n\n    if not intervals:\n        return []\n\n    sorted_intervals = sorted(intervals)\n    merged = [sorted_intervals[0]]\n\n    for start, end in sorted_intervals[1:]:\n        if start <= merged[-1][1]:\n            if end > merged[-1][1]:\n                merged[-1] = (merged[-1][0], end)\n        else:\n            merged.append((start, end))\n\n    return merged\n```"
+  },
+  {
+   "id": "N5",
+   "tier": "normal",
+   "title": "bracket balance ignoring quoted text",
+   "seconds": 29.8,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 588,
+   "answer": "```python\ndef balanced(s: str) -> bool:\n    stack = []\n    matching = {\n        \")\": \"(\",\n        \"]\": \"[\",\n        \"}\": \"{\",\n    }\n    openers = \"([{\"\n    closers = \")]}\"\n\n    in_quote = None\n\n    for ch in s:\n        if in_quote is not None:\n            if ch == in_quote:\n                in_quote = None\n            continue\n\n        if ch in (\"'\", '\"'):\n            in_quote = ch\n        elif ch in openers:\n            stack.append(ch)\n        elif ch in closers:\n            if not stack or stack[-1] != matching[ch]:\n                return False\n            stack.pop()\n\n    return not stack\n```"
+  },
+  {
+   "id": "H1",
+   "tier": "hard",
+   "title": "Dijkstra with deterministic path",
+   "seconds": 100.5,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'shortest_path' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmppmt0npds/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "H2",
+   "tier": "hard",
+   "title": "integer expression evaluator",
+   "seconds": 80.5,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'eval_expr' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmp8878gq3a/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "H3",
+   "tier": "hard",
+   "title": "token-bucket rate limiter with injected clock",
+   "seconds": 40.6,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 647,
+   "answer": "```python\nclass RateLimiter:\n    def __init__(self, capacity: int, refill_per_second: float):\n        self.capacity = float(capacity)\n        self.refill_per_second = float(refill_per_second)\n        self.tokens = float(capacity)\n        self.last_time = 0.0\n\n    def allow(self, now: float) -> bool:\n        if now > self.last_time:\n            elapsed = now - self.last_time\n            self.tokens = min(\n                self.capacity,\n                self.tokens + elapsed * self.refill_per_second\n            )\n            self.last_time = now\n\n        if self.tokens >= 1.0:\n            self.tokens -= 1.0\n            return True\n\n        return False\n```"
+  },
+  {
+   "id": "H4",
+   "tier": "hard",
+   "title": "edit distance with linear memory",
+   "seconds": 42.7,
+   "transport_error": null,
+   "passed": false,
+   "error": "AssertionError",
+   "chars": 468,
+   "answer": "```python\ndef edit_distance(a: str, b: str) -> int:\n    if len(a) > len(b):\n        a, b = b, a\n\n    if not a:\n        return len(b)\n\n    m = len(a)\n    dp = list(range(m + 1))\n\n    for i, ch_b in enumerate(b, 1):\n        prev_diag = dp[0]\n        dp[0] = i\n\n        for j, ch_a in enumerate(a, 1):\n            old = dp[j]\n            cost = 0 if ch_a == ch_b else 1\n            dp[j] = min(old + 1, dp[j - 1] + 1, prev_diag + cost)\n            prev_diag = old\n\n    return dp[m]\n```"
+  },
+  {
+   "id": "H5",
+   "tier": "hard",
+   "title": "stable topological order with cycle detection",
+   "seconds": 38.5,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 643,
+   "answer": "```python\nimport heapq\n\n\ndef toposort(n: int, deps: list[tuple[int, int]]) -> list[int]:\n    adj = [set() for _ in range(n)]\n    indegree = [0] * n\n\n    for a, b in deps:\n        if b not in adj[a]:\n            adj[a].add(b)\n            indegree[b] += 1\n\n    heap = [i for i in range(n) if indegree[i] == 0]\n    heapq.heapify(heap)\n\n    order = []\n    while heap:\n        node = heapq.heappop(heap)\n        order.append(node)\n\n        for nxt in adj[node]:\n            indegree[nxt] -= 1\n            if indegree[nxt] == 0:\n                heapq.heappush(heap, nxt)\n\n    if len(order) != n:\n        raise ValueError(\"Graph has a cycle\")\n\n    return order\n```"
+  },
+  {
+   "id": "X1",
+   "tier": "expert",
+   "title": "minimal JSON parser",
+   "seconds": 84.6,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'json_parse' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmp5889k32j/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "X2",
+   "tier": "expert",
+   "title": "regex engine with . * + ? | ( )",
+   "seconds": 92.1,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'regex_match' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmpy8yq0ps0/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "X3",
+   "tier": "expert",
+   "title": "SPSC ring buffer under real threads",
+   "seconds": 86.5,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'RingBuffer' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmpqc97ul3o/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "X4",
+   "tier": "expert",
+   "title": "minimal edit script from LCS",
+   "seconds": 91.5,
+   "transport_error": null,
+   "passed": false,
+   "error": "ImportError: cannot import name 'diff_script' from 'submission' (/private/var/folders/kl/hqm6nz251jv8wmj_dxc1k_z80000gt/T/tmpoa1xfh47/submission.py)",
+   "chars": 0,
+   "answer": ""
+  },
+  {
+   "id": "X5",
+   "tier": "expert",
+   "title": "fix a racy counter",
+   "seconds": 7.9,
+   "transport_error": null,
+   "passed": true,
+   "error": "",
+   "chars": 346,
+   "answer": "```python\nimport threading\n\n\nclass Counter:\n    def __init__(self):\n        self.n = 0\n        self._lock = threading.Lock()\n\n    def add(self, n=1):\n        with self._lock:\n            self.n += n\n\n    def value(self) -> int:\n        with self._lock:\n            return self.n\n\n    def reset(self) -> None:\n        with self._lock:\n            self.n = 0\n```"
+  }
+ ],
+ "tiers": {
+  "easy": {
+   "passed": 4,
+   "total": 5
+  },
+  "normal": {
+   "passed": 4,
+   "total": 5
+  },
+  "hard": {
+   "passed": 2,
+   "total": 5
+  },
+  "expert": {
+   "passed": 1,
+   "total": 5
+  }
+ },
+ "total_passed": 11,
+ "total": 20,
+ "finished": "2026-10-31T10:20:47"
+}

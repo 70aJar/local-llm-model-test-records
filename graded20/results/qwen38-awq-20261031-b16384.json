@@ -1,0 +1,276 @@
+{
+ "label": "qwen38-awq-20261031-b16384",
+ "model": "Qwen3.8-27B-AWQ-5.0bpw",
+ "temperature": 0.0,
+ "max_tokens": 16384,
+ "started": "2026-10-31T10:22:00",
+ "suite_sha256": "188a5816a338625fb2c21e7aa267bb118b9605b6371170dff1b1f09738f1276f",
+ "questions": [
+  {
+   "id": "E1",
+   "tier": "easy",
+   "title": "reverse word order",
+   "seconds": 2.9,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 70,
+   "finish_reason": "stop",
+   "answer": "```python\ndef reverse_words(s: str) -> str:\n    return \" \".join(s.split()[::-1])\n```"
+  },
+  {
+   "id": "E2",
+   "tier": "easy",
+   "title": "count vowels",
+   "seconds": 3.2,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 87,
+   "finish_reason": "stop",
+   "answer": "```python\ndef count_vowels(s: str) -> int:\n    return sum(1 for ch in s if ch.lower() in \"aeiou\")\n```"
+  },
+  {
+   "id": "E3",
+   "tier": "easy",
+   "title": "layered fizzbuzz",
+   "seconds": 4.3,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 331,
+   "finish_reason": "stop",
+   "answer": "```python\ndef fizzbuzz(n: int) -> list[str]:\n    result: list[str] = []\n    for i in range(1, n + 1):\n        value = \"\"\n        if i % 3 == 0:\n            value += \"Fizz\"\n        if i % 5 == 0:\n            value += \"Buzz\"\n        if i % 7 == 0:\n            value += \"Bazz\"\n        result.append(value if value else str(i))\n    return result\n```"
+  },
+  {
+   "id": "E4",
+   "tier": "easy",
+   "title": "deep flatten",
+   "seconds": 4.8,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 181,
+   "finish_reason": "stop",
+   "answer": "```python\ndef flatten(x) -> list:\n    if isinstance(x, (list, tuple)):\n        result = []\n        for item in x:\n            result.extend(flatten(item))\n        return result\n    return [x]\n```"
+  },
+  {
+   "id": "E5",
+   "tier": "easy",
+   "title": "parse key=value",
+   "seconds": 119.6,
+   "passed": false,
+   "outcome": "wrong",
+   "error": "AssertionError",
+   "chars": 442,
+   "finish_reason": "stop",
+   "answer": "```python\nimport re\n\n_INT_RE = re.compile(r\"[+-]?[0-9]+\")\n\ndef parse_kv(s: str) -> dict:\n    result = {}\n    for part in s.split(\";\"):\n        part = part.strip()\n        if not part:\n            continue\n        if \"=\" not in part:\n            raise ValueError(f\"Invalid key-value pair: {part!r}\")\n        key, value = part.split(\"=\", 1)\n        if _INT_RE.fullmatch(value):\n            value = int(value)\n        result[key] = value\n    return result\n```"
+  },
+  {
+   "id": "N1",
+   "tier": "normal",
+   "title": "LRU cache from an operation log",
+   "seconds": 7.6,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 898,
+   "finish_reason": "stop",
+   "answer": "```python\nfrom collections import OrderedDict\n\nclass LRU:\n    def __init__(self, capacity: int):\n        self.capacity = capacity\n        self.cache = OrderedDict()\n\n    def run(self, ops: list) -> list:\n        results = []\n\n        for op in ops:\n            if op[0] == \"put\":\n                _, key, value = op\n\n                if key in self.cache:\n                    self.cache[key] = value\n                    self.cache.move_to_end(key)\n                else:\n                    self.cache[key] = value\n                    if len(self.cache) > self.capacity:\n                        self.cache.popitem(last=False)\n\n            elif op[0] == \"get\":\n                _, key = op\n\n                if key in self.cache:\n                    results.append(self.cache[key])\n                    self.cache.move_to_end(key)\n                else:\n                    results.append(-1)\n\n        return results\n```"
+  },
+  {
+   "id": "N2",
+   "tier": "normal",
+   "title": "run-length encode and decode",
+   "seconds": 30.3,
+   "passed": false,
+   "outcome": "wrong",
+   "error": "ValueError: empty string",
+   "chars": 908,
+   "finish_reason": "stop",
+   "answer": "```python\ndef rle_encode(s: str) -> str:\n    if not s:\n        return \"\"\n\n    encoded = []\n    current = s[0]\n    count = 1\n\n    for ch in s[1:]:\n        if ch == current:\n            count += 1\n        else:\n            encoded.append(f\"{count}{current}\")\n            current = ch\n            count = 1\n\n    encoded.append(f\"{count}{current}\")\n    return \"\".join(encoded)\n\n\ndef rle_decode(s: str) -> str:\n    if not s:\n        raise ValueError(\"empty string\")\n\n    decoded = []\n    i = 0\n    n = len(s)\n\n    while i < n:\n        start = i\n        while i < n and s[i].isdigit():\n            i += 1\n\n        if i == start:\n            raise ValueError(\"missing count\")\n\n        count = int(s[start:i])\n\n        if count == 0:\n            raise ValueError(\"zero count\")\n\n        if i >= n:\n            raise ValueError(\"trailing digits\")\n\n        decoded.append(s[i] * count)\n        i += 1\n\n    return \"\".join(decoded)\n```"
+  },
+  {
+   "id": "N3",
+   "tier": "normal",
+   "title": "top-k words with deterministic tie-break",
+   "seconds": 7.3,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 325,
+   "finish_reason": "stop",
+   "answer": "```python\nimport re\nfrom collections import Counter\n\ndef top_k_words(text: str, k: int) -> list[str]:\n    if k <= 0:\n        return []\n\n    words = re.findall(r\"[a-z0-9]+\", text.lower())\n    counts = Counter(words)\n\n    return [\n        word\n        for word, _ in sorted(counts.items(), key=lambda item: (-item[1], item[0]))[:k]\n    ]\n```"
+  },
+  {
+   "id": "N4",
+   "tier": "normal",
+   "title": "merge intervals",
+   "seconds": 13.2,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 613,
+   "finish_reason": "stop",
+   "answer": "```python\ndef merge_intervals(intervals: list[tuple[int, int]]) -> list[tuple[int, int]]:\n    for start, end in intervals:\n        if start > end:\n            raise ValueError(\"Interval start must be less than or equal to its end.\")\n\n    if not intervals:\n        return []\n\n    sorted_intervals = sorted(intervals, key=lambda interval: interval[0])\n    merged = [sorted_intervals[0]]\n\n    for start, end in sorted_intervals[1:]:\n        if start <= merged[-1][1]:\n            if end > merged[-1][1]:\n                merged[-1] = (merged[-1][0], end)\n        else:\n            merged.append((start, end))\n\n    return merged\n```"
+  },
+  {
+   "id": "N5",
+   "tier": "normal",
+   "title": "bracket balance ignoring quoted text",
+   "seconds": 57.5,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 742,
+   "finish_reason": "stop",
+   "answer": "```python\ndef balanced(s: str) -> bool:\n    stack = []\n    in_single = False\n    in_double = False\n\n    matching = {\n        \")\": \"(\",\n        \"]\": \"[\",\n        \"}\": \"{\",\n    }\n    openers = {\"(\", \"[\", \"{\"}\n\n    for ch in s:\n        if in_single:\n            if ch == \"'\":\n                in_single = False\n            continue\n\n        if in_double:\n            if ch == '\"':\n                in_double = False\n            continue\n\n        if ch == \"'\":\n            in_single = True\n        elif ch == '\"':\n            in_double = True\n        elif ch in openers:\n            stack.append(ch)\n        elif ch in matching:\n            if not stack or stack[-1] != matching[ch]:\n                return False\n            stack.pop()\n\n    return not stack\n```"
+  },
+  {
+   "id": "H1",
+   "tier": "hard",
+   "title": "Dijkstra with deterministic path",
+   "seconds": 353.2,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 62495,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "H2",
+   "tier": "hard",
+   "title": "integer expression evaluator",
+   "seconds": 281.2,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 48170,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "H3",
+   "tier": "hard",
+   "title": "token-bucket rate limiter with injected clock",
+   "seconds": 25.2,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 710,
+   "finish_reason": "stop",
+   "answer": "```python\nclass RateLimiter:\n    def __init__(self, capacity: int, refill_per_second: float):\n        self.capacity = max(0, capacity)\n        self.refill_per_second = max(0.0, refill_per_second)\n        self.tokens = float(self.capacity)\n        self.last_time = 0.0\n\n    def allow(self, now: float) -> bool:\n        if now > self.last_time:\n            elapsed = now - self.last_time\n            self.last_time = now\n            self.tokens = min(\n                float(self.capacity),\n                self.tokens + elapsed * self.refill_per_second\n            )\n        else:\n            elapsed = 0.0\n\n        if self.tokens >= 1.0 - 1e-12:\n            self.tokens -= 1.0\n            return True\n        return False\n```"
+  },
+  {
+   "id": "H4",
+   "tier": "hard",
+   "title": "edit distance with linear memory",
+   "seconds": 38.0,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 688,
+   "finish_reason": "stop",
+   "answer": "```python\ndef edit_distance(a: str, b: str) -> int:\n    if a == b:\n        return 0\n\n    if len(a) > len(b):\n        a, b = b, a\n\n    m = len(a)\n    if m == 0:\n        return len(b)\n\n    dp = list(range(m + 1))\n\n    for i, cb in enumerate(b, 1):\n        prev_diag = dp[0]\n        dp[0] = i\n\n        for j, ca in enumerate(a, 1):\n            old = dp[j]\n            cost = 0 if ca == cb else 1\n\n            best = old + 1\n            insert = dp[j - 1] + 1\n            if insert < best:\n                best = insert\n\n            substitute = prev_diag + cost\n            if substitute < best:\n                best = substitute\n\n            dp[j] = best\n            prev_diag = old\n\n    return dp[m]\n```"
+  },
+  {
+   "id": "H5",
+   "tier": "hard",
+   "title": "stable topological order with cycle detection",
+   "seconds": 29.2,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 633,
+   "finish_reason": "stop",
+   "answer": "```python\nimport heapq\n\n\ndef toposort(n: int, deps: list[tuple[int, int]]) -> list[int]:\n    adj = [[] for _ in range(n)]\n    indegree = [0] * n\n\n    for a, b in deps:\n        adj[a].append(b)\n        indegree[b] += 1\n\n    heap = [i for i in range(n) if indegree[i] == 0]\n    heapq.heapify(heap)\n\n    order = []\n\n    while heap:\n        node = heapq.heappop(heap)\n        order.append(node)\n\n        for neighbor in adj[node]:\n            indegree[neighbor] -= 1\n            if indegree[neighbor] == 0:\n                heapq.heappush(heap, neighbor)\n\n    if len(order) != n:\n        raise ValueError(\"Graph contains a cycle\")\n\n    return order\n```"
+  },
+  {
+   "id": "X1",
+   "tier": "expert",
+   "title": "minimal JSON parser",
+   "seconds": 212.1,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 29662,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X2",
+   "tier": "expert",
+   "title": "regex engine with . * + ? | ( )",
+   "seconds": 400.2,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 66897,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X3",
+   "tier": "expert",
+   "title": "SPSC ring buffer under real threads",
+   "seconds": 47.6,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 1157,
+   "finish_reason": "stop",
+   "answer": "```python\nimport threading\n\n\nclass RingBuffer:\n    def __init__(self, capacity: int) -> None:\n        if capacity <= 0:\n            raise ValueError(\"capacity must be positive\")\n\n        self._capacity = capacity\n        self._buffer = [None] * capacity\n        self._head = 0\n        self._tail = 0\n        self._size = 0\n\n        self._lock = threading.Lock()\n        self._not_full = threading.Condition(self._lock)\n        self._not_empty = threading.Condition(self._lock)\n\n    def push(self, item) -> None:\n        with self._not_full:\n            while self._size == self._capacity:\n                self._not_full.wait()\n\n            self._buffer[self._head] = item\n            self._head = (self._head + 1) % self._capacity\n            self._size += 1\n\n            self._not_empty.notify()\n\n    def pop(self) -> object:\n        with self._not_empty:\n            while self._size == 0:\n                self._not_empty.wait()\n\n            item = self._buffer[self._tail]\n            self._buffer[self._tail] = None\n            self._tail = (self._tail + 1) % self._capacity\n            self._size -= 1\n\n            self._not_full.notify()\n            return item\n```"
+  },
+  {
+   "id": "X4",
+   "tier": "expert",
+   "title": "minimal edit script from LCS",
+   "seconds": 354.4,
+   "passed": false,
+   "outcome": "no_answer",
+   "chars": 0,
+   "reasoning_chars": 52345,
+   "finish_reason": "length",
+   "error": "empty content \u2014 the model spent its budget without answering"
+  },
+  {
+   "id": "X5",
+   "tier": "expert",
+   "title": "fix a racy counter",
+   "seconds": 7.0,
+   "passed": true,
+   "outcome": "pass",
+   "error": "",
+   "chars": 346,
+   "finish_reason": "stop",
+   "answer": "```python\nimport threading\n\n\nclass Counter:\n    def __init__(self):\n        self.n = 0\n        self._lock = threading.Lock()\n\n    def add(self, n=1):\n        with self._lock:\n            self.n += n\n\n    def value(self) -> int:\n        with self._lock:\n            return self.n\n\n    def reset(self) -> None:\n        with self._lock:\n            self.n = 0\n```"
+  }
+ ],
+ "tiers": {
+  "easy": {
+   "passed": 4,
+   "total": 5
+  },
+  "normal": {
+   "passed": 4,
+   "total": 5
+  },
+  "hard": {
+   "passed": 3,
+   "total": 5
+  },
+  "expert": {
+   "passed": 2,
+   "total": 5
+  }
+ },
+ "outcomes": {
+  "pass": 13,
+  "wrong": 2,
+  "no_answer": 5
+ },
+ "total_passed": 13,
+ "total": 20,
+ "finished": "2026-10-31T10:55:19"
+}
